@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1630542910 source:c:\users\soare\documents\ads tarefas\1. programaÇÃo 1\semana 5\lista de exercícios em c\questão 9\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+

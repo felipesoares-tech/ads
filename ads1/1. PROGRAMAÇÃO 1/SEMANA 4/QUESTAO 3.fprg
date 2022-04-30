@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="soare"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-08-27 07:11:50 "/>
+        <attribute name="created" value="c29hcmU7REVTS1RPUC1CVFQzQTY5OzIwMjEtMDgtMjM7IjExOjUzOjEyICI7Mjc2OA=="/>
+        <attribute name="edited" value="c29hcmU7REVTS1RPUC1CVFQzQTY5OzIwMjEtMDgtMjc7IjA3OjExOjUwICI7MjsyODgy"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="gasto, gorj, desp, total" type="Real" array="False" size=""/>
+            <output expression="&quot;DIGITE O VALOR GASTO!&quot;" newline="True"/>
+            <input variable="gasto"/>
+            <output expression="&quot;DIGITE O VALOR DA GORGETA!&quot;" newline="True"/>
+            <input variable="gorj"/>
+            <assign variable="desp" expression="(10/100*gasto) + gasto"/>
+            <assign variable="total" expression="desp+gorj"/>
+            <output expression="&quot;VALOR TOTAL DA CONTA:&quot; &amp;total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

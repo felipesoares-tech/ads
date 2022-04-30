@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1635078491 source:d:\semana 12\questão 13\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+

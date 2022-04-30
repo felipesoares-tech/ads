@@ -1,0 +1,1 @@
+{nome} tem: {idade} anos e seu peso é:{peso} Kg e seu imc é:{imc:.2f}')

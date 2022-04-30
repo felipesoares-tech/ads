@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1635081550 source:c:\users\win - 10 pro\documents\semana 12\questão 11\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+
+1635081550 source:d:\semana 12\questão 11\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+

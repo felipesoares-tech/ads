@@ -1,0 +1,578 @@
+%PDF-1.3
+3 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/Annots []
+/Contents 4 0 R>>
+endobj
+4 0 obj
+<</Length 23833>>
+stream
+q
+1.000 0.000 0.000 -1.000 0.000 841.890 cm
+2 J
+0.57 w
+BT /F1 8.00 Tf ET
+0 G
+0 g
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 28.35 36.42 Tm 0 Tr (#include <stdio.h>) Tj  ET Q
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 28.35 47.75 Tm 0 Tr (#include <stdlib.h>) Tj  ET Q
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 28.35 59.09 Tm 0 Tr (#include <locale.h>) Tj  ET Q
+q 0.596 0.596 0.851 rg BT 1 0 0 -1 28.35 70.43 Tm 0 Tr (///////////////////////////////////QUESTÃO 4//////////////////////////////) Tj  ET Q
+BT /F2 8.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 28.35 81.77 Tm 0 Tr (int ) Tj  ET Q
+BT /F1 8.00 Tf ET
+1.000 1.000 1.000 rg
+47.55 73.70 19.20 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 47.55 81.77 Tm 0 Tr (main) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 66.75 81.77 Tm 0 Tr (\(\)) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 93.11 Tm 0 Tr ({) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 104.45 Tm 0 Tr (    ) Tj  ET Q
+1.000 1.000 1.000 rg
+47.55 96.38 43.20 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 47.55 104.45 Tm 0 Tr (setlocale) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 90.75 104.45 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+95.55 96.38 28.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 95.55 104.45 Tm 0 Tr (LC_ALL) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 124.35 104.45 Tm 0 Tr (,) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 129.15 104.45 Tm 0 Tr ("") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 138.75 104.45 Tm 0 Tr (\);) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 127.12 Tm 0 Tr (    ) Tj  ET Q
+BT /F2 8.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 47.55 127.12 Tm 0 Tr (float ) Tj  ET Q
+BT /F1 8.00 Tf ET
+1.000 1.000 1.000 rg
+76.35 119.06 4.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 76.35 127.12 Tm 0 Tr (a) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 81.15 127.12 Tm 0 Tr (,) Tj  ET Q
+1.000 1.000 1.000 rg
+85.95 119.06 4.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 85.95 127.12 Tm 0 Tr (b) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 90.75 127.12 Tm 0 Tr (,) Tj  ET Q
+1.000 1.000 1.000 rg
+95.55 119.06 4.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 95.55 127.12 Tm 0 Tr (c) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 100.35 127.12 Tm 0 Tr (,) Tj  ET Q
+1.000 1.000 1.000 rg
+105.15 119.06 38.40 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 105.15 127.12 Tm 0 Tr (vlr_piso) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 143.55 127.12 Tm 0 Tr (,) Tj  ET Q
+1.000 1.000 1.000 rg
+148.35 119.06 28.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 148.35 127.12 Tm 0 Tr (metros) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 177.15 127.12 Tm 0 Tr (,) Tj  ET Q
+1.000 1.000 1.000 rg
+181.95 119.06 19.20 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 181.95 127.12 Tm 0 Tr (tint) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 201.15 127.12 Tm 0 Tr (,) Tj  ET Q
+1.000 1.000 1.000 rg
+205.95 119.06 14.40 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 205.95 127.12 Tm 0 Tr (qtd) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 220.35 127.12 Tm 0 Tr (,) Tj  ET Q
+1.000 1.000 1.000 rg
+225.15 119.06 57.60 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 225.15 127.12 Tm 0 Tr (vlr_tintaint) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 282.75 127.12 Tm 0 Tr (,) Tj  ET Q
+1.000 1.000 1.000 rg
+287.55 119.06 57.60 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 287.55 127.12 Tm 0 Tr (vlr_tintaext) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 345.15 127.12 Tm 0 Tr (,) Tj  ET Q
+1.000 1.000 1.000 rg
+349.95 119.06 19.20 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 349.95 127.12 Tm 0 Tr (desp) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 369.15 127.12 Tm 0 Tr (;) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 138.46 Tm 0 Tr (    ) Tj  ET Q
+BT /F2 8.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 47.55 138.46 Tm 0 Tr (int ) Tj  ET Q
+BT /F1 8.00 Tf ET
+1.000 1.000 1.000 rg
+66.75 130.39 19.20 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 66.75 138.46 Tm 0 Tr (esc1) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 85.95 138.46 Tm 0 Tr (,) Tj  ET Q
+1.000 1.000 1.000 rg
+90.75 130.39 19.20 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 90.75 138.46 Tm 0 Tr (esc2) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 109.95 138.46 Tm 0 Tr (,) Tj  ET Q
+1.000 1.000 1.000 rg
+114.75 130.39 19.20 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 114.75 138.46 Tm 0 Tr (esc3) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 133.95 138.46 Tm 0 Tr (;) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 161.14 Tm 0 Tr (    ) Tj  ET Q
+1.000 1.000 1.000 rg
+47.55 153.07 28.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 47.55 161.14 Tm 0 Tr (printf) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 76.35 161.14 Tm 0 Tr (\() Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 81.15 161.14 Tm 0 Tr ("INFORME O COMPRIMENTO -> ") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 210.75 161.14 Tm 0 Tr (\);) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 172.48 Tm 0 Tr (    ) Tj  ET Q
+1.000 1.000 1.000 rg
+47.55 164.41 24.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 47.55 172.48 Tm 0 Tr (scanf) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 71.55 172.48 Tm 0 Tr (\() Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 76.35 172.48 Tm 0 Tr ("%f") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 95.55 172.48 Tm 0 Tr (, &) Tj  ET Q
+1.000 1.000 1.000 rg
+109.95 164.41 4.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 109.95 172.48 Tm 0 Tr (a) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 114.75 172.48 Tm 0 Tr (\); ) Tj  ET Q
+q 0.596 0.596 0.851 rg BT 1 0 0 -1 129.15 172.48 Tm 0 Tr (//A CORRESPONDE AO COMPRIMENTO) Tj  ET Q
+q 0.596 0.596 0.851 rg BT 1 0 0 -1 28.35 195.16 Tm 0 Tr (    ) Tj  ET Q
+1.000 1.000 1.000 rg
+47.55 187.09 28.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 47.55 195.16 Tm 0 Tr (printf) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 76.35 195.16 Tm 0 Tr (\() Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 81.15 195.16 Tm 0 Tr ("INFORME A LARGURA -> ") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 191.55 195.16 Tm 0 Tr (\);) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 206.49 Tm 0 Tr (    ) Tj  ET Q
+1.000 1.000 1.000 rg
+47.55 198.43 24.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 47.55 206.49 Tm 0 Tr (scanf) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 71.55 206.49 Tm 0 Tr (\() Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 76.35 206.49 Tm 0 Tr ("%f") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 95.55 206.49 Tm 0 Tr (, &) Tj  ET Q
+1.000 1.000 1.000 rg
+109.95 198.43 4.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 109.95 206.49 Tm 0 Tr (b) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 114.75 206.49 Tm 0 Tr (\); ) Tj  ET Q
+q 0.596 0.596 0.851 rg BT 1 0 0 -1 129.15 206.49 Tm 0 Tr (//B CORRESPONDE A LARGURA) Tj  ET Q
+q 0.596 0.596 0.851 rg BT 1 0 0 -1 28.35 229.17 Tm 0 Tr (    ) Tj  ET Q
+1.000 1.000 1.000 rg
+47.55 221.10 28.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 47.55 229.17 Tm 0 Tr (printf) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 76.35 229.17 Tm 0 Tr (\() Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 81.15 229.17 Tm 0 Tr ("INFORME A ALTURA -> ") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 186.75 229.17 Tm 0 Tr (\);) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 240.51 Tm 0 Tr (    ) Tj  ET Q
+1.000 1.000 1.000 rg
+47.55 232.44 24.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 47.55 240.51 Tm 0 Tr (scanf) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 71.55 240.51 Tm 0 Tr (\() Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 76.35 240.51 Tm 0 Tr ("%f") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 95.55 240.51 Tm 0 Tr (, &) Tj  ET Q
+1.000 1.000 1.000 rg
+109.95 232.44 4.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 109.95 240.51 Tm 0 Tr (c) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 114.75 240.51 Tm 0 Tr (\);) Tj  ET Q
+q 0.596 0.596 0.851 rg BT 1 0 0 -1 124.35 240.51 Tm 0 Tr (// C CORRESPONED A ALUTRA) Tj  ET Q
+q 0.596 0.596 0.851 rg BT 1 0 0 -1 28.35 263.19 Tm 0 Tr (    ) Tj  ET Q
+1.000 1.000 1.000 rg
+47.55 255.12 28.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 47.55 263.19 Tm 0 Tr (printf) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 76.35 263.19 Tm 0 Tr (\() Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 81.15 263.19 Tm 0 Tr ("\\nAGORA, ESCOLHA O TIPO DE PISO!!\\n\\n") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 268.35 263.19 Tm 0 Tr (\);) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 274.53 Tm 0 Tr (    ) Tj  ET Q
+1.000 1.000 1.000 rg
+47.55 266.46 28.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 47.55 274.53 Tm 0 Tr (printf) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 76.35 274.53 Tm 0 Tr (\() Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 81.15 274.53 Tm 0 Tr ("PISO 1 -> R$24,00 POR m²\\n") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 215.55 274.53 Tm 0 Tr (\);) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 285.86 Tm 0 Tr (    ) Tj  ET Q
+1.000 1.000 1.000 rg
+47.55 277.80 28.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 47.55 285.86 Tm 0 Tr (printf) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 76.35 285.86 Tm 0 Tr (\() Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 81.15 285.86 Tm 0 Tr ("PISO 2 -> R$31,00 POR m²\\n") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 215.55 285.86 Tm 0 Tr (\);) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 297.20 Tm 0 Tr (    ) Tj  ET Q
+1.000 1.000 1.000 rg
+47.55 289.13 28.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 47.55 297.20 Tm 0 Tr (printf) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 76.35 297.20 Tm 0 Tr (\() Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 81.15 297.20 Tm 0 Tr ("PISO 3 -> R$55,00 POR m²\\n\\n") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 225.15 297.20 Tm 0 Tr (\);) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 319.88 Tm 0 Tr (    ) Tj  ET Q
+1.000 1.000 1.000 rg
+47.55 311.81 28.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 47.55 319.88 Tm 0 Tr (printf) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 76.35 319.88 Tm 0 Tr (\() Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 81.15 319.88 Tm 0 Tr ("ESCOLHA: ") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 133.95 319.88 Tm 0 Tr (\);) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 331.22 Tm 0 Tr (    ) Tj  ET Q
+1.000 1.000 1.000 rg
+47.55 323.15 24.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 47.55 331.22 Tm 0 Tr (scanf) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 71.55 331.22 Tm 0 Tr (\() Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 76.35 331.22 Tm 0 Tr ("%d") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 95.55 331.22 Tm 0 Tr (, &) Tj  ET Q
+1.000 1.000 1.000 rg
+109.95 323.15 19.20 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 109.95 331.22 Tm 0 Tr (esc1) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 129.15 331.22 Tm 0 Tr (\);) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 365.23 Tm 0 Tr (    ) Tj  ET Q
+1.000 1.000 1.000 rg
+47.55 357.17 28.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 47.55 365.23 Tm 0 Tr (printf) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 76.35 365.23 Tm 0 Tr (\() Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 81.15 365.23 Tm 0 Tr ("\\nESCOLHA O TIPO DE TINTA A SER UTILIZADA INTERNAMENTE!!\\n\\n") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 378.75 365.23 Tm 0 Tr (\);) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 387.91 Tm 0 Tr (    ) Tj  ET Q
+1.000 1.000 1.000 rg
+47.55 379.84 28.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 47.55 387.91 Tm 0 Tr (printf) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 76.35 387.91 Tm 0 Tr (\() Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 81.15 387.91 Tm 0 Tr ("TINTA 1 -> R$22,00 POR LITRO\\n") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 234.75 387.91 Tm 0 Tr (\);) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 399.25 Tm 0 Tr (    ) Tj  ET Q
+1.000 1.000 1.000 rg
+47.55 391.18 28.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 47.55 399.25 Tm 0 Tr (printf) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 76.35 399.25 Tm 0 Tr (\() Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 81.15 399.25 Tm 0 Tr ("TINTA 2 -> R$47,00 POR LITRO\\n\\n") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 244.35 399.25 Tm 0 Tr (\);) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 421.93 Tm 0 Tr (    ) Tj  ET Q
+1.000 1.000 1.000 rg
+47.55 413.86 28.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 47.55 421.93 Tm 0 Tr (printf) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 76.35 421.93 Tm 0 Tr (\() Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 81.15 421.93 Tm 0 Tr ("ESCOLHA: ") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 133.95 421.93 Tm 0 Tr (\);) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 433.27 Tm 0 Tr (    ) Tj  ET Q
+1.000 1.000 1.000 rg
+47.55 425.20 24.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 47.55 433.27 Tm 0 Tr (scanf) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 71.55 433.27 Tm 0 Tr (\() Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 76.35 433.27 Tm 0 Tr ("%d") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 95.55 433.27 Tm 0 Tr (, &) Tj  ET Q
+1.000 1.000 1.000 rg
+109.95 425.20 19.20 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 109.95 433.27 Tm 0 Tr (esc2) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 129.15 433.27 Tm 0 Tr (\);) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 455.94 Tm 0 Tr (    ) Tj  ET Q
+1.000 1.000 1.000 rg
+47.55 447.87 28.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 47.55 455.94 Tm 0 Tr (printf) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 76.35 455.94 Tm 0 Tr (\() Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 81.15 455.94 Tm 0 Tr ("\\nESCOLHA O TIPO DE TINTA A SER UTILIZADA EXTERNAMENTE!!\\n\\n") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 378.75 455.94 Tm 0 Tr (\);) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 478.62 Tm 0 Tr (    ) Tj  ET Q
+1.000 1.000 1.000 rg
+47.55 470.55 28.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 47.55 478.62 Tm 0 Tr (printf) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 76.35 478.62 Tm 0 Tr (\() Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 81.15 478.62 Tm 0 Tr ("TINTA 1 -> R$22,00 POR LITRO\\n") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 234.75 478.62 Tm 0 Tr (\);) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 489.96 Tm 0 Tr (    ) Tj  ET Q
+1.000 1.000 1.000 rg
+47.55 481.89 28.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 47.55 489.96 Tm 0 Tr (printf) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 76.35 489.96 Tm 0 Tr (\() Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 81.15 489.96 Tm 0 Tr ("TINTA 2 -> R$47,00 POR LITRO\\n\\n") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 244.35 489.96 Tm 0 Tr (\);) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 512.64 Tm 0 Tr (    ) Tj  ET Q
+1.000 1.000 1.000 rg
+47.55 504.57 28.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 47.55 512.64 Tm 0 Tr (printf) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 76.35 512.64 Tm 0 Tr (\() Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 81.15 512.64 Tm 0 Tr ("ESCOLHA: ") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 133.95 512.64 Tm 0 Tr (\);) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 523.97 Tm 0 Tr (    ) Tj  ET Q
+1.000 1.000 1.000 rg
+47.55 515.91 24.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 47.55 523.97 Tm 0 Tr (scanf) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 71.55 523.97 Tm 0 Tr (\() Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 76.35 523.97 Tm 0 Tr ("%d") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 95.55 523.97 Tm 0 Tr (, &) Tj  ET Q
+1.000 1.000 1.000 rg
+109.95 515.91 19.20 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 109.95 523.97 Tm 0 Tr (esc3) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 129.15 523.97 Tm 0 Tr (\);) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 546.65 Tm 0 Tr (    ) Tj  ET Q
+1.000 1.000 1.000 rg
+47.55 538.58 33.60 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 47.55 546.65 Tm 0 Tr (metros ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 81.15 546.65 Tm 0 Tr (= ) Tj  ET Q
+1.000 1.000 1.000 rg
+90.75 538.58 4.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 90.75 546.65 Tm 0 Tr (a) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 95.55 546.65 Tm 0 Tr (*) Tj  ET Q
+1.000 1.000 1.000 rg
+100.35 538.58 4.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 100.35 546.65 Tm 0 Tr (b) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 105.15 546.65 Tm 0 Tr (; ) Tj  ET Q
+q 0.596 0.596 0.851 rg BT 1 0 0 -1 114.75 546.65 Tm 0 Tr (// QUANTIDADE DE METROS QUADRADOS QUE O CHÃO POSSUI) Tj  ET Q
+q 0.596 0.596 0.851 rg BT 1 0 0 -1 28.35 557.99 Tm 0 Tr (    ) Tj  ET Q
+1.000 1.000 1.000 rg
+47.55 549.92 24.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 47.55 557.99 Tm 0 Tr (tint ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 71.55 557.99 Tm 0 Tr (= \() Tj  ET Q
+1.000 1.000 1.000 rg
+85.95 549.92 4.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 85.95 557.99 Tm 0 Tr (a) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 90.75 557.99 Tm 0 Tr (*) Tj  ET Q
+1.000 1.000 1.000 rg
+95.55 549.92 4.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 95.55 557.99 Tm 0 Tr (c) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 100.35 557.99 Tm 0 Tr (*) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 105.15 557.99 Tm 0 Tr (2) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 109.95 557.99 Tm 0 Tr (\)+\() Tj  ET Q
+1.000 1.000 1.000 rg
+124.35 549.92 4.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 124.35 557.99 Tm 0 Tr (b) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 129.15 557.99 Tm 0 Tr (*) Tj  ET Q
+1.000 1.000 1.000 rg
+133.95 549.92 4.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 133.95 557.99 Tm 0 Tr (c) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 138.75 557.99 Tm 0 Tr (*) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 143.55 557.99 Tm 0 Tr (2) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 148.35 557.99 Tm 0 Tr (\); ) Tj  ET Q
+q 0.596 0.596 0.851 rg BT 1 0 0 -1 162.75 557.99 Tm 0 Tr (//QUANTIDADE DE METROS QUADRADOS DE TODAS AS PAREDES) Tj  ET Q
+q 0.596 0.596 0.851 rg BT 1 0 0 -1 28.35 569.33 Tm 0 Tr (    ) Tj  ET Q
+1.000 1.000 1.000 rg
+47.55 561.26 19.20 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 47.55 569.33 Tm 0 Tr (qtd ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 66.75 569.33 Tm 0 Tr (= ) Tj  ET Q
+1.000 1.000 1.000 rg
+76.35 561.26 19.20 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 76.35 569.33 Tm 0 Tr (tint) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 95.55 569.33 Tm 0 Tr (/) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 100.35 569.33 Tm 0 Tr (2) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 105.15 569.33 Tm 0 Tr (; ) Tj  ET Q
+q 0.596 0.596 0.851 rg BT 1 0 0 -1 114.75 569.33 Tm 0 Tr (//CÁLCULO DA QUANTIDADE DE LITROS DE TINTA NECESSÁRIO PARA PINTAR AS PAREDES) Tj  ET Q
+q 0.596 0.596 0.851 rg BT 1 0 0 -1 28.35 592.01 Tm 0 Tr (    ) Tj  ET Q
+BT /F2 8.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 47.55 592.01 Tm 0 Tr (switch) Tj  ET Q
+BT /F1 8.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 76.35 592.01 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+81.15 583.94 19.20 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 81.15 592.01 Tm 0 Tr (esc1) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 100.35 592.01 Tm 0 Tr (\)) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 603.34 Tm 0 Tr (    {) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 614.68 Tm 0 Tr (    ) Tj  ET Q
+BT /F2 8.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 47.55 614.68 Tm 0 Tr (case ) Tj  ET Q
+BT /F1 8.00 Tf ET
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 71.55 614.68 Tm 0 Tr (1) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 76.35 614.68 Tm 0 Tr (:) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 626.02 Tm 0 Tr (        ) Tj  ET Q
+1.000 1.000 1.000 rg
+66.75 617.95 43.20 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 66.75 626.02 Tm 0 Tr (vlr_piso ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 109.95 626.02 Tm 0 Tr (= ) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 119.55 626.02 Tm 0 Tr (24 ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 133.95 626.02 Tm 0 Tr (* ) Tj  ET Q
+1.000 1.000 1.000 rg
+143.55 617.95 28.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 143.55 626.02 Tm 0 Tr (metros) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 172.35 626.02 Tm 0 Tr (;) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 637.36 Tm 0 Tr (        ) Tj  ET Q
+BT /F2 8.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 66.75 637.36 Tm 0 Tr (break) Tj  ET Q
+BT /F1 8.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 90.75 637.36 Tm 0 Tr (;) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 648.70 Tm 0 Tr (    ) Tj  ET Q
+BT /F2 8.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 47.55 648.70 Tm 0 Tr (case ) Tj  ET Q
+BT /F1 8.00 Tf ET
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 71.55 648.70 Tm 0 Tr (2) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 76.35 648.70 Tm 0 Tr (:) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 660.04 Tm 0 Tr (        ) Tj  ET Q
+1.000 1.000 1.000 rg
+66.75 651.97 43.20 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 66.75 660.04 Tm 0 Tr (vlr_piso ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 109.95 660.04 Tm 0 Tr (= ) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 119.55 660.04 Tm 0 Tr (31 ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 133.95 660.04 Tm 0 Tr (* ) Tj  ET Q
+1.000 1.000 1.000 rg
+143.55 651.97 28.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 143.55 660.04 Tm 0 Tr (metros) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 172.35 660.04 Tm 0 Tr (;) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 671.38 Tm 0 Tr (        ) Tj  ET Q
+BT /F2 8.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 66.75 671.38 Tm 0 Tr (break) Tj  ET Q
+BT /F1 8.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 90.75 671.38 Tm 0 Tr (;) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 682.71 Tm 0 Tr (    ) Tj  ET Q
+BT /F2 8.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 47.55 682.71 Tm 0 Tr (case ) Tj  ET Q
+BT /F1 8.00 Tf ET
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 71.55 682.71 Tm 0 Tr (3) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 76.35 682.71 Tm 0 Tr (:) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 694.05 Tm 0 Tr (        ) Tj  ET Q
+1.000 1.000 1.000 rg
+66.75 685.98 43.20 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 66.75 694.05 Tm 0 Tr (vlr_piso ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 109.95 694.05 Tm 0 Tr (= ) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 119.55 694.05 Tm 0 Tr (55 ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 133.95 694.05 Tm 0 Tr (* ) Tj  ET Q
+1.000 1.000 1.000 rg
+143.55 685.98 28.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 143.55 694.05 Tm 0 Tr (metros) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 172.35 694.05 Tm 0 Tr (;) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 705.39 Tm 0 Tr (        ) Tj  ET Q
+BT /F2 8.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 66.75 705.39 Tm 0 Tr (break) Tj  ET Q
+BT /F1 8.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 90.75 705.39 Tm 0 Tr (;) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 716.73 Tm 0 Tr (    }) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 739.41 Tm 0 Tr (    ) Tj  ET Q
+BT /F2 8.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 47.55 739.41 Tm 0 Tr (switch) Tj  ET Q
+BT /F1 8.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 76.35 739.41 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+81.15 731.34 19.20 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 81.15 739.41 Tm 0 Tr (esc2) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 100.35 739.41 Tm 0 Tr (\)) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 750.75 Tm 0 Tr (    {) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 762.09 Tm 0 Tr (    ) Tj  ET Q
+BT /F2 8.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 47.55 762.09 Tm 0 Tr (case ) Tj  ET Q
+BT /F1 8.00 Tf ET
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 71.55 762.09 Tm 0 Tr (1) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 76.35 762.09 Tm 0 Tr (:) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 773.42 Tm 0 Tr (        ) Tj  ET Q
+1.000 1.000 1.000 rg
+66.75 765.35 62.40 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 66.75 773.42 Tm 0 Tr (vlr_tintaint ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 129.15 773.42 Tm 0 Tr (= ) Tj  ET Q
+1.000 1.000 1.000 rg
+138.75 765.35 19.20 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 138.75 773.42 Tm 0 Tr (qtd ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 157.95 773.42 Tm 0 Tr (* ) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 167.55 773.42 Tm 0 Tr (22) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 177.15 773.42 Tm 0 Tr (;) Tj  ET Q
+Q
+
+endstream
+endobj
+5 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/Annots []
+/Contents 6 0 R>>
+endobj
+6 0 obj
+<</Length 6472>>
+stream
+q
+1.000 0.000 0.000 -1.000 0.000 841.890 cm
+2 J
+0.57 w
+BT /F1 8.00 Tf ET
+0 G
+1.000 1.000 1.000 rg
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 36.42 Tm 0 Tr (        ) Tj  ET Q
+BT /F2 8.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 66.75 36.42 Tm 0 Tr (break) Tj  ET Q
+BT /F1 8.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 90.75 36.42 Tm 0 Tr (;) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 47.75 Tm 0 Tr (    ) Tj  ET Q
+BT /F2 8.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 47.55 47.75 Tm 0 Tr (case ) Tj  ET Q
+BT /F1 8.00 Tf ET
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 71.55 47.75 Tm 0 Tr (2) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 76.35 47.75 Tm 0 Tr (:) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 59.09 Tm 0 Tr (        ) Tj  ET Q
+1.000 1.000 1.000 rg
+66.75 51.02 62.40 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 66.75 59.09 Tm 0 Tr (vlr_tintaint ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 129.15 59.09 Tm 0 Tr (= ) Tj  ET Q
+1.000 1.000 1.000 rg
+138.75 51.02 19.20 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 138.75 59.09 Tm 0 Tr (qtd ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 157.95 59.09 Tm 0 Tr (* ) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 167.55 59.09 Tm 0 Tr (47) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 177.15 59.09 Tm 0 Tr (;) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 70.43 Tm 0 Tr (        ) Tj  ET Q
+BT /F2 8.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 66.75 70.43 Tm 0 Tr (break) Tj  ET Q
+BT /F1 8.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 90.75 70.43 Tm 0 Tr (;) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 81.77 Tm 0 Tr (    }) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 104.45 Tm 0 Tr (        ) Tj  ET Q
+BT /F2 8.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 66.75 104.45 Tm 0 Tr (switch) Tj  ET Q
+BT /F1 8.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 95.55 104.45 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+100.35 96.38 19.20 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 100.35 104.45 Tm 0 Tr (esc3) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 119.55 104.45 Tm 0 Tr (\)) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 115.79 Tm 0 Tr (    {) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 127.12 Tm 0 Tr (    ) Tj  ET Q
+BT /F2 8.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 47.55 127.12 Tm 0 Tr (case ) Tj  ET Q
+BT /F1 8.00 Tf ET
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 71.55 127.12 Tm 0 Tr (1) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 76.35 127.12 Tm 0 Tr (:) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 138.46 Tm 0 Tr (        ) Tj  ET Q
+1.000 1.000 1.000 rg
+66.75 130.39 62.40 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 66.75 138.46 Tm 0 Tr (vlr_tintaext ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 129.15 138.46 Tm 0 Tr (= ) Tj  ET Q
+1.000 1.000 1.000 rg
+138.75 130.39 19.20 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 138.75 138.46 Tm 0 Tr (qtd ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 157.95 138.46 Tm 0 Tr (* ) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 167.55 138.46 Tm 0 Tr (22) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 177.15 138.46 Tm 0 Tr (;) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 149.80 Tm 0 Tr (        ) Tj  ET Q
+BT /F2 8.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 66.75 149.80 Tm 0 Tr (break) Tj  ET Q
+BT /F1 8.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 90.75 149.80 Tm 0 Tr (;) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 161.14 Tm 0 Tr (    ) Tj  ET Q
+BT /F2 8.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 47.55 161.14 Tm 0 Tr (case ) Tj  ET Q
+BT /F1 8.00 Tf ET
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 71.55 161.14 Tm 0 Tr (2) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 76.35 161.14 Tm 0 Tr (:) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 172.48 Tm 0 Tr (        ) Tj  ET Q
+1.000 1.000 1.000 rg
+66.75 164.41 62.40 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 66.75 172.48 Tm 0 Tr (vlr_tintaext ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 129.15 172.48 Tm 0 Tr (= ) Tj  ET Q
+1.000 1.000 1.000 rg
+138.75 164.41 19.20 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 138.75 172.48 Tm 0 Tr (qtd ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 157.95 172.48 Tm 0 Tr (* ) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 167.55 172.48 Tm 0 Tr (47) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 177.15 172.48 Tm 0 Tr (;) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 183.82 Tm 0 Tr (        ) Tj  ET Q
+BT /F2 8.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 66.75 183.82 Tm 0 Tr (break) Tj  ET Q
+BT /F1 8.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 90.75 183.82 Tm 0 Tr (;) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 195.16 Tm 0 Tr (    }) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 229.17 Tm 0 Tr (    ) Tj  ET Q
+1.000 1.000 1.000 rg
+47.55 221.10 24.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 47.55 229.17 Tm 0 Tr (desp ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 71.55 229.17 Tm 0 Tr (= ) Tj  ET Q
+1.000 1.000 1.000 rg
+81.15 221.10 62.40 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 81.15 229.17 Tm 0 Tr (vlr_tintaint ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 143.55 229.17 Tm 0 Tr (+ ) Tj  ET Q
+1.000 1.000 1.000 rg
+153.15 221.10 62.40 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 153.15 229.17 Tm 0 Tr (vlr_tintaext ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 215.55 229.17 Tm 0 Tr (+ ) Tj  ET Q
+1.000 1.000 1.000 rg
+225.15 221.10 38.40 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 225.15 229.17 Tm 0 Tr (vlr_piso) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 263.55 229.17 Tm 0 Tr (;) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 240.51 Tm 0 Tr (    ) Tj  ET Q
+1.000 1.000 1.000 rg
+47.55 232.44 28.80 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 47.55 240.51 Tm 0 Tr (printf) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 76.35 240.51 Tm 0 Tr (\() Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 81.15 240.51 Tm 0 Tr ("\\nCUSTO DE MATERIAL -> R$%.2f\\n") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 239.55 240.51 Tm 0 Tr (, ) Tj  ET Q
+1.000 1.000 1.000 rg
+249.15 232.44 19.20 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 249.15 240.51 Tm 0 Tr (desp) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 268.35 240.51 Tm 0 Tr (\);) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 274.53 Tm 0 Tr (    ) Tj  ET Q
+BT /F2 8.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 47.55 274.53 Tm 0 Tr (return ) Tj  ET Q
+BT /F1 8.00 Tf ET
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 81.15 274.53 Tm 0 Tr (0) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 85.95 274.53 Tm 0 Tr (;) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 285.86 Tm 0 Tr (}) Tj  ET Q
+Q
+
+endstream
+endobj
+1 0 obj
+<</Type /Pages
+/Kids [3 0 R 5 0 R ]
+/Count 2
+/MediaBox [0 0 595.276 841.890]
+>>
+endobj
+7 0 obj
+<</Type /Font
+/BaseFont /Courier-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+>>
+endobj
+8 0 obj
+<</Type /Font
+/BaseFont /Courier
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+>>
+endobj
+2 0 obj
+<<
+/ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
+/Font <<
+/F2 7 0 R
+/F1 8 0 R
+>>
+/XObject <<
+>>
+>>
+endobj
+9 0 obj
+<<
+/Names []
+>>
+endobj
+10 0 obj
+<<
+/Producer (þÿ w x P d f D o c u m e n t   0 . 9 . 8)
+/CreationDate (D:20210930175916)
+>>
+endobj
+11 0 obj
+<<
+/Type /Catalog
+/Pages 1 0 R
+/OpenAction [3 0 R /FitH null]
+/PageLayout /OneColumn
+>>
+endobj
+xref
+0 12
+0000000000 65535 f 
+0000030593 00000 n 
+0000030881 00000 n 
+0000000009 00000 n 
+0000000098 00000 n 
+0000023982 00000 n 
+0000024071 00000 n 
+0000030688 00000 n 
+0000030787 00000 n 
+0000030995 00000 n 
+0000031026 00000 n 
+0000031134 00000 n 
+trailer
+<<
+/Size 12
+/Root 11 0 R
+/Info 10 0 R
+>>
+startxref
+31238
+%%EOF
