@@ -9,6 +9,8 @@ int main()
 
     int x;
 
+    printf("OI");
+
     printf("INFORME O DIA DA SEMANA (1,2,3,4,5,6,7): ");
     scanf("%d",&x);
 
