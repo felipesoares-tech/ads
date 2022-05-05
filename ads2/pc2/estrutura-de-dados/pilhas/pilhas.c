@@ -1,118 +1,154 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// PILHA EST¡TICA - VETORES
+// PILHA DIN√ÇMICA - VETORES
 
-#define MAX 5
+typedef struct NO
+{
+    int valores;
+    struct NO *prox;
+} tNO;
 
-typedef struct{
-	int elementos[MAX]; // PILHA EST¡TICA
-	int topo;
+typedef struct
+{
+    tNO *topo; // PILHA EST√ÅTICA
+
 } TPilha;
 
 // CRIAR PILHA
-TPilha * criar_pilha(){
-	TPilha *ppilha;	
+TPilha *criar_pilha()
+{
+    TPilha *ppilha;
 
-	ppilha = calloc(1, sizeof(TPilha)); //ALOCA«√O DA MEM”RIA
-	if(ppilha == NULL)
-		exit(1);
+    ppilha = calloc(1, sizeof(TPilha)); // ALOCA√á√ÉO DA MEM√ìRIA
+    if (ppilha == NULL)
+        exit(1);
 
-	ppilha->topo = 0;
+    ppilha->topo = NULL;
 
-	return ppilha;
+    return ppilha;
 }
 
-// EMPILHAR ELEMENTO  
-void empilhar(TPilha *ppilha, int valor){
-	int i = ppilha->topo;
-
-        printf("A PILHA EST¡ CHEIA!");
-    if(i >= MAX){
+// EMPILHAR ELEMENTO
+void empilhar(TPilha *ppilha, int valor)
+{
+    tNO *aux = malloc(sizeof(tNO));
+    if (aux == NULL)
+    {
+        printf("Erro na alocacao de no");
         return;
     }
-
-	ppilha->elementos[i] = valor;
-	ppilha->topo = ppilha->topo + 1;
-
+    else
+    {
+        aux->valores = valor;
+        aux->prox = ppilha->topo;
+        ppilha->topo = aux;
+    }
 }
 
-void mostrar(TPilha *ppilha){
-    int i;
-    for(i=0; i<MAX; i++){
-        printf("%d ",ppilha->elementos[i]);
-        ppilha->topo = ppilha->topo + 1;
+// MOSTRAR ELEMENTOS DA PILHA
+void mostrar(TPilha *ppilha)
+{
+    tNO *aux = ppilha->topo;
+    if(aux == NULL){
+        printf("A Pilha esta vazia");
+        return;
+    }else{
+        while(aux != NULL){
+            printf("%d ", aux->valores);
+            aux = aux->prox;
+        }
+        printf("\n");
     }
-    ppilha->topo=ppilha->topo-i;
 }
 
-// DESEMPILHAR ELEMENTO  
-int desempilhar(TPilha *ppilha){
-	int i;
-
-    if(ppilha->topo<=0){
-        printf("A PILHA EST¡ VAZIA!!");
-        return 0;
+// DESEMPILHAR ELEMENTO
+int desempilhar(TPilha *ppilha)
+{
+    tNO *aux = ppilha->topo;
+    int dado;
+    if (aux == NULL)
+    {
+        printf("A PIlha esta vazia");
+        return;
     }
-
-	ppilha->topo = ppilha->topo - 1;
-
-	i = ppilha->topo;
-
-	return ppilha->elementos[i];
+    else
+    {
+        ppilha->topo = aux->prox;
+        aux->prox = NULL;
+        dado = aux->valores;
+        free(aux);
+        return dado;
+    }
 }
 
 // MENSURAR TAMANHO DA PILHA
-int tamanho(TPilha *ppilha){
-	return ppilha->topo;
+int tamanho(TPilha *ppilha)
+{
+    int cont=0;
+    tNO *aux = ppilha->topo;
+    if(ppilha == NULL){
+        printf("A Pilha esta vazia");
+        return;
+    }else{
+        while(aux != NULL){
+            aux = aux->prox;
+            cont++;
+        }
+    }
+
+    return cont;
 }
 
-//DESTRUIR PILHA
-void destruir_pilha(TPilha *ppilha) {
-	free(ppilha);
+// DESTRUIR PILHA
+void destruir_pilha(TPilha *ppilha)
+{
+    free(ppilha);
 }
 
-int main(void) {
-  int op;
-  int valor;
-  int i ;
-  TPilha *ppilha;
+int main(void)
+{
+    int op;
+    int valor;
+    TPilha *ppilha;
 
-  ppilha = criar_pilha();
-  
-  printf("\n------ PILHA EST¡TICA -------");
+    ppilha = criar_pilha();
 
-  do{
-      printf("\n 1 - Empilhar");
-      printf("\n 2 - Desempilhar");
-      printf("\n 3 - Tamanho da pilha");
-      printf("\n 4 - Mostrar Elementos");
-      printf("\n 5 - Sair");
-      printf("\n Digite a opÁ„o: ");
-      scanf("%d", &op);
+    printf("\n------ PILHA EST√ÅTICA -------");
 
-      switch(op){
-            case 1:
-                printf("\n Digite o valor: ");
-                scanf("%d", &valor);
-                empilhar(ppilha, valor);
-                break;
-            case 2:
-                valor = desempilhar(ppilha);
-                printf("\n Valor: %d \n", valor);
-                break;
-            case 3:
-                valor = tamanho(ppilha);
-                printf("\n Tamanho: %d\n", valor);	
-                break;
-            case 4:
-                mostrar(ppilha);
-                break;
-      }
+    do
+    {
+        printf("\n 1 - Empilhar");
+        printf("\n 2 - Desempilhar");
+        printf("\n 3 - Tamanho da pilha");
+        printf("\n 4 - Mostrar Elementos");
+        printf("\n 5 - Sair");
+        printf("\n Digite a op√ß√£o: ");
+        scanf("%d", &op);
 
-  } while(op != 5);
+        switch (op)
+        {
+        case 1:
+            printf("\n Digite o valor: ");
+            scanf("%d", &valor);
+            empilhar(ppilha, valor);
+            break;
+        case 2:
+            valor = desempilhar(ppilha);
+            printf("\n Valor: %d \n", valor);
+            break;
+        case 3:
+            valor = tamanho(ppilha);
+            printf("\n Tamanho: %d\n", valor);
+            break;
+        case 4:
+            mostrar(ppilha);
+            break;
+        }
 
-  destruir_pilha(ppilha);
+    } while (op != 5);
 
-  return 0;
+    destruir_pilha(ppilha);
+
+    return 0;
 }
