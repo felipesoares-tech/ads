@@ -4,59 +4,53 @@
 #include <ctype.h>
 
 FILE *arquivo;
-int col, lin, max;
+short int col, lin, max;
 char tipo[3];
 
-int is_p2(char *filename[]) // FUNÇÃO RESPONSÁVEL POR IDENTIFICAR O TIPO DE ARQUIVO, P2 OU P5
+void ignore_comments()
 {
-    FILE *f = fopen(filename[1], "r");
-    char type[3];
+    char c = fgetc(arquivo);
 
-    fgets(type, 3, f);
+    while (c != '#')
+        c = fgetc(arquivo);
 
-    if (strcmp(type, "P2") == 0) // SE O TIPO DO MEU ARQUIVO FOR P2 IRÁ RETURNAR 1
-        return 1;
-    else if (strcmp(type, "P5") == 0) // CASO SEJA P5, IRÁ RETORNAR 0
-        return 0;
-    else // CASO NÃO SEJA NENHUM DOS DOIS, ENTÃO O TIPO DE ARQUIVO NÃO É VÁLIDO
+    if (c == '#')
     {
-        printf("Arquivo inválido!");
-        exit(1);
+        while (c != '\n')
+        {
+            printf("%c", c);
+            c = fgetc(arquivo);
+        }
     }
+    else
+    {
+        fseek(arquivo, -1, SEEK_CUR);
+        return;
+    }
+    printf("\n");
 }
 
-void read_p2(char *filename[]) // FUNÇÃO RESPONSÁVEL POR LER ARQUIVOS DO TIPO P2
+void read_file(char *filename[]) // FUNÇÃO RESPONSÁVEL POR LER ARQUIVOS DO TIPO P2
 {
+    arquivo = fopen(filename[1], "r");
 
-    arquivo = fopen(filename[1], "r"); // LENDO O ARQUIVO PASSADO COMO ARGUMENTO.
     if (arquivo == NULL)
     {
-        perror("error:");
+        perror("error");
         exit(1);
     }
 
-    fgets(tipo, 3, arquivo);              // LENDO O TIPO DE PGM
-    fscanf(arquivo, "%d %d", &col, &lin); // LENDO RESPECTIVAMENTE O NUMERO DE COLUNAS E LINHAS
-    fscanf(arquivo, "%d", &max);          // LENDO SUA INTENSIDADE MÁXIMA
+    fgets(tipo, 3, arquivo);
 
-    printf("O arquivo inserido é do tipo: %s\n", tipo);
-}
+    if ((strcmp(tipo, "P2")) != 0)
+        if ((strcmp(tipo, "P5")) != 0)
+        {
+            printf("Arquivo inválido!");
+            exit(1);
+        }
 
-void read_p5(char *filename[]) // FUNÇÃO RESPONSÁEL POR LER ARQUIVOS DO TIPO P5
-{
-
-    arquivo = fopen(filename[1], "rb");
-    if (!arquivo)
-    {
-        perror("error:");
-        exit(1);
-    }
-
-    fgets(tipo, 3, arquivo);              // LENDO O TIPO DE PGM
-    fscanf(arquivo, "%d %d", &col, &lin); // LENDO RESPECTIVAMENTE O NUMERO DE COLUNAS E LINHAS
-    fscanf(arquivo, "%d", &max);          // LENDO SUA INTENSIDADE MÁXIMA
-
-    printf("O arquivo inserido é do tipo: %s\n", tipo);
+    fscanf(arquivo, "%hd %hd", &col, &lin); // LENDO RESPECTIVAMENTE O NUMERO DE COLUNAS E LINHAS
+    fscanf(arquivo, "%hd", &max);           // LENDO SUA INTENSIDADE MÁXIMA
 }
 
 void set_limiar(int matriz[][col]) // FUNÇÃO PARA DEFINIÇÃO DE LIMIAR.
@@ -115,12 +109,12 @@ void save_p2(int matriz[][col], char *filename[]) // FUNÇÃO RESPONSÁVEL POR S
         strcpy(tipo, "P2");
 
     fputs(tipo, arquivo);
-    fprintf(arquivo, "\n%d %d\n", col, lin);
-    fprintf(arquivo, "%d\n", max);
+    fprintf(arquivo, "\n%hd %hd\n", col, lin);
+    fprintf(arquivo, "%hd\n", max);
 
     for (int i = 0; i < lin; i++)
         for (int j = 0; j < col; j++)
-            fprintf(arquivo, "%d ", matriz[i][j]);
+            fprintf(arquivo, "%hd ", matriz[i][j]);
 
     printf("Os dados foram salvos com sucesso!!");
     fclose(arquivo);
@@ -141,8 +135,8 @@ void save_p5(int matriz[][col], char *filename[]) // FUNÇÃO RESPONSÁVEL POR S
         strcpy(tipo, "P5");
 
     fputs(tipo, arquivo);
-    fprintf(arquivo, "\n%d %d\n", col, lin);
-    fprintf(arquivo, "%d\n", max);
+    fprintf(arquivo, "\n%hd %hd\n", col, lin);
+    fprintf(arquivo, "%hd\n", max);
 
     for (int i = 0; i < lin; i++)
         for (int j = 0; j < col; j++)
@@ -202,10 +196,11 @@ int main(int argc, char *argv[])
         printf("Erro, quantidade de argumentos inválidas!");
         return -1;
     }
+    read_file(argv);
 
-    if (is_p2(argv)) // CASO VERDADEIRO, O ALGORITMO IRÁ REALIZAR A ROTINA PADRÃO DE UM ARQUIVO DO TIPO P2
+    if ((strcmp(tipo,"P2"))==0) // CASO VERDADEIRO, O ALGORITMO IRÁ REALIZAR A ROTINA PADRÃO DE UM ARQUIVO DO TIPO P2
     {
-        read_p2(argv); //LENDO O ARQUIVO
+        printf("TIPO DE ARQUIVO: %s\n", tipo);
         int mat[lin][col];
 
         set_limiar(mat);    // DEFININDO LIMIAR
@@ -216,7 +211,7 @@ int main(int argc, char *argv[])
     }
     else // CASO CONTRÁRIO IRÁ REALIZAR A ROTINA PARA O TIPO DE ARQUIVO P5
     {
-        read_p5(argv);
+        printf("TIPO DE ARQUIVO: %s\n", tipo);
         unsigned char mat[lin][col]; // MATRIZ CRIADA PARA LEITURA DE UM ARQUIVO DO TIPO P5
         int mat_int[lin][col];
 
