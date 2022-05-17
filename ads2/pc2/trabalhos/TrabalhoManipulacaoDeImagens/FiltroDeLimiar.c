@@ -1,62 +1,79 @@
+/**
+ * @file FiltroDeLimiar.c
+ * @authors Felipe Soares, Elisabete Xavier e Fábio Feliciano
+ * @brief Trabalho desenvolvido como componente avaliativo da disciplina de ADS com o tema Manipulação De Imagens
+ * @date 2022-05-17
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
 
 FILE *arquivo;
-short int col, lin, max;
+unsigned short int col, lin, max;
 char tipo[3];
 
-void ignore_comments()
+void ignore_comments() //Função para ignorar comentários
 {
-    char c = fgetc(arquivo);
+    char c;
+    fseek(arquivo, 1, SEEK_CUR);
 
-    while (c != '#')
+    do
+    {
         c = fgetc(arquivo);
 
-    if (c == '#')
-    {
-        while (c != '\n')
+        switch (c)
         {
-            printf("%c", c);
-            c = fgetc(arquivo);
+        case '#':
+            while (c != '\n')
+            {
+                printf("%c", c);
+                c = fgetc(arquivo);
+            }
+            break;
+        case ' ':
+            while (c != ' ')
+                c = fgetc(arquivo);
+            break;
+        default:
+            fseek(arquivo, -1, SEEK_CUR);
+            return;
         }
-    }
-    else
-    {
-        fseek(arquivo, -1, SEEK_CUR);
-        return;
-    }
+    } while (c != '\n');
+
     printf("\n");
 }
 
-void read_file(char *filename[]) // FUNÇÃO RESPONSÁVEL POR LER ARQUIVOS DO TIPO P2
+void read_file(char *filename[])  //Função para ler o arquivo, sendo P2 ou P5
 {
     arquivo = fopen(filename[1], "r");
 
-    if (arquivo == NULL)
+    if (!arquivo)
     {
         perror("error");
         exit(1);
     }
 
     fgets(tipo, 3, arquivo);
+    ignore_comments();
 
-    if ((strcmp(tipo, "P2")) != 0)
-        if ((strcmp(tipo, "P5")) != 0)
+    if ((strcmp(tipo, "P2")))
+        if ((strcmp(tipo, "P5")))
         {
             printf("Arquivo inválido!");
             exit(1);
         }
 
-    fscanf(arquivo, "%hd %hd", &col, &lin); // LENDO RESPECTIVAMENTE O NUMERO DE COLUNAS E LINHAS
-    fscanf(arquivo, "%hd", &max);           // LENDO SUA INTENSIDADE MÁXIMA
+    fscanf(arquivo, "%hd %hd", &col, &lin); 
+    fscanf(arquivo, "%hd", &max);           
+
 }
 
-void set_limiar(int matriz[][col]) // FUNÇÃO PARA DEFINIÇÃO DE LIMIAR.
+void set_limiar(int matriz[][col]) //Função para definir o limiar
 {
     float limiar;
-    char op;
+    unsigned char op;
 
     printf("Definir Limiar[s/n]: ");
     op = getchar();
@@ -93,19 +110,18 @@ void set_limiar(int matriz[][col]) // FUNÇÃO PARA DEFINIÇÃO DE LIMIAR.
                 matriz[i][j] = 0;
         }
     }
-    setbuf(stdin, NULL);
 }
 
-void save_p2(int matriz[][col], char *filename[]) // FUNÇÃO RESPONSÁVEL POR SALVAR NO FORMATO P2
+void save_p2(int matriz[][col], char *filename[]) //Função para salvar como tipo P2
 {
     arquivo = fopen(filename[2], "w");
 
-    if (arquivo == NULL)
+    if (!arquivo)
     {
         perror("error:");
         exit(1);
     }
-    if (strcmp(tipo, "P2") != 0)
+    if (strcmp(tipo, "P2"))
         strcpy(tipo, "P2");
 
     fputs(tipo, arquivo);
@@ -119,19 +135,19 @@ void save_p2(int matriz[][col], char *filename[]) // FUNÇÃO RESPONSÁVEL POR S
     printf("Os dados foram salvos com sucesso!!");
     fclose(arquivo);
 }
-void save_p5(int matriz[][col], char *filename[]) // FUNÇÃO RESPONSÁVEL POR SALVAR NO FORMATO P5
+void save_p5(int matriz[][col], char *filename[]) //Função para salvar como tipo P5
 {
 
     arquivo = fopen(filename[2], "wb");
 
     char mat[lin][col];
 
-    if (arquivo == NULL)
+    if (!arquivo)
     {
-        perror("error:");
+        perror("error");
         exit(1);
     }
-    if (strcmp(tipo, "P5") != 0)
+    if (strcmp(tipo, "P5"))
         strcpy(tipo, "P5");
 
     fputs(tipo, arquivo);
@@ -142,7 +158,7 @@ void save_p5(int matriz[][col], char *filename[]) // FUNÇÃO RESPONSÁVEL POR S
         for (int j = 0; j < col; j++)
             mat[i][j] = matriz[i][j];
 
-    if (!fwrite(mat, lin * col, 1, arquivo))
+    if (!fwrite(mat, (lin * col), 1, arquivo))
     {
         printf("Erro ao salvar o arquivo!");
         exit(1);
@@ -153,17 +169,17 @@ void save_p5(int matriz[][col], char *filename[]) // FUNÇÃO RESPONSÁVEL POR S
     fclose(arquivo);
 }
 
-void mtr_copy_ch_int(int matriz1[][col], unsigned char matriz2[][col]) // FUNÇÃO RESPONSÁVEL POR PASSAR OS DADOS DA MATRIZ DE CHAR PARA INTEIRO.
+void mtr_copy_ch_int(int matriz1[][col], unsigned char matriz2[][col]) //Função para copiar uma matriz de caracteres para uma matriz inteira
 {
     for (int i = 0; i < lin; i++)
         for (int j = 0; j < col; j++)
             matriz1[i][j] = matriz2[i][j];
 }
 
-void save_as(int mat[][col], char *filename[])
+void save_as(int mat[][col], char *filename[]) //Função para escolher o tipo de arquivo a ser salvo.
 {
     unsigned char op;
-
+    setbuf(stdin, NULL);
     printf("Salvar como:\n[1] - P2\n[2] - P5\n\nEscolha: ");
     op = getchar();
 
@@ -190,39 +206,45 @@ void save_as(int mat[][col], char *filename[])
 
 int main(int argc, char *argv[])
 {
+    /*Argumentos necessários para o funcionamento do programa:
+    1º Executável do código fonte
+    2º Arquivo analisado
+    3º Caminho e nome de onde o arquivo gerado será salvo
+    */
 
-    if (argc != 3)
+    if (argc != 3) //Caso não seja inseridos 3 argumentos o programa não continuará 
     {
         printf("Erro, quantidade de argumentos inválidas!");
         return -1;
     }
-    read_file(argv);
 
-    if ((strcmp(tipo,"P2"))==0) // CASO VERDADEIRO, O ALGORITMO IRÁ REALIZAR A ROTINA PADRÃO DE UM ARQUIVO DO TIPO P2
+    read_file(argv); //Chamando a função que realiza a leitura do arquivo, e passando os argumentos
+
+    if (!(strcmp(tipo, "P2")))  
     {
         printf("TIPO DE ARQUIVO: %s\n", tipo);
         int mat[lin][col];
 
-        set_limiar(mat);    // DEFININDO LIMIAR
-        fclose(arquivo);    // FECHANDO O ARQUIVO
-        save_as(mat, argv); // SALVANDO UM NOVO ARQUIVO
+        set_limiar(mat); //Chamando a função que define o limiar do arquivo
+        fclose(arquivo);    
+        save_as(mat, argv);  //Chamando a função que irá definir como irei salvar o arquivo
 
         return 0;
     }
-    else // CASO CONTRÁRIO IRÁ REALIZAR A ROTINA PARA O TIPO DE ARQUIVO P5
+    else 
     {
         printf("TIPO DE ARQUIVO: %s\n", tipo);
-        unsigned char mat[lin][col]; // MATRIZ CRIADA PARA LEITURA DE UM ARQUIVO DO TIPO P5
+        unsigned char mat_ch[lin][col]; 
         int mat_int[lin][col];
 
-        for (int i = 0; i < lin; i++) // PASSANDO TODOS OS BYTES DA IMAGEM PARA A MATRIZ
+        for (int i = 0; i < lin; i++) 
             for (int j = 0; j < col; j++)
-                fread(mat, sizeof(mat), 1, arquivo);
+                fread(mat_ch, sizeof(mat_ch), 1, arquivo);
 
-        mtr_copy_ch_int(mat_int, mat); // COPIANDO A MATRIZ GERADA PARA DENTRO DE UMA MATRIZ DE VALORES INTEIROS
-        set_limiar(mat_int);           // DEFININDO LIMIAR
-        fclose(arquivo);               // FECHANDO ARQUIVO
-        save_as(mat_int, argv);        // SALVANDO UM NOVO ARQUIVO
+        mtr_copy_ch_int(mat_int, mat_ch); //Chamando a função que irá copiar a matriz de caracteres para a matriz de inteiros
+        set_limiar(mat_int);           
+        fclose(arquivo);               
+        save_as(mat_int, argv);        
 
         return 0;
     }
