@@ -14,7 +14,7 @@ FILE *arquivo;
 unsigned short int col, lin, max;
 char tipo[3];
 
-void ignore_comments() //Função para ignorar comentários
+void ignore_comments() // Função para ignorar comentários
 {
     char c;
     fseek(arquivo, 1, SEEK_CUR);
@@ -45,7 +45,7 @@ void ignore_comments() //Função para ignorar comentários
     printf("\n");
 }
 
-void read_file(char *filename[])  //Função para ler o arquivo, sendo P2 ou P5
+void read_file(char *filename[]) // Função para ler o arquivo, sendo P2 ou P5
 {
     arquivo = fopen(filename[1], "r");
 
@@ -65,12 +65,11 @@ void read_file(char *filename[])  //Função para ler o arquivo, sendo P2 ou P5
             exit(1);
         }
 
-    fscanf(arquivo, "%hd %hd", &col, &lin); 
-    fscanf(arquivo, "%hd", &max);           
-
+    fscanf(arquivo, "%hd %hd", &col, &lin);
+    fscanf(arquivo, "%hd", &max);
 }
 
-void set_limiar(int matriz[][col]) //Função para definir o limiar
+void set_limiar(int matriz[][col]) // Função para definir o limiar
 {
     float limiar;
     unsigned char op;
@@ -112,7 +111,7 @@ void set_limiar(int matriz[][col]) //Função para definir o limiar
     }
 }
 
-void save_p2(int matriz[][col], char *filename[]) //Função para salvar como tipo P2
+void save_p2(int matriz[][col], char *filename[]) // Função para salvar como tipo P2
 {
     arquivo = fopen(filename[2], "w");
 
@@ -135,7 +134,7 @@ void save_p2(int matriz[][col], char *filename[]) //Função para salvar como ti
     printf("Os dados foram salvos com sucesso!!");
     fclose(arquivo);
 }
-void save_p5(int matriz[][col], char *filename[]) //Função para salvar como tipo P5
+void save_p5(int matriz[][col], char *filename[]) // Função para salvar como tipo P5
 {
 
     arquivo = fopen(filename[2], "wb");
@@ -169,14 +168,14 @@ void save_p5(int matriz[][col], char *filename[]) //Função para salvar como ti
     fclose(arquivo);
 }
 
-void mtr_copy_ch_int(int matriz1[][col], unsigned char matriz2[][col]) //Função para copiar uma matriz de caracteres para uma matriz inteira
+void mtr_copy_ch_int(int matriz1[][col], unsigned char matriz2[][col]) // Função para copiar uma matriz de caracteres para uma matriz inteira
 {
     for (int i = 0; i < lin; i++)
         for (int j = 0; j < col; j++)
             matriz1[i][j] = matriz2[i][j];
 }
 
-void save_as(int mat[][col], char *filename[]) //Função para escolher o tipo de arquivo a ser salvo.
+void save_as(int mat[][col], char *filename[]) // Função para escolher o tipo de arquivo a ser salvo.
 {
     unsigned char op;
     setbuf(stdin, NULL);
@@ -212,39 +211,37 @@ int main(int argc, char *argv[])
     3º Caminho e nome de onde o arquivo gerado será salvo
     */
 
-    if (argc != 3) //Caso não seja inseridos 3 argumentos o programa não continuará 
+    if (argc != 3) // Caso não seja inseridos 3 argumentos o programa não continuará
     {
         printf("Erro, quantidade de argumentos inválidas!");
         return -1;
     }
 
-    read_file(argv); //Chamando a função que realiza a leitura do arquivo, e passando os argumentos
+    read_file(argv); // Chamando a função que realiza a leitura do arquivo, e passando os argumentos
 
-    if (!(strcmp(tipo, "P2")))  
+    if (!(strcmp(tipo, "P2")))
     {
         printf("TIPO DE ARQUIVO: %s\n", tipo);
         int mat[lin][col];
 
-        set_limiar(mat); //Chamando a função que define o limiar do arquivo
-        fclose(arquivo);    
-        save_as(mat, argv);  //Chamando a função que irá definir como irei salvar o arquivo
+        set_limiar(mat); // Chamando a função que define o limiar do arquivo
+        fclose(arquivo);
+        save_as(mat, argv); // Chamando a função que irá definir como irei salvar o arquivo
 
         return 0;
     }
-    else 
+    else
     {
         printf("TIPO DE ARQUIVO: %s\n", tipo);
-        unsigned char mat_ch[lin][col]; 
+        unsigned char mat_ch[lin][col];
         int mat_int[lin][col];
 
-        for (int i = 0; i < lin; i++) 
-            for (int j = 0; j < col; j++)
-                fread(mat_ch, sizeof(mat_ch), 1, arquivo);
+        fread(mat_ch, sizeof(mat_ch), 1, arquivo);
 
-        mtr_copy_ch_int(mat_int, mat_ch); //Chamando a função que irá copiar a matriz de caracteres para a matriz de inteiros
-        set_limiar(mat_int);           
-        fclose(arquivo);               
-        save_as(mat_int, argv);        
+        mtr_copy_ch_int(mat_int, mat_ch); // Chamando a função que irá copiar a matriz de caracteres para a matriz de inteiros
+        set_limiar(mat_int);
+        fclose(arquivo);
+        save_as(mat_int, argv);
 
         return 0;
     }
