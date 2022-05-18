@@ -14,7 +14,16 @@ FILE *arquivo;
 unsigned short int col, lin, max;
 char tipo[3];
 
-void ignore_comments() // Função para ignorar comentários
+void ignore_comments();// Função para ignorar comentários
+void read_file(char *filename[]);// Função para ler o arquivo, sendo P2 ou P5
+void set_limiar(int matriz[][col]);// Função para definir o limiar
+void save_p2(int matriz[][col], char *filename[]);// Função para salvar como tipo P2
+void save_p5(int matriz[][col], char *filename[]);// Função para salvar como tipo P5
+void matriz_cpy(int matriz1[][col], unsigned char matriz2[][col]);// Função para copiar uma matriz de caracteres para uma matriz inteira
+void save_as(int mat[][col], char *filename[]); // Função para escolher o tipo de arquivo a ser salvo.
+
+
+void ignore_comments() 
 {
     char c;
     fseek(arquivo, 1, SEEK_CUR);
@@ -45,7 +54,7 @@ void ignore_comments() // Função para ignorar comentários
     printf("\n");
 }
 
-void read_file(char *filename[]) // Função para ler o arquivo, sendo P2 ou P5
+void read_file(char *filename[]) 
 {
     arquivo = fopen(filename[1], "r");
 
@@ -69,7 +78,7 @@ void read_file(char *filename[]) // Função para ler o arquivo, sendo P2 ou P5
     fscanf(arquivo, "%hd", &max);
 }
 
-void set_limiar(int matriz[][col]) // Função para definir o limiar
+void set_limiar(int matriz[][col]) 
 {
     float limiar;
     unsigned char op;
@@ -111,7 +120,7 @@ void set_limiar(int matriz[][col]) // Função para definir o limiar
     }
 }
 
-void save_p2(int matriz[][col], char *filename[]) // Função para salvar como tipo P2
+void save_p2(int matriz[][col], char *filename[]) 
 {
     arquivo = fopen(filename[2], "w");
 
@@ -134,7 +143,7 @@ void save_p2(int matriz[][col], char *filename[]) // Função para salvar como t
     printf("Os dados foram salvos com sucesso!!");
     fclose(arquivo);
 }
-void save_p5(int matriz[][col], char *filename[]) // Função para salvar como tipo P5
+void save_p5(int matriz[][col], char *filename[]) 
 {
 
     arquivo = fopen(filename[2], "wb");
@@ -168,14 +177,14 @@ void save_p5(int matriz[][col], char *filename[]) // Função para salvar como t
     fclose(arquivo);
 }
 
-void mtr_copy_ch_int(int matriz1[][col], unsigned char matriz2[][col]) // Função para copiar uma matriz de caracteres para uma matriz inteira
+void matriz_cpy(int matriz1[][col], unsigned char matriz2[][col]) 
 {
     for (int i = 0; i < lin; i++)
         for (int j = 0; j < col; j++)
             matriz1[i][j] = matriz2[i][j];
 }
 
-void save_as(int mat[][col], char *filename[]) // Função para escolher o tipo de arquivo a ser salvo.
+void save_as(int mat[][col], char *filename[])
 {
     unsigned char op;
     setbuf(stdin, NULL);
