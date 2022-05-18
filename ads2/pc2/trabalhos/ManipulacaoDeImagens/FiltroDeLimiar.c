@@ -247,7 +247,7 @@ int main(int argc, char *argv[])
 
         fread(mat_ch, sizeof(mat_ch), 1, arquivo);
 
-        mtr_copy_ch_int(mat_int, mat_ch); // Chamando a função que irá copiar a matriz de caracteres para a matriz de inteiros
+        matriz_cpy(mat_int, mat_ch); // Chamando a função que irá copiar a matriz de caracteres para a matriz de inteiros
         set_limiar(mat_int);
         fclose(arquivo);
         save_as(mat_int, argv);
