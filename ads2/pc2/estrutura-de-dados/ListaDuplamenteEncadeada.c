@@ -115,6 +115,7 @@ void inserir_inicio(unsigned int nOS) {
         exit(1);
     }
     novo_no->nOS = nOS;
+    tam++;
 
     if (inicio == NULL) {
         novo_no->prox = NULL;
@@ -161,6 +162,7 @@ void inserir_depois(unsigned int nOS, unsigned int dpsOS) {
         exit(1);
     }
     novo_no->nOS = nOS;
+    tam++;
 
     Psys os_atual;
 
@@ -184,7 +186,7 @@ void inserir_depois(unsigned int nOS, unsigned int dpsOS) {
 
 void menu() {
     setlocale(LC_ALL, "");
-    unsigned short int op, os;
+    unsigned int op, os;
     Psys p;
 
     do {
