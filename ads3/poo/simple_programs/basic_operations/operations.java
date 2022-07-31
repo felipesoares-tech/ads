@@ -1,4 +1,4 @@
-package simplePrograms.basicOperations;
+package simple_programs.basic_operations;
 import java.util.Scanner;
 /*Faça um algoritmo que receba dois números e ao final mostre a soma, subtração,
 multiplicação e a divisão dos números lidos.*/

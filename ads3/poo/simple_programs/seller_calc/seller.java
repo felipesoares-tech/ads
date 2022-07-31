@@ -1,4 +1,4 @@
-package simplePrograms.sellerCalc;
+package simple_programs.seller_calc;
 import java.util.Scanner;
 /*Faça um algoritmo que leia o nome do vendedor, o seu salário fixo e o total (valor)
 de vendas efetuadas por ele no mês. Sabendo que este vendedor ganha 15% de

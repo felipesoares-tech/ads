@@ -1,6 +1,6 @@
-package simplePrograms.simpleSum;
+package simple_programs.simple_sum;
 import java.util.Scanner;
-
+/*Faça um algoritmo que receba dois números e exiba o resultado da sua soma. */
 public class sum{
     public static void main(String[] args){
         int n1,n2;
