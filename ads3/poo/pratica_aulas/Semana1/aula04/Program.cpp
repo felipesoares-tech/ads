@@ -10,7 +10,7 @@ int main(int argc, char *argv[]){
 
 	cout << "Informe o nome: ";
 	cin >> nome;
-
+	setbuf(stdin,NULL);
 	cout << "Informe o valor da hora: ";
 	cin >> valorHora;
 
@@ -21,9 +21,9 @@ int main(int argc, char *argv[]){
 	cin >> descontos;
 
 	cout << "\n\nFolha de pagamento: " << nome << endl;
-	cout << horasTrabalhadas << x "R$" << valorHora = R$%.2f" << horasTrabalhadas << valorHora << (valorHora*horasTrabalhadas) << endl;
-        cout << "Descontos: R$%.2f" << descontos << endl;
-        cout << "Total devido: %.2f" << ((valorHora*horasTrabalhadas)-descontos) << endl;
+	cout << horasTrabalhadas << " x R$" << valorHora << "= R$" << (valorHora*horasTrabalhadas) << endl;
+        cout << "Descontos: R$" << descontos << endl;
+        cout << "Total devido: R$" << ((valorHora*horasTrabalhadas)-descontos) << endl;
 
 	return 0;
 }
