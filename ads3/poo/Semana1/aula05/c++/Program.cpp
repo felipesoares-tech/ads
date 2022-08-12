@@ -7,15 +7,14 @@ int main(int argc, char *argv[]){
 	int qtdeMinimaPorVenda = 5;
 	
 	cout << "Entre com o valor do pedido: ";
-		qtdePedido = entrada.nextInt();
+	cin >> qtdePedido;
 		
-		System.out.print("Entre com o valor do estoque: ");
-		qtdeEstoque = entrada.nextInt();
+	cout << "Entre com o valor do estoque: ";
+	cin >> qtdeEstoque;
 		
-		System.out.print("Entre com a quantidade minima por venda: ");
-		qtdeMinimaPorVenda = entrada.nextInt();
+	cout << "Entre com a quantidade minima por venda: ";
+	cin >> qtdeMinimaPorVenda;
 
-		
 	bool vendaLiberada = qtdePedido <= qtdeEstoque && qtdePedido >= qtdeMinimaPorVenda;
 	cout << "Venda Liberado: " << (vendaLiberada ? "true" : "false") << endl;
 		
