@@ -1,0 +1,41 @@
+*{
+    font-family: Arial;
+    font-size: 12px;
+}
+
+thead{
+    background-color: #0D5188;
+}
+
+.title{
+    color: #fff;
+    font-weight: normal;
+}
+
+.subtitle{
+    background-color:  #66C5E3;
+}
+
+.position{
+    background-color: #ccc;
+    text-align: center;
+}
+
+.city{
+    
+    font-weight: bold;
+    color:  #0D5188;
+}
+
+.city,.number{
+    background-color:  #C7E7F3;
+}
+
+td{
+    padding: 2px;
+    margin: 2px;
+}
+table{
+    border: none;
+    width: 600px;
+}
