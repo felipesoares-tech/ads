@@ -1,0 +1,8 @@
+body {
+    margin: 0;
+    color: rgb(10, 44, 233);
+}
+
+h1{
+    border: 2px solid currentColor;
+}
