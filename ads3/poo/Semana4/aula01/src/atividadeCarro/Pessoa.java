@@ -24,45 +24,17 @@ public class Pessoa {
     public void setPossuiHabilitacao(boolean possuiHabilitacao) {
         this.possuiHabilitacao = possuiHabilitacao;
     }
-    public String getNome() {
-        return nome;
-    }
-
     public boolean isPossuiHabilitacao() {
         return possuiHabilitacao;
+    }
+    public String getNome() {
+        return nome;
     }
 
     public void setCarro(Carro carro) {
         this.carro = carro;
     }
-
-    public void ligarCarro(){
-        if(carro != null){
-            if(isPossuiHabilitacao())
-                carro.ligar();
-            else
-                System.out.println("Você não tem habilitação!!");
-        }else
-            System.out.println("Você não possui carro");
-
-    }
-
-    public void desligarCarro(){
-        if(carro != null){
-            if(isPossuiHabilitacao())
-                carro.desligar();
-            else
-                System.out.println("Você não tem habilitação!!");
-        }else
-            System.out.println("Você não possui carro");
-    }
-
-    public void acelerarCarro(){
-        carro.acelerar();
-    }
-    public void frearCarro(){
-        carro.frear();
-    }
+    
     public Pessoa(String nome, int idade){
         this.nome = nome;
         this.idade = idade;
@@ -72,6 +44,16 @@ public class Pessoa {
     }
     public void passear(){
         System.out.println("Estou passeando");
+        if(carro != null) {
+            if (isPossuiHabilitacao()){
+                carro.ligar();
+                carro.acelerar();
+                carro.acelerar();
+            }
+            else
+                System.out.println("Voce nao tem habilitacao!");
+        }else
+            System.out.println("Voce nao tem um carro!");
     }
 
 }
