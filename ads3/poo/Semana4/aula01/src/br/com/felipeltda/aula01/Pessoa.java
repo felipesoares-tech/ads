@@ -5,7 +5,6 @@ public class Pessoa {
     private final int idade;
     private Carro carro;
     private boolean possuiHabilitacao;
-    private String modelo;
 
     public void mostrarDocumento(){
         if(carro != null){
@@ -14,7 +13,9 @@ public class Pessoa {
             System.out.println("Modelo: "+carro.getModelo());
             System.out.println("Cor: "+carro.getCor());
             System.out.println("----------------------------------------");
+            return;
         }
+        System.out.println("Nao tenho carro, entao nao tenho documento!");
     }
 
     public void verificarPotencia(){
@@ -36,9 +37,6 @@ public class Pessoa {
     }
     private int getIdade() {
         return idade;
-    }
-    private String getModelo() {
-        return modelo;
     }
 
     private void setPossuiHabilitacao(boolean possuiHabilitacao) {
