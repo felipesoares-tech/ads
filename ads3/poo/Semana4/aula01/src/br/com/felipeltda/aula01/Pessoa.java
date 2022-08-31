@@ -1,4 +1,4 @@
-package atividadeCarro;
+package br.com.felipeltda.aula01;
 
 public class Pessoa {
     private final String nome;
