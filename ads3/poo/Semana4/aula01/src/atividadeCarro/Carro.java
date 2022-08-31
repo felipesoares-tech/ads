@@ -4,18 +4,20 @@ public class Carro {
 
     private int velocidade;
     private boolean ligado;
-    private String modelo;
-    private double potencia;
-    Motor motor = new Motor();
+    private final String modelo;
+    private final Motor motor;
+
+    public double getMotor() {
+        return motor.getPotencia();
+    }
 
     public String getModelo() {
         return modelo;
     }
 
-    public Carro(String modelo, Carro motor){
+    public Carro(String modelo, Motor motor){
         this.modelo = modelo;
-        this.potencia = motor.potencia;
-
+        this.motor = motor;
     }
 
     public void ligar(){

@@ -1,8 +1,9 @@
 package atividadeCarro;
 
 public class Motor {
+    private final double potencia=500.00;
     public double getPotencia() {
-        double potencia = 500;
         return potencia;
     }
+
 }
