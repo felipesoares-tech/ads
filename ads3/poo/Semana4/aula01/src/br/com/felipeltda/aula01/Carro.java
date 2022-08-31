@@ -6,9 +6,27 @@ public class Carro {
     private boolean ligado;
     private final String modelo;
     private final Motor motor;
+    private Pessoa dono;
+    private String cor = "Vermelha";
 
-    public double getMotor() {
-        return motor.getPotencia();
+    public String getCor() {
+        return cor;
+    }
+
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
+
+    public Pessoa getDono() {
+        return dono;
+    }
+
+    public void setDono(Pessoa dono) {
+        this.dono = dono;
+    }
+
+    public Motor getMotor() {
+        return motor;
     }
 
     public String getModelo() {

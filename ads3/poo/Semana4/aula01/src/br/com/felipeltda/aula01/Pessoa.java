@@ -7,9 +7,19 @@ public class Pessoa {
     private boolean possuiHabilitacao;
     private String modelo;
 
+    public void mostrarDocumento(){
+        if(carro != null){
+            System.out.println("-------------Documento do carro---------");
+            System.out.println("Propietario: "+carro.getDono().nome);
+            System.out.println("Modelo: "+carro.getModelo());
+            System.out.println("Cor: "+carro.getCor());
+            System.out.println("----------------------------------------");
+        }
+    }
+
     public void verificarPotencia(){
         if(carro != null)
-            System.out.println("A potencia do carro e : "+ carro.getMotor());
+            System.out.println("A potencia do carro e : "+ carro.getMotor().getPotencia());
         else
             System.out.println("Eu nao tenho carro, entao nao posso verificar a potencia");
     }
@@ -27,14 +37,6 @@ public class Pessoa {
     private int getIdade() {
         return idade;
     }
-
-    public void verificarModelo(){
-        if(carro != null)
-            System.out.println(carro.getModelo());
-        else
-            System.out.println("Eu nao tenho carro, entao nao posso verificar o modelo");
-
-    }
     private String getModelo() {
         return modelo;
     }
@@ -51,6 +53,7 @@ public class Pessoa {
 
     public void setCarro(Carro carro) {
         this.carro = carro;
+        carro.setDono(this);
         System.out.println("Oba, ganhei um carro!");
     }
 

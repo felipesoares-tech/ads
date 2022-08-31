@@ -10,8 +10,8 @@ public class Main {
         pessoa.verificarNome();
         pessoa.passear();
         pessoa.verificarPotencia();
-        pessoa.verificarModelo();
         pessoa.setCarro(carro);
+        pessoa.mostrarDocumento();
         pessoa.verificarPotencia();
 
     }
