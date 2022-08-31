@@ -5,13 +5,17 @@ public class Carro {
     private int velocidade;
     private boolean ligado;
     private String modelo;
+    private double potencia;
+    Motor motor = new Motor();
 
     public String getModelo() {
         return modelo;
     }
 
-    public Carro(String modelo){
+    public Carro(String modelo, Carro motor){
         this.modelo = modelo;
+        this.potencia = motor.potencia;
+
     }
 
     public void ligar(){
