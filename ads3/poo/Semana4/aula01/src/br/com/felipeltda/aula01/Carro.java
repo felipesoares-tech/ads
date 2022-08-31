@@ -4,41 +4,37 @@ public class Carro {
 
     private int velocidade;
     private boolean ligado;
-    private final String modelo;
-    private final Motor motor;
-    private Pessoa dono;
-    private String cor = "Vermelha";
+    private final String model;
+    private Pessoa owner;
+    Motor motor;
 
-    public String getCor() {
-        return cor;
+
+    public String getColor() {
+        return "Vermelha";
     }
 
-    public void setCor(String cor) {
-        this.cor = cor;
+    public Pessoa getOwner() {
+        return owner;
     }
 
-    public Pessoa getDono() {
-        return dono;
-    }
-
-    public void setDono(Pessoa dono) {
-        this.dono = dono;
+    public void setOwner(Pessoa owner) {
+        this.owner = owner;
     }
 
     public Motor getMotor() {
         return motor;
     }
 
-    public String getModelo() {
-        return modelo;
+    public String getModel() {
+        return model;
     }
 
-    public Carro(String modelo, Motor motor){
-        this.modelo = modelo;
-        this.motor = motor;
+    public Carro(String model){
+        this.model = model;
+        this.motor = new Motor("Motor em V");
     }
 
-    public void ligar(){
+    public void turnOn(){
         if(ligado) {
             System.out.println("O carro ja esta ligado !!");
             return;
@@ -46,7 +42,7 @@ public class Carro {
         System.out.println("Carro ligado!");
         ligado = true;
     }
-    public void desligar(){
+    public void turnOff(){
         if(ligado) {
             if(velocidade == 0){
                 System.out.println("Carro desligado!");
@@ -58,7 +54,7 @@ public class Carro {
         }
         System.out.println("O Carro ja esta desligado!");
     }
-    public void acelerar(){
+    public void accelerate(){
         if(ligado){
             if(velocidade < 100){
                 velocidade+=20;
@@ -70,7 +66,7 @@ public class Carro {
         }
         System.out.println("Nao foi possivel acelerar, carro desligado");
     }
-    public void frear(){
+    public void breakCar(){
         if (ligado){
             if(velocidade != 0){
                 velocidade-=20;

@@ -1,80 +1,79 @@
 package br.com.felipeltda.aula01;
 
 public class Pessoa {
-    private final String nome;
-    private final int idade;
-    private Carro carro;
-    private boolean possuiHabilitacao;
+    private final String name;
+    private final int age;
+    private Carro car;
+    private boolean licensed;
 
-    public void mostrarDocumento(){
-        if(carro != null){
+    public void showDocument(){
+        if(car != null){
             System.out.println("-------------Documento do carro---------");
-            System.out.println("Propietario: "+carro.getDono().nome);
-            System.out.println("Modelo: "+carro.getModelo());
-            System.out.println("Cor: "+carro.getCor());
+            System.out.println("Propietario: "+car.getOwner().name);
+            System.out.println("Modelo: "+car.getModel());
+            System.out.println("Cor: "+car.getColor());
+            System.out.println("Tipo do motor: "+car.getMotor().getEngineType());
             System.out.println("----------------------------------------");
-            return;
         }
-        System.out.println("Nao tenho carro, entao nao tenho documento!");
     }
 
-    public void verificarPotencia(){
-        if(carro != null)
-            System.out.println("A potencia do carro e : "+ carro.getMotor().getPotencia());
+    public void checkPower(){
+        if(car != null)
+            System.out.println("A potencia do carro e : "+ car.getMotor().getPower());
         else
             System.out.println("Eu nao tenho carro, entao nao posso verificar a potencia");
     }
 
-    public void mostrarHabilitacao(){
-        System.out.println(isPossuiHabilitacao() ? "Oba, eu ja tenho habilitacao" : "Vish, nao tenho habilitacao");
+    public void showLicense(){
+        System.out.println(isLicensed() ? "Eu ja tenho habilitacao" : "Nao tenho habilitacao");
     }
 
-    public void verificarIdade(){
-        System.out.println("Eu tenho + "+getIdade()+" anos");
+    public void sayAge(){
+        System.out.println("Eu tenho "+getAge()+" anos");
     }
-    public void verificarNome(){
-        System.out.println("Meu nome e: "+getNome());
+    public void sayName(){
+        System.out.println("Meu nome e: "+getName());
     }
-    private int getIdade() {
-        return idade;
-    }
-
-    private void setPossuiHabilitacao(boolean possuiHabilitacao) {
-        this.possuiHabilitacao = possuiHabilitacao;
-    }
-    private boolean isPossuiHabilitacao() {
-        return possuiHabilitacao;
-    }
-    private String getNome() {
-        return nome;
+    private int getAge() {
+        return age;
     }
 
-    public void setCarro(Carro carro) {
-        this.carro = carro;
-        carro.setDono(this);
+    private void setLicensed(boolean licensed) {
+        this.licensed = licensed;
+    }
+    private boolean isLicensed() {
+        return licensed;
+    }
+    private String getName() {
+        return name;
+    }
+
+    public void setCar(Carro car) {
+        this.car = car;
+        car.setOwner(this);
         System.out.println("Oba, ganhei um carro!");
     }
 
-    public Pessoa(String nome, int idade){
-        this.nome = nome;
-        this.idade = idade;
+    public Pessoa(String name, int age){
+        this.name = name;
+        this.age = age;
 
-        if(idade>=18)
-            setPossuiHabilitacao(true);
-        else
-            setPossuiHabilitacao(false);
+        setLicensed(age >= 18);
     }
-    public void passear(){
-        if(carro != null) {
-            if (isPossuiHabilitacao()){
-                carro.ligar();
-                carro.acelerar();
-                carro.acelerar();
+    public void walk(){
+        if(car != null) {
+            if (isLicensed()){
+                car.turnOn();
+                car.accelerate();
+                car.accelerate();
+                car.breakCar();
+                car.breakCar();
+                car.turnOff();
             }
             else
-                System.out.println("Voce nao tem habilitacao!");
+                System.out.println("Nao tenho habilitacao, vou ir a pe!");
         }else
-            System.out.println("Estou andando, podia estar de carro, mas nao ganhei carro!");
+            System.out.println("Nao tenho carro, entao vou a pe!");
     }
 
 }

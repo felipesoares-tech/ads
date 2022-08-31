@@ -1,18 +1,24 @@
+import br.com.felipeltda.atividade01.Carro;
+import br.com.felipeltda.atividade01.Pessoa;
 import br.com.felipeltda.aula01.*;
 
 
 public class Main {
     public static void main(String[] args) {
-        Pessoa pessoa = new Pessoa("Felipe",22);
-        Motor motor = new Motor();
-        Carro carro = new Carro("Ferrari",motor);
+        Pessoa people = new Pessoa("Felipe",18);
+        Carro car = new Carro("Ferrari");
 
-        pessoa.verificarNome();
-        pessoa.passear();
-        pessoa.verificarPotencia();
-        pessoa.setCarro(carro);
-        pessoa.mostrarDocumento();
-        pessoa.verificarPotencia();
+        /*apresentacoes*/
+        people.sayName();
+        people.sayAge();
+        people.showLicense();
+
+        /*acoes*/
+        people.walk();
+        people.setCar(car);
+        people.showDocument();
+        people.walk();
+        people.checkPower();
 
     }
 }
