@@ -6,10 +6,12 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class FicharioTurma {
-    private Turma turmas[];
+    private final Turma[] turmas;
+    private final Scanner entrada;
 
-    public FicharioTurma(Turma turmas[]){
+    public FicharioTurma(Turma[] turmas){
         this.turmas = turmas;
+        entrada = new Scanner(System.in);
     }
 
     private int busca(){
@@ -68,8 +70,7 @@ public class FicharioTurma {
         System.out.println("[Relatório de TURMAS]");
         for (int j = 0; j < turmas.length; j++) {
             if (turmas[j] != null) {
-                System.out.println(turmas[j].toString());
-                System.out.println("---------------------");
+                System.out.println(turmas[j]);
             }
 
         }
@@ -100,4 +101,42 @@ public class FicharioTurma {
             System.out.println("Cadastros esgotados!");
         }
     }
+
+    public void alterar(){
+        System.out.println(" === Alterar TURMAS ==== ");
+
+        short opcao;
+        String dado;
+        int retornoBusca = busca();
+        short codigo;
+
+        if(retornoBusca >=0){
+            System.out.println(turmas[retornoBusca].toString());
+            System.out.println("Escolha o item a editar!");
+            System.out.println("[1] - Codigo");
+            System.out.println("[2] - Nome");
+            opcao = entrada.nextShort();
+            entrada.skip("\n");
+
+            switch (opcao) {
+                case 1 -> {
+                    System.out.print("Codigo: ");
+                    codigo = entrada.nextShort();
+                    turmas[retornoBusca].setCodigo(codigo);
+                }
+                case 2 -> {
+                    System.out.print("Nome: ");
+                    dado = entrada.nextLine();
+                    turmas[retornoBusca].setNome(dado);
+                }
+            }
+        }else
+            System.out.println("Cadastro nao encontrado!!");
+
+    }
+
+    /*public void cadastrarAlunoTurma(){
+        //ficharioTurma.setAlunoTurma(ficharioAluno.getAluno(123456)
+        //turmas[0].setAlunos();
+    }*/
 }

@@ -7,11 +7,12 @@ import java.util.Scanner;
 // adicionar os metodos alterar, excluir e consultar
 // não permitir exclusão de alunos vinculados a turmas
 public class FicharioAluno {
-    private Aluno alunos[];
+    private final Aluno[] alunos;
     private final Scanner entrada;
 
 
-    public FicharioAluno(Aluno alunos[]){
+
+    public FicharioAluno(Aluno[] alunos){
         this.alunos = alunos;
         entrada = new Scanner(System.in);
     }
@@ -164,8 +165,7 @@ public class FicharioAluno {
         System.out.println("[Relatório de ALUNOS]");
         for (int j = 0; j < alunos.length; j++) {
             if (alunos[j] != null) {
-                System.out.println(alunos[j].toString());
-                System.out.println("---------------------");
+                System.out.println(alunos[j]);
             }
 
         }

@@ -1,6 +1,5 @@
 package br.com.felipeltda.ficharios;
 
-import br.com.felipeltda.modelos.Aluno;
 import br.com.felipeltda.modelos.Professor;
 
 import java.util.Objects;
@@ -8,10 +7,10 @@ import java.util.Scanner;
 
 
 public class FicharioProfessor {
-    private Professor professores[];
+    private final Professor[] professores;
     private final Scanner entrada;
 
-    public FicharioProfessor(Professor professores[]){
+    public FicharioProfessor(Professor[] professores){
         this.professores = professores;
         entrada = new Scanner(System.in);
     }
@@ -73,6 +72,7 @@ public class FicharioProfessor {
             nome = entrada.nextLine();
             System.out.print("Registro: ");
             registro = entrada.nextInt();
+            entrada.skip("\n");
             System.out.print("Telefone: ");
             telefone = entrada.nextLine();
             System.out.print("CPF: ");
@@ -89,16 +89,70 @@ public class FicharioProfessor {
 
     }
 
+    public void consultar(){
+        System.out.println(" === Consultar PROFESSOR ==== ");
+        int retornoBusca = busca();
+        System.out.println(retornoBusca >= 0 ? professores[retornoBusca].toString() : "Cadastro nao encontrado!!");
+    }
+
     public void relatorio() {
 
         System.out.println("[Relatório de PROFESSORES]");
         for (int j = 0; j < professores.length; j++) {
             if (professores[j] != null) {
-                System.out.println(professores[j].toString());
-                System.out.println("---------------------");
+                System.out.println(professores[j]);
             }
 
         }
+
+    }
+    public void alterar(){
+        System.out.println(" === Alterar PROFESSOR ==== ");
+
+        short opcao;
+        String dado;
+        int retornoBusca = busca(),registro;
+
+        if(retornoBusca >=0){
+            System.out.println(professores[retornoBusca].toString());
+            System.out.println("Escolha o item a editar!");
+            System.out.println("[1] - Registro");
+            System.out.println("[2] - Nome");
+            System.out.println("[3] - Telefone");
+            System.out.println("[4] - Cpf");
+            System.out.println("[5] - E-mail");
+            opcao = entrada.nextShort();
+            entrada.skip("\n");
+
+            switch (opcao) {
+                case 1 -> {
+                    System.out.print("Registro: ");
+                    registro = entrada.nextInt();
+                    professores[retornoBusca].setRegistro(registro);
+                }
+                case 2 -> {
+                    System.out.print("Nome: ");
+                    dado = entrada.nextLine();
+                    professores[retornoBusca].setNome(dado);
+                }
+                case 3 -> {
+                    System.out.print("Telefone: ");
+                    dado = entrada.nextLine();
+                    professores[retornoBusca].setTelefone(dado);
+                }
+                case 4 -> {
+                    System.out.print("Cpf: ");
+                    dado = entrada.nextLine();
+                    professores[retornoBusca].setCpf(dado);
+                }
+                case 5 -> {
+                    System.out.print("E-mail: ");
+                    dado = entrada.nextLine();
+                    professores[retornoBusca].setEmail(dado);
+                }
+            }
+        }else
+            System.out.println("Cadastro nao encontrado!!");
 
     }
 }

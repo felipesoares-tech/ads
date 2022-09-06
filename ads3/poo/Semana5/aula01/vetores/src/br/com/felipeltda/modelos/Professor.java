@@ -1,7 +1,5 @@
 package br.com.felipeltda.modelos;
 
-import java.util.Objects;
-
 public class Professor extends Pessoa{
 
     private int registro;
