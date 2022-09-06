@@ -16,7 +16,6 @@ public class FicharioAluno {
         entrada = new Scanner(System.in);
     }
 
-
     private int buscaMatricula(String matricula){
         for (int i=0; i < alunos.length; i++){
             if((this.alunos[i] != null) && (Objects.equals(this.alunos[i].getMatricula(), matricula))){
@@ -44,32 +43,32 @@ public class FicharioAluno {
 
     private int busca(){
         short opcao;
-        int retornoBusca = 0;
+        int retornoBusca;
         String dado;
 
-        System.out.println("[1] - Por nome");
+        System.out.println("[1] - Por Nome");
         System.out.println("[2] - Por Cpf");
         System.out.println("[3] - Por Matricula");
         opcao = entrada.nextShort();
         entrada.skip("\n");
 
-        switch (opcao){
-
-            case 1:
+        switch (opcao) {
+            case 1 -> {
                 System.out.println("Nome: ");
                 dado = entrada.nextLine();
                 retornoBusca = buscaNome(dado);
-                break;
-            case 2:
+            }
+            case 2 -> {
                 System.out.println("Cpf: ");
                 dado = entrada.nextLine();
                 retornoBusca = buscaCpf(dado);
-                break;
-            case 3:
+            }
+            case 3 -> {
                 System.out.println("Matricula: ");
                 dado = entrada.nextLine();
                 retornoBusca = buscaMatricula(dado);
-                break;
+            }
+            default -> retornoBusca = -1;
         }
 
         return retornoBusca;
@@ -104,6 +103,11 @@ public class FicharioAluno {
         }
 
     }
+    public void consultar(){
+        System.out.println(" === Consultar ALUNO ==== ");
+        int retornoBusca = busca();
+        System.out.println(retornoBusca >= 0 ? alunos[retornoBusca].toString() : "Cadastro nao encontrado!!");
+    }
 
     public void alterar(){
         System.out.println(" === Alterar ALUNO ==== ");
@@ -123,37 +127,38 @@ public class FicharioAluno {
             opcao = entrada.nextShort();
             entrada.skip("\n");
 
-            switch (opcao){
-                case 1:
+            switch (opcao) {
+                case 1 -> {
                     System.out.print("Matrícula: ");
                     dado = entrada.nextLine();
                     alunos[retornoBusca].setMatricula(dado);
-                    break;
-                case 2:
+                }
+                case 2 -> {
                     System.out.print("Nome: ");
                     dado = entrada.nextLine();
                     alunos[retornoBusca].setNome(dado);
-                    break;
-                case 3:
+                }
+                case 3 -> {
                     System.out.print("Telefone: ");
                     dado = entrada.nextLine();
                     alunos[retornoBusca].setTelefone(dado);
-                    break;
-                case 4:
+                }
+                case 4 -> {
                     System.out.print("Cpf: ");
                     dado = entrada.nextLine();
                     alunos[retornoBusca].setCpf(dado);
-                    break;
-                case 5:
+                }
+                case 5 -> {
                     System.out.print("E-mail: ");
                     dado = entrada.nextLine();
                     alunos[retornoBusca].setEmail(dado);
-                    break;
+                }
             }
         }else
             System.out.println("Cadastro nao encontrado!!");
 
     }
+
     public void relatorio() {
 
         System.out.println("[Relatório de ALUNOS]");

@@ -2,6 +2,9 @@ package br.com.felipeltda.modelos;
 
 public class Aluno extends Pessoa{
     private String matricula;
+    private Turma turma;
+
+
     public Aluno(String nome,String telefone,String matricula, String cpf,String email){
         this.telefone = telefone;
         this.nome = nome;
@@ -29,9 +32,4 @@ public class Aluno extends Pessoa{
                 ", email='" + email + '\'' +
                 '}';
     }
-
-
-/*public Aluno(String nome){
-        this.nome = nome;
-    }*/
 }
