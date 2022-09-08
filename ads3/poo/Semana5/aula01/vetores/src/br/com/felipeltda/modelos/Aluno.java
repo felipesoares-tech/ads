@@ -22,12 +22,10 @@ public class Aluno extends Pessoa{
 
     @Override
     public String toString() {
-        return "Aluno{" +
-                "matricula='" + matricula + '\'' +
+        return "\nmatricula='" + matricula + '\'' +
                 ", nome='" + nome + '\'' +
                 ", cpf='" + cpf + '\'' +
                 ", telefone='" + telefone + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+                ", email='" + email + '\'';
     }
 }

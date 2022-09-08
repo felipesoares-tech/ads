@@ -1,52 +1,52 @@
 package br.com.felipeltda.ficharios;
-import br.com.felipeltda.modelos.*;
+import br.com.felipeltda.modelos.Aluno;
 
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
 
-// adicionar os metodos alterar, excluir e consultar
-// não permitir exclusão de alunos vinculados a turmas
 public class FicharioAluno {
-    private final Aluno[] alunos;
+    private final ArrayList<Aluno> alunos;
     private final Scanner entrada;
+    private final FicharioEnturmacao ficharioEnturmacao;
 
 
-
-    public FicharioAluno(Aluno[] alunos){
+    public FicharioAluno(ArrayList<Aluno> alunos,FicharioEnturmacao ficharioEnturmacao ){
         this.alunos = alunos;
         entrada = new Scanner(System.in);
+        this.ficharioEnturmacao = ficharioEnturmacao;
     }
 
-    private int buscaMatricula(String matricula){
-        for (int i=0; i < alunos.length; i++){
-            if((this.alunos[i] != null) && (Objects.equals(this.alunos[i].getMatricula(), matricula))){
-                return i;
+    private Aluno buscaMatricula(String matricula){
+        for (Aluno aluno : alunos) {
+            if ((aluno != null) && (Objects.equals(aluno.getMatricula(), matricula))) {
+                return aluno;
             }
         }
-        return -1;
+        return null;
     }
-    private int buscaNome(String nome){
-        for (int i=0; i < alunos.length; i++){
-            if((this.alunos[i] != null) && (Objects.equals(this.alunos[i].getNome(), nome))){
-                return i;
+    private Aluno buscaNome(String nome){
+        for (Aluno aluno : alunos) {
+            if ((aluno != null) && (Objects.equals(aluno.getNome(), nome))) {
+                return aluno;
             }
         }
-        return -1;
+        return null;
     }
-    private int buscaCpf(String cpf){
-        for (int i=0; i < alunos.length; i++){
-            if((this.alunos[i] != null) && (Objects.equals(this.alunos[i].getCpf(), cpf))){
-                return i;
+    private Aluno buscaCpf(String cpf){
+        for (Aluno aluno : alunos) {
+            if ((aluno != null) && (Objects.equals(aluno.getCpf(), cpf))) {
+                return aluno;
             }
         }
-        return -1;
+        return null;
     }
 
-    private int busca(){
+    private Aluno busca(){
         short opcao;
-        int retornoBusca;
+        Aluno aluno =  null;
         String dado;
-
+        System.out.println("===TIPO DE BUSCA===");
         System.out.println("[1] - Por Nome");
         System.out.println("[2] - Por Cpf");
         System.out.println("[3] - Por Matricula");
@@ -57,57 +57,73 @@ public class FicharioAluno {
             case 1 -> {
                 System.out.println("Nome: ");
                 dado = entrada.nextLine();
-                retornoBusca = buscaNome(dado);
+                aluno = buscaNome(dado);
             }
             case 2 -> {
                 System.out.println("Cpf: ");
                 dado = entrada.nextLine();
-                retornoBusca = buscaCpf(dado);
+                aluno = buscaCpf(dado);
             }
             case 3 -> {
                 System.out.println("Matricula: ");
                 dado = entrada.nextLine();
-                retornoBusca = buscaMatricula(dado);
+                aluno = buscaMatricula(dado);
             }
-            default -> retornoBusca = -1;
+            default -> System.out.println("Opcao invalida!!");
         }
 
-        return retornoBusca;
+        return aluno;
+    }
+
+    private boolean alunoVinculado(Aluno aluno){
+        for (int i=0; i<ficharioEnturmacao.getEnturmacoes().size(); i++){
+            if(ficharioEnturmacao.getEnturmacoes().get(i).getAlunos().contains(aluno))
+                return true;
+        }
+        return false;
+    }
+
+    public void excluir(){
+        Aluno aluno;
+        String nome;
+        System.out.println("Informe o nome do aluno que deseja excluir: ");
+        nome = entrada.nextLine();
+
+        aluno = buscaNome(nome);
+
+        if(aluno != null){
+            if(alunoVinculado(aluno)){
+                System.out.println("Nao foi possivel excluir o aluno em questao, pois o mesmo esta vinculado a uma turma");
+            }else{
+                System.out.println("Aluno nao vinculado");
+            }
+        }
     }
 
     public void cadastrar(){
         String nome, telefone, matricula, cpf,email;
-        int contador = 0;
 
-        while (alunos[contador] != null){
-            contador++;
-        }
+        System.out.println(" === Cadastrar ALUNO ==== ");
+        System.out.print("Nome: ");
+        nome = entrada.nextLine();
+        System.out.print("Matrícula: ");
+        matricula = entrada.nextLine();
+        System.out.print("Telefone: ");
+        telefone = entrada.nextLine();
+        System.out.print("CPF: ");
+        cpf = entrada.nextLine();
+        System.out.print("E-mail: ");
+        email = entrada.nextLine();
 
-        if(contador < 40){
-            System.out.println(" === Cadastrar ALUNO ==== ");
-            System.out.print("Nome: ");
-            nome = entrada.nextLine();
-            System.out.print("Matrícula: ");
-            matricula = entrada.nextLine();
-            System.out.print("Telefone: ");
-            telefone = entrada.nextLine();
-            System.out.print("CPF: ");
-            cpf = entrada.nextLine();
-            System.out.print("E-mail: ");
-            email = entrada.nextLine();
-
-            Aluno aluno;
-            aluno = new Aluno(nome,telefone,matricula,cpf,email);
-            alunos[contador] = aluno;
-        } else {
-            System.out.println("Cadastros esgotados!");
-        }
+        Aluno aluno;
+        aluno = new Aluno(nome,telefone,matricula,cpf,email);
+        alunos.add(aluno);
 
     }
     public void consultar(){
         System.out.println(" === Consultar ALUNO ==== ");
-        int retornoBusca = busca();
-        System.out.println(retornoBusca >= 0 ? alunos[retornoBusca].toString() : "Cadastro nao encontrado!!");
+        Aluno aluno = busca();
+        System.out.println(aluno != null ? aluno : "Cadastro nao encontrado!!");
     }
 
     public void alterar(){
@@ -115,15 +131,15 @@ public class FicharioAluno {
 
         short opcao;
         String dado;
-        int retornoBusca = busca();
+        Aluno aluno = busca();
 
-        if(retornoBusca >=0){
-            System.out.println(alunos[retornoBusca].toString());
+        if(aluno != null){
+            System.out.println(aluno);
             System.out.println("Escolha o item a editar!");
             System.out.println("[1] - Matricula");
             System.out.println("[2] - Nome");
-            System.out.println("[3] - Telefone");
-            System.out.println("[4] - Cpf");
+            System.out.println("[3] - Cpf");
+            System.out.println("[4] - Telefone");
             System.out.println("[5] - E-mail");
             opcao = entrada.nextShort();
             entrada.skip("\n");
@@ -132,27 +148,27 @@ public class FicharioAluno {
                 case 1 -> {
                     System.out.print("Matrícula: ");
                     dado = entrada.nextLine();
-                    alunos[retornoBusca].setMatricula(dado);
+                    aluno.setMatricula(dado);
                 }
                 case 2 -> {
                     System.out.print("Nome: ");
                     dado = entrada.nextLine();
-                    alunos[retornoBusca].setNome(dado);
+                    aluno.setNome(dado);
                 }
                 case 3 -> {
-                    System.out.print("Telefone: ");
-                    dado = entrada.nextLine();
-                    alunos[retornoBusca].setTelefone(dado);
-                }
-                case 4 -> {
                     System.out.print("Cpf: ");
                     dado = entrada.nextLine();
-                    alunos[retornoBusca].setCpf(dado);
+                    aluno.setCpf(dado);
+                }
+                case 4 -> {
+                    System.out.print("Telefone: ");
+                    dado = entrada.nextLine();
+                    aluno.setTelefone(dado);
                 }
                 case 5 -> {
                     System.out.print("E-mail: ");
                     dado = entrada.nextLine();
-                    alunos[retornoBusca].setEmail(dado);
+                    aluno.setEmail(dado);
                 }
             }
         }else
@@ -163,9 +179,9 @@ public class FicharioAluno {
     public void relatorio() {
 
         System.out.println("[Relatório de ALUNOS]");
-        for (int j = 0; j < alunos.length; j++) {
-            if (alunos[j] != null) {
-                System.out.println(alunos[j]);
+        for (Aluno aluno : alunos) {
+            if (aluno != null) {
+                System.out.println(aluno);
             }
 
         }

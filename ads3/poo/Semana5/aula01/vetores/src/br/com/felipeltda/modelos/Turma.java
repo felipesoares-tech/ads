@@ -1,22 +1,19 @@
 package br.com.felipeltda.modelos;
 
 public class Turma {
-    private short codigo;
+    private int codigo;
     private String nome;
 
-    private Aluno alunos[];
-
-    // deve ter um codigo, um nome e um vetor de alunos
-    public Turma(String nome, short codigo){
+    public Turma(String nome, int codigo){
         this.nome = nome;
         this.codigo = codigo;
     }
 
-    public short getCodigo() {
+    public int getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(short codigo) {
+    public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
 
@@ -28,13 +25,6 @@ public class Turma {
         this.nome = nome;
     }
 
-    public Aluno[] getAlunos() {
-        return alunos;
-    }
-
-    public void setAlunos(Aluno[] alunos) {
-        this.alunos = alunos;
-    }
 
     @Override
     public String toString() {

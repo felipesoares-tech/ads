@@ -1,24 +1,24 @@
 package br.com.felipeltda.ficharios;
-
 import br.com.felipeltda.modelos.Turma;
 
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
 
 public class FicharioTurma {
-    private final Turma[] turmas;
+    private final ArrayList<Turma> turmas;
     private final Scanner entrada;
 
-    public FicharioTurma(Turma[] turmas){
+    public FicharioTurma(ArrayList<Turma> turmas){
         this.turmas = turmas;
         entrada = new Scanner(System.in);
     }
 
-    private int busca(){
+    private Turma busca(){
         short opcao;
-        int retornoBusca;
+        Turma turma = null;
         String nome;
-        short codigo;
+        int codigo;
         Scanner entrada = new Scanner(System.in);
 
         System.out.println("[1] - Por Nome");
@@ -30,75 +30,76 @@ public class FicharioTurma {
             case 1 -> {
                 System.out.println("Nome: ");
                 nome = entrada.nextLine();
-                retornoBusca = buscaNome(nome);
+                turma = buscaNome(nome);
             }
             case 2 -> {
                 System.out.println("Codigo: ");
                 codigo = entrada.nextShort();
-                retornoBusca = buscaCodigo(codigo);
+                turma = buscaCodigo(codigo);
             }
-            default -> retornoBusca = -1;
+            default -> System.out.println("Opcao invalida!!");
         }
 
-        return retornoBusca;
+        return turma;
     }
 
-    private int buscaNome(String nome){
-        for (int i=0; i < turmas.length; i++){
-            if((this.turmas[i] != null) && (Objects.equals(this.turmas[i].getNome(), nome))){
-                return i;
+    private Turma buscaNome(String nome){
+        for (Turma turma : turmas) {
+            if ((turma != null) && (Objects.equals(turma.getNome(), nome))) {
+                return turma;
             }
         }
-        return -1;
+        return null;
     }
-    private int buscaCodigo(short codigo){
-        for (int i=0; i < turmas.length; i++){
-            if((this.turmas[i] != null) && (turmas[i].getCodigo() == codigo)){
-                return i;
+    private Turma buscaCodigo(int codigo){
+        for (Turma turma : turmas) {
+            if ((turma != null) && (turma.getCodigo() == codigo)) {
+                return turma;
             }
         }
-        return -1;
+        return null;
     }
     public void consultar(){
-        System.out.println(" === Consultar TURMA ==== ");
-        int retornoBusca = busca();
-        System.out.println(retornoBusca >= 0 ? turmas[retornoBusca].toString() : "Cadastro nao encontrado!!");
+        System.out.println(" === Consultar TURMAS ==== ");
+        Turma turma = busca();
+        System.out.println(turma != null ? turma : "Cadastro nao encontrado!!");
     }
 
     public void relatorio() {
-
         System.out.println("[Relatório de TURMAS]");
-        for (int j = 0; j < turmas.length; j++) {
-            if (turmas[j] != null) {
-                System.out.println(turmas[j]);
+        for (Turma turma : turmas) {
+            if (turma != null) {
+                System.out.println(turma);
             }
-
         }
-
     }
 
     public void cadastrar(){
-        String nome;
-        short codigo;
-        int contador = 0;
+        String nomeTurma;
+        int codigo;
         Scanner entrada = new Scanner(System.in);
 
-        while (turmas[contador] != null){
-            contador++;
-        }
+        System.out.println(" === Cadastrar TURMA ==== ");
+        System.out.print("Nome: ");
+        nomeTurma = entrada.nextLine();
+        System.out.print("Codigo: ");
+        codigo = entrada.nextInt();
 
-        if(contador < 3){
-            System.out.println(" === Cadastrar TURMA ==== ");
-            System.out.print("Nome: ");
-            nome = entrada.nextLine();
-            System.out.print("Codigo: ");
-            codigo = entrada.nextShort();
+        Turma turma;
+        turma = new Turma(nomeTurma,codigo);
+        turmas.add(turma);
 
-            Turma turma;
-            turma = new Turma(nome,codigo);
-            turmas[contador] = turma;
-        } else {
-            System.out.println("Cadastros esgotados!");
+    }
+    public void excluir(){
+        Turma turma;
+        String nome;
+        System.out.println("Informe o nome da turma que deseja excluir: ");
+        nome = entrada.nextLine();
+
+        turma = buscaNome(nome);
+
+        if(turma != null){
+            System.out.println("Excluido");
         }
     }
 
@@ -107,36 +108,32 @@ public class FicharioTurma {
 
         short opcao;
         String dado;
-        int retornoBusca = busca();
-        short codigo;
+        int codigo;
+        Turma turma = busca();
 
-        if(retornoBusca >=0){
-            System.out.println(turmas[retornoBusca].toString());
+        if(turma != null){
+            System.out.println(turma);
             System.out.println("Escolha o item a editar!");
-            System.out.println("[1] - Codigo");
+            System.out.println("[1] - Código");
             System.out.println("[2] - Nome");
+
             opcao = entrada.nextShort();
             entrada.skip("\n");
 
             switch (opcao) {
                 case 1 -> {
                     System.out.print("Codigo: ");
-                    codigo = entrada.nextShort();
-                    turmas[retornoBusca].setCodigo(codigo);
+                    codigo = entrada.nextInt();
+                    turma.setCodigo(codigo);
                 }
                 case 2 -> {
                     System.out.print("Nome: ");
                     dado = entrada.nextLine();
-                    turmas[retornoBusca].setNome(dado);
+                    turma.setNome(dado);
                 }
             }
         }else
             System.out.println("Cadastro nao encontrado!!");
 
     }
-
-    /*public void cadastrarAlunoTurma(){
-        //ficharioTurma.setAlunoTurma(ficharioAluno.getAluno(123456)
-        //turmas[0].setAlunos();
-    }*/
 }

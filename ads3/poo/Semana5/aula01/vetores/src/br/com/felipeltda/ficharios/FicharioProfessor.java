@@ -1,43 +1,53 @@
 package br.com.felipeltda.ficharios;
-
 import br.com.felipeltda.modelos.Professor;
 
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
 
 
 public class FicharioProfessor {
-    private final Professor[] professores;
+    private final ArrayList<Professor> professores;
     private final Scanner entrada;
 
-    public FicharioProfessor(Professor[] professores){
+    public FicharioProfessor(ArrayList<Professor> professores){
         this.professores = professores;
         entrada = new Scanner(System.in);
     }
 
-    private int buscaRegistro(int registro){
-        for (int i=0; i < professores.length; i++){
-            if((this.professores[i] != null) && (registro == this.professores[i].getRegistro())){
-                return i;
+    private Professor buscaRegistro(int registro){
+        for (Professor professor : professores) {
+            if ((professor != null) && (professor.getRegistro() == registro)) {
+                return professor;
             }
         }
-        return -1;
+        return null;
     }
-    private int buscaNome(String nome){
-        for (int i=0; i < professores.length; i++){
-            if((this.professores[i] != null) && (Objects.equals(this.professores[i].getNome(), nome))){
-                return i;
+    private Professor buscaNome(String nome){
+        for (Professor professor : professores) {
+            if ((professor != null) && (Objects.equals(professor.getNome(), nome))) {
+                return professor;
             }
         }
-        return -1;
+        return null;
     }
-    private int busca(){
+    private Professor buscaCpf(String cpf){
+        for (Professor professor : professores) {
+            if ((professor != null) && (Objects.equals(professor.getCpf(), cpf))) {
+                return professor;
+            }
+        }
+        return null;
+    }
+    private Professor busca(){
         short opcao;
-        int retornoBusca,registro;
+        int registro;
+        Professor professor =  null;
         String dado;
-
+        System.out.println("===TIPO DE BUSCA===");
         System.out.println("[1] - Por Nome");
-        System.out.println("[2] - Por Registro");
+        System.out.println("[2] - Por Cpf");
+        System.out.println("[3] - Por Registro");
         opcao = entrada.nextShort();
         entrada.skip("\n");
 
@@ -45,64 +55,74 @@ public class FicharioProfessor {
             case 1 -> {
                 System.out.println("Nome: ");
                 dado = entrada.nextLine();
-                retornoBusca = buscaNome(dado);
+                professor = buscaNome(dado);
             }
             case 2 -> {
+                System.out.println("Cpf: ");
+                dado = entrada.nextLine();
+                professor = buscaCpf(dado);
+            }
+            case 3 -> {
                 System.out.println("Registro: ");
                 registro = entrada.nextInt();
-                retornoBusca = buscaRegistro(registro);
+                professor = buscaRegistro(registro);
             }
-            default -> retornoBusca = -1;
+            default -> System.out.println("Opcao invalida!!");
         }
 
-        return retornoBusca;
+        return professor;
     }
 
     public void cadastrar(){
         String nome, telefone, cpf,email;
-        int contador = 0,registro;
+        int registro;
 
-        while (professores[contador] != null){
-            contador++;
-        }
+        System.out.println(" === Cadastrar PROFESSOR ==== ");
+        System.out.print("Nome: ");
+        nome = entrada.nextLine();
+        System.out.print("Registro: ");
+        registro = entrada.nextInt();
+        entrada.skip("\n");
+        System.out.print("Telefone: ");
+        telefone = entrada.nextLine();
+        System.out.print("CPF: ");
+        cpf = entrada.nextLine();
+        System.out.print("E-mail: ");
+        email = entrada.nextLine();
 
-        if(contador < 40){
-            System.out.println(" === Cadastrar PROFESSOR ==== ");
-            System.out.print("Nome: ");
-            nome = entrada.nextLine();
-            System.out.print("Registro: ");
-            registro = entrada.nextInt();
-            entrada.skip("\n");
-            System.out.print("Telefone: ");
-            telefone = entrada.nextLine();
-            System.out.print("CPF: ");
-            cpf = entrada.nextLine();
-            System.out.print("E-mail: ");
-            email = entrada.nextLine();
-
-            Professor professor;
-            professor = new Professor(nome,telefone,registro,cpf,email);
-            professores[contador] = professor;
-        } else {
-            System.out.println("Cadastros esgotados!");
-        }
+        Professor professor;
+        professor = new Professor(nome,telefone,registro,cpf,email);
+        professores.add(professor);
 
     }
 
     public void consultar(){
         System.out.println(" === Consultar PROFESSOR ==== ");
-        int retornoBusca = busca();
-        System.out.println(retornoBusca >= 0 ? professores[retornoBusca].toString() : "Cadastro nao encontrado!!");
+        Professor professor = busca();
+        System.out.println(professor != null ? professor : "Cadastro nao encontrado!!");
     }
 
     public void relatorio() {
 
         System.out.println("[Relatório de PROFESSORES]");
-        for (int j = 0; j < professores.length; j++) {
-            if (professores[j] != null) {
-                System.out.println(professores[j]);
+        for (Professor professor : professores) {
+            if (professor != null) {
+                System.out.println(professor);
             }
 
+        }
+
+    }
+    public void excluir(){
+        Professor professor;
+        String nome;
+        System.out.println("Informe o nome do aluno que deseja excluir: ");
+        nome = entrada.nextLine();
+
+        professor = buscaNome(nome);
+
+        if(professor != null){
+            System.out.println("Excluido");
         }
 
     }
@@ -111,15 +131,16 @@ public class FicharioProfessor {
 
         short opcao;
         String dado;
-        int retornoBusca = busca(),registro;
+        int registro;
+        Professor professor = busca();
 
-        if(retornoBusca >=0){
-            System.out.println(professores[retornoBusca].toString());
+        if(professor != null){
+            System.out.println(professor);
             System.out.println("Escolha o item a editar!");
             System.out.println("[1] - Registro");
             System.out.println("[2] - Nome");
-            System.out.println("[3] - Telefone");
-            System.out.println("[4] - Cpf");
+            System.out.println("[3] - Cpf");
+            System.out.println("[4] - Telefone");
             System.out.println("[5] - E-mail");
             opcao = entrada.nextShort();
             entrada.skip("\n");
@@ -128,27 +149,27 @@ public class FicharioProfessor {
                 case 1 -> {
                     System.out.print("Registro: ");
                     registro = entrada.nextInt();
-                    professores[retornoBusca].setRegistro(registro);
+                    professor.setRegistro(registro);
                 }
                 case 2 -> {
                     System.out.print("Nome: ");
                     dado = entrada.nextLine();
-                    professores[retornoBusca].setNome(dado);
+                    professor.setNome(dado);
                 }
                 case 3 -> {
-                    System.out.print("Telefone: ");
-                    dado = entrada.nextLine();
-                    professores[retornoBusca].setTelefone(dado);
-                }
-                case 4 -> {
                     System.out.print("Cpf: ");
                     dado = entrada.nextLine();
-                    professores[retornoBusca].setCpf(dado);
+                    professor.setCpf(dado);
+                }
+                case 4 -> {
+                    System.out.print("Telefone: ");
+                    dado = entrada.nextLine();
+                    professor.setTelefone(dado);
                 }
                 case 5 -> {
                     System.out.print("E-mail: ");
                     dado = entrada.nextLine();
-                    professores[retornoBusca].setEmail(dado);
+                    professor.setEmail(dado);
                 }
             }
         }else
