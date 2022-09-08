@@ -57,7 +57,7 @@ public class Main {
                             case 3 -> ficharioAluno.excluir();
                             case 4 -> ficharioAluno.consultar();
                             case 5 -> ficharioAluno.relatorio();
-                            default -> {if (operacao != 6 ) System.out.println("Opcao invalida");}
+                            default -> {if (operacao != 0 ) System.out.println("Opcao invalida");}
                         }
                     }while(operacao != 0);
                 }
@@ -70,7 +70,7 @@ public class Main {
                             case 3 -> ficharioProfessor.excluir();
                             case 4 -> ficharioProfessor.consultar();
                             case 5 -> ficharioProfessor.relatorio();
-                            default -> {if (operacao != 6 ) System.out.println("Opcao invalida");}
+                            default -> {if (operacao != 0 ) System.out.println("Opcao invalida");}
                         }
                     }while(operacao != 0);
 
@@ -84,7 +84,7 @@ public class Main {
                             case 3 -> ficharioTurma.excluir();
                             case 4 -> ficharioTurma.consultar();
                             case 5 -> ficharioTurma.relatorio();
-                            default -> {if (operacao != 6 ) System.out.println("Opcao invalida");}
+                            default -> {if (operacao != 0 ) System.out.println("Opcao invalida");}
                         }
                     }while(operacao != 0);
 
