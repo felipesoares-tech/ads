@@ -10,7 +10,6 @@ public class FicharioAluno {
     private final Scanner entrada;
     private final FicharioEnturmacao ficharioEnturmacao;
 
-
     public FicharioAluno(ArrayList<Aluno> alunos,FicharioEnturmacao ficharioEnturmacao ){
         this.alunos = alunos;
         entrada = new Scanner(System.in);
@@ -71,7 +70,6 @@ public class FicharioAluno {
             }
             default -> System.out.println("Opcao invalida!!");
         }
-
         return aluno;
     }
 
@@ -86,6 +84,7 @@ public class FicharioAluno {
     public void excluir(){
         Aluno aluno;
         String nome;
+        System.out.println(alunos);
         System.out.println("Informe o nome do aluno que deseja excluir: ");
         nome = entrada.nextLine();
 
@@ -95,9 +94,18 @@ public class FicharioAluno {
             if(alunoVinculado(aluno)){
                 System.out.println("Nao foi possivel excluir o aluno em questao, pois o mesmo esta vinculado a uma turma");
             }else{
-                System.out.println("Aluno nao vinculado");
+                int resposta;
+                System.out.println("Confirma a exclusão? (1-sim) e (2-não) ");
+                resposta = entrada.nextInt();
+                if(resposta == 1){
+                    alunos.remove(aluno);
+                    System.out.println("Exclusão efetuada com sucesso!");
+                    return;
+                }
+                System.out.println("Exclusão não efetuada.");
             }
-        }
+        }else
+            System.out.println("Aluno inexistente!");
     }
 
     public void cadastrar(){
@@ -117,7 +125,11 @@ public class FicharioAluno {
 
         Aluno aluno;
         aluno = new Aluno(nome,telefone,matricula,cpf,email);
-        alunos.add(aluno);
+        if(!alunos.contains(aluno)){
+            alunos.add(aluno);
+            return;
+        }
+        System.out.println("Aluno ja cadastrado!");
 
     }
     public void consultar(){
@@ -175,7 +187,6 @@ public class FicharioAluno {
             System.out.println("Cadastro nao encontrado!!");
 
     }
-
     public void relatorio() {
 
         System.out.println("[Relatório de ALUNOS]");
@@ -183,9 +194,6 @@ public class FicharioAluno {
             if (aluno != null) {
                 System.out.println(aluno);
             }
-
         }
-
     }
-
 }

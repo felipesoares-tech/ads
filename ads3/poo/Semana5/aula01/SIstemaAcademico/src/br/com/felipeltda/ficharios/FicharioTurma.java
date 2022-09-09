@@ -93,14 +93,24 @@ public class FicharioTurma {
     public void excluir(){
         Turma turma;
         String nome;
+        System.out.println(turmas);
         System.out.println("Informe o nome da turma que deseja excluir: ");
         nome = entrada.nextLine();
 
         turma = buscaNome(nome);
 
         if(turma != null){
-            System.out.println("Excluido");
-        }
+            int resposta;
+            System.out.println("Confirma a exclusão? (1-sim) e (2-não) ");
+            resposta = entrada.nextInt();
+            if(resposta == 1){
+                turmas.remove(turma);
+                System.out.println("Exclusão efetuada com sucesso!");
+                return;
+            }
+            System.out.println("Exclusão não efetuada.");
+        }else
+            System.out.println("Turma inexistente!");
     }
 
     public void alterar(){

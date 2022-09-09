@@ -2,6 +2,7 @@ package br.com.felipeltda.modelos;
 
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.Random;
 
 public class Enturmacao {
     private int codigo;
@@ -9,7 +10,8 @@ public class Enturmacao {
     protected ArrayList<Aluno> alunos;
 
     public Enturmacao(Turma turma, Aluno aluno) {
-        this.codigo = 0;
+        Random gerador = new Random();
+        this.codigo = gerador.nextInt();
         this.turma = turma;
         alunos = new ArrayList<>();
         this.alunos.add(aluno);

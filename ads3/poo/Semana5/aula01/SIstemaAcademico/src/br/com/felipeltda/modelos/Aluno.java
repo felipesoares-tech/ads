@@ -1,5 +1,7 @@
 package br.com.felipeltda.modelos;
 
+import java.util.Objects;
+
 public class Aluno extends Pessoa{
     private String matricula;
 
@@ -28,4 +30,17 @@ public class Aluno extends Pessoa{
                 ", telefone='" + telefone + '\'' +
                 ", email='" + email + '\'';
     }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Aluno aluno = (Aluno) o;
+        return Objects.equals(matricula, aluno.matricula);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(matricula);
+    }
+
 }

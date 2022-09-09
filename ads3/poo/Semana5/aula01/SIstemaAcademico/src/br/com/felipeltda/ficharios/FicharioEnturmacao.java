@@ -27,6 +27,22 @@ public class FicharioEnturmacao {
         return null;
     }
 
+    private int buscarTurmaArray(Turma turma){
+        for (int i=0; i <enturmacoes.size(); i++){
+            if(enturmacoes.get(i).getTurma() == turma)
+                return i;
+        }
+        return -1;
+    }
+    private Enturmacao buscaCodigo(int codigo){
+        for (Enturmacao enturmacao : enturmacoes) {
+            if ((enturmacao != null) && (codigo == enturmacao.getCodigo())) {
+                return enturmacao;
+            }
+        }
+        return null;
+    }
+
     private Aluno buscaNomeAluno(String nome){
         for (Aluno aluno : alunos) {
             if ((aluno != null) && (Objects.equals(aluno.getNome(), nome))) {
@@ -36,18 +52,25 @@ public class FicharioEnturmacao {
         return null;
     }
 
-    public int verificarEnturmacoes(String nomeTurma){
-        for (int i =0; i<enturmacoes.size(); i++){
-            if(Objects.equals(enturmacoes.get(i).getTurma().getNome(), nomeTurma)){
-                return i;
+    private boolean turmaEnturmada(Turma turma){
+        for (Enturmacao enturmacao : enturmacoes) {
+            if (enturmacao.getTurma() == turma) {
+                return true;
             }
         }
-        return -1;
+        return false;
+    }
+    private boolean alunoEnturmado(Aluno aluno){
+        for (Enturmacao enturmacao : enturmacoes) {
+            if (enturmacao.getAlunos().contains(aluno)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void cadastrar() {
         String nomeTurma, nomeAluno;
-        int ind;
 
         Turma turma;
         Aluno aluno;
@@ -64,41 +87,46 @@ public class FicharioEnturmacao {
         aluno = buscaNomeAluno(nomeAluno);
 
         if(turma != null && aluno != null){
-            ind = verificarEnturmacoes(nomeTurma);
-            if(ind == -1){
+
+            if(!turmaEnturmada(turma) && !alunoEnturmado(aluno)){
                 Enturmacao enturmacao = new Enturmacao(turma,aluno);
                 enturmacoes.add(enturmacao);
-            }else
-                enturmacoes.get(ind).getAlunos().add(aluno);
+                System.out.println("Enturmação realizada com sucesso!");
+            }else{
+                if(!alunoEnturmado(aluno)){
+                    enturmacoes.get(buscarTurmaArray(turma)).getAlunos().add(aluno);
+                    System.out.println("Enturmação realizada com sucesso!");
+                }
+                    System.out.println("Aluno ja enturmado!!!");
+            }
 
-            System.out.println("Enturmação realizada com sucesso!");
         }else
             System.out.println("Nome da turma ou aluno inexistente!");
     }
 
     public void excluir() {
-        int pos, resp;
+        int resposta;
+        Enturmacao enturmacao;
 
         System.out.println(" --==[Excluir Enturmação]==-- ");
-        System.out.println("Qual a posição do vetor deseja excluir? ");
-        pos = entrada.nextInt();
-        entrada.skip("\n");
+        System.out.println("Informe o codigo da enturmação a qual deseja excluir: ");
+        resposta = entrada.nextInt();
 
-        if (enturmacoes.get(pos) != null) {
-            System.out.println(enturmacoes.get(pos));
+        enturmacao = buscaCodigo(resposta);
+
+        if (enturmacao != null) {
             System.out.println("Confirma a exclusão? (1-sim) e (2-não) ");
-            resp = entrada.nextInt();
-            entrada.skip("\n");
+            resposta = entrada.nextInt();
 
-            if (resp == 1) {
-                enturmacoes.remove(pos); // exclui um objeto do vetor
+            if (resposta == 1) {
+                enturmacoes.remove(enturmacao);
                 System.out.println(" Exclusão efetuada com sucesso. ");
 
             } else {
                 System.out.println(" Exclusão não efetuada. ");
             }
         } else {
-            System.out.println(" Posição inválida. ");
+            System.out.println(" Enturmacao nao encontrada!!");
         }
     }
 
@@ -110,7 +138,6 @@ public class FicharioEnturmacao {
         pos = entrada.nextInt();
         entrada.skip("\n");
 
-        // TODO:testa se existe uma enturmação na posição escolhida pelo usuário
         if (enturmacoes.get(pos) != null) {
             System.out.println(enturmacoes.get(pos));
         } else {
@@ -128,7 +155,7 @@ public class FicharioEnturmacao {
         System.out.println("[Relatório de ENTURMACOES]");
 
         for(Enturmacao enturmacao: enturmacoes){
-            System.out.println(enturmacao.toString());
+            System.out.println(enturmacao);
             System.out.println("---------------------");
         }
 

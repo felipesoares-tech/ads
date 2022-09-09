@@ -92,7 +92,11 @@ public class FicharioProfessor {
 
         Professor professor;
         professor = new Professor(nome,telefone,registro,cpf,email);
-        professores.add(professor);
+        if(!professores.contains(professor)){
+            professores.add(professor);
+            return;
+        }
+        System.out.println("Professor ja cadastrado!");
 
     }
 
@@ -103,28 +107,34 @@ public class FicharioProfessor {
     }
 
     public void relatorio() {
-
         System.out.println("[Relatório de PROFESSORES]");
         for (Professor professor : professores) {
             if (professor != null) {
                 System.out.println(professor);
             }
-
         }
-
     }
     public void excluir(){
         Professor professor;
         String nome;
-        System.out.println("Informe o nome do aluno que deseja excluir: ");
+        System.out.println(professores);
+        System.out.println("Informe o nome do professor que deseja excluir: ");
         nome = entrada.nextLine();
 
         professor = buscaNome(nome);
 
         if(professor != null){
-            System.out.println("Excluido");
-        }
-
+                int resposta;
+                System.out.println("Confirma a exclusão? (1-sim) e (2-não) ");
+                resposta = entrada.nextInt();
+                if(resposta == 1){
+                    professores.remove(professor);
+                    System.out.println("Exclusão efetuada com sucesso!");
+                    return;
+                }
+                System.out.println("Exclusão não efetuada.");
+        }else
+            System.out.println("Professor inexistente!");
     }
     public void alterar(){
         System.out.println(" === Alterar PROFESSOR ==== ");

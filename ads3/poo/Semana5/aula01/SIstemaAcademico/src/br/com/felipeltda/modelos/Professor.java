@@ -1,4 +1,5 @@
 package br.com.felipeltda.modelos;
+import java.util.Objects;
 
 public class Professor extends Pessoa{
 
@@ -17,6 +18,18 @@ public class Professor extends Pessoa{
 
     public void setRegistro(int registro) {
         this.registro = registro;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Professor professor)) return false;
+        return getRegistro() == professor.getRegistro();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getRegistro());
     }
 
     @Override
