@@ -80,9 +80,14 @@ public class FicharioProfessor {
         System.out.println(" === Cadastrar PROFESSOR ==== ");
         System.out.print("Nome: ");
         nome = entrada.nextLine();
-        System.out.print("Registro: ");
-        registro = entrada.nextInt();
-        entrada.skip("\n");
+
+        try{
+            System.out.print("Registro: ");
+            registro = entrada.nextInt();
+            entrada.skip("\n");
+        }catch (Exception e){
+            throw new RuntimeException("Registro invalido!");
+        }
         System.out.print("Telefone: ");
         telefone = entrada.nextLine();
         System.out.print("CPF: ");
@@ -124,15 +129,15 @@ public class FicharioProfessor {
         professor = buscaNome(nome);
 
         if(professor != null){
-                int resposta;
-                System.out.println("Confirma a exclusão? (1-sim) e (2-não) ");
-                resposta = entrada.nextInt();
-                if(resposta == 1){
-                    professores.remove(professor);
-                    System.out.println("Exclusão efetuada com sucesso!");
-                    return;
-                }
-                System.out.println("Exclusão não efetuada.");
+            int resposta;
+            System.out.println("Confirma a exclusão? (1-sim) e (2-não) ");
+            resposta = entrada.nextInt();
+            if(resposta == 1){
+                professores.remove(professor);
+                System.out.println("Exclusão efetuada com sucesso!");
+                return;
+            }
+            System.out.println("Exclusão não efetuada.");
         }else
             System.out.println("Professor inexistente!");
     }

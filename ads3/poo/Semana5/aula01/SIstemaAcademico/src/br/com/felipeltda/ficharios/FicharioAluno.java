@@ -87,10 +87,13 @@ public class FicharioAluno {
         System.out.println(alunos);
         System.out.println("Informe o nome do aluno que deseja excluir: ");
         nome = entrada.nextLine();
-
         aluno = buscaNome(nome);
 
-        if(aluno != null){
+        if(aluno == null){
+            throw new RuntimeException("Aluno inexistente!");
+        }
+
+        try{
             if(alunoVinculado(aluno)){
                 System.out.println("Nao foi possivel excluir o aluno em questao, pois o mesmo esta vinculado a uma turma");
             }else{
@@ -104,8 +107,9 @@ public class FicharioAluno {
                 }
                 System.out.println("Exclusão não efetuada.");
             }
-        }else
-            System.out.println("Aluno inexistente!");
+        }catch (RuntimeException e){
+            System.out.println(e.getMessage());
+        }
     }
 
     public void cadastrar(){
