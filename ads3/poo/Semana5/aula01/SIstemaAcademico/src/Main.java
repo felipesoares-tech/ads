@@ -94,7 +94,7 @@ public class Main {
                         operacao = menu(opcao);
                         switch (operacao){
                             case 1 -> ficharioEnturmacao.cadastrar();
-                            //case 2 -> ficharioEnturmacao.alterar();
+                            case 2 -> ficharioEnturmacao.alterar();
                             case 3 -> ficharioEnturmacao.excluir();
                             case 4 -> ficharioEnturmacao.consultar();
                             case 5 -> ficharioEnturmacao.relatorio();

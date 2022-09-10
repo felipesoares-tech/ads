@@ -1,17 +1,18 @@
 package br.com.felipeltda.modelos;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
-import java.util.Random;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Enturmacao {
     private int codigo;
     private Turma turma;
     protected ArrayList<Aluno> alunos;
 
-    public Enturmacao(Turma turma, Aluno aluno) {
-        Random gerador = new Random();
-        this.codigo = gerador.nextInt();
+    public Enturmacao(Turma turma, Aluno aluno, int codigo) {
+        this.codigo = codigo;
         this.turma = turma;
         alunos = new ArrayList<>();
         this.alunos.add(aluno);

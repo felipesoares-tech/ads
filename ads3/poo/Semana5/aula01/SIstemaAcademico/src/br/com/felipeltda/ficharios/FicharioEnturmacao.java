@@ -17,6 +17,12 @@ public class FicharioEnturmacao {
         this.enturmacoes = enturmacoes;
         entrada = new Scanner(System.in);
     }
+    private int geradorCodigo(){
+        int qtdEnturmacoes = enturmacoes.size();
+        int codigo = 0;
+        codigo += qtdEnturmacoes;
+        return codigo;
+    }
 
     private Turma buscaNomeTurma(String nome){
         for (Turma turma : turmas) {
@@ -89,15 +95,16 @@ public class FicharioEnturmacao {
         if(turma != null && aluno != null){
 
             if(!turmaEnturmada(turma) && !alunoEnturmado(aluno)){
-                Enturmacao enturmacao = new Enturmacao(turma,aluno);
+                Enturmacao enturmacao = new Enturmacao(turma,aluno,geradorCodigo());
                 enturmacoes.add(enturmacao);
                 System.out.println("Enturmação realizada com sucesso!");
+
             }else{
-                if(!alunoEnturmado(aluno)){
+                if(!alunoEnturmado(aluno) && turmaEnturmada(turma)){
                     enturmacoes.get(buscarTurmaArray(turma)).getAlunos().add(aluno);
                     System.out.println("Enturmação realizada com sucesso!");
-                }
-                    System.out.println("Aluno ja enturmado!!!");
+                }else
+                    System.out.println("Aluno já enturmado!!");
             }
 
         }else
@@ -158,6 +165,79 @@ public class FicharioEnturmacao {
             System.out.println(enturmacao);
             System.out.println("---------------------");
         }
+
+    }
+
+    private int buscaCodigoEnturmacao(int codigo){
+        for (int i=0; i<enturmacoes.size(); i++) {
+            if (enturmacoes.get(i).getCodigo() == codigo)
+                return i;
+        }
+        return -1;
+    }
+
+    private boolean turmaExistente(String nomeTurma){
+        Turma turma = buscaNomeTurma(nomeTurma);
+        return turma != null;
+    }
+
+    private String escolherNome(){
+        String novoNomeTurma;
+        System.out.println("Informe o novo nome de turma: ");
+        novoNomeTurma = entrada.nextLine();
+        return novoNomeTurma;
+    }
+
+    public void alterar(){
+        System.out.println(" === Alterar ENTURMACAO ==== ");
+
+        short opcaoMenu;
+        String nomeTurma,novoNomeTurma;
+        Turma turma,novaTurma;
+        int codigo;
+        int retornoBuscaCodigo;
+
+        System.out.println(enturmacoes);
+        System.out.println("Informe o codigo da enturmacao a qual deseja modificar: ");
+        codigo = entrada.nextInt();
+        retornoBuscaCodigo = buscaCodigoEnturmacao(codigo);
+
+        if(retornoBuscaCodigo != -1){
+            System.out.println("Escolha o item a editar!");
+            System.out.println("[1] - Turma");
+            System.out.println("[2] - Alunos");
+            opcaoMenu = entrada.nextShort();
+            entrada.skip("\n");
+
+            switch (opcaoMenu) {
+                case 1 -> {
+                    nomeTurma = enturmacoes.get(retornoBuscaCodigo).getTurma().getNome();
+
+                    if(turmaExistente(nomeTurma)){
+                        turma = buscaNomeTurma(nomeTurma);
+                        if(turmaEnturmada(turma)){
+                            novoNomeTurma = escolherNome();
+                            if(turmaExistente(novoNomeTurma)){
+                                novaTurma = buscaNomeTurma(novoNomeTurma);
+                                if(!turmaEnturmada(novaTurma))
+                                    enturmacoes.get(buscarTurmaArray(turma)).setTurma(buscaNomeTurma(novoNomeTurma));
+                                else
+                                    System.out.println("Esta turma ja esta enturmada, necessario desenturmar-la antes!");
+                            }else
+                                System.out.println("Turma inexistente!");
+                        }else
+                            System.out.println("A Turma nao esta enturmada!, necessario enturmar-la antes!");
+                    }else
+                        System.out.println("Turma inexistente!");
+                }
+                case 2 ->{
+                    System.out.println("ainda vazio");
+                    System.out.println("asdasd");
+                }
+            }
+        }
+
+
 
     }
 
