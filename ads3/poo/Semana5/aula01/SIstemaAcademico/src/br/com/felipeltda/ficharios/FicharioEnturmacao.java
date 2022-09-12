@@ -33,13 +33,23 @@ public class FicharioEnturmacao {
         return null;
     }
 
-    private int buscarTurmaArray(Turma turma){
+    private int buscaPosicaoTurmaArray(Turma turma){
         for (int i=0; i <enturmacoes.size(); i++){
             if(enturmacoes.get(i).getTurma() == turma)
                 return i;
         }
         return -1;
     }
+
+    private int buscaPosicaoAlunoArray(String nomeAluno, int posicaoTurmaAtual){
+        for (int i=0; i<enturmacoes.get(posicaoTurmaAtual).getAlunos().size(); i++){
+            if(Objects.equals(nomeAluno, enturmacoes.get(posicaoTurmaAtual).getAlunos().get(i).getNome())){
+                return i;
+            }
+        }
+        return -1;
+    }
+
     private Enturmacao buscaCodigo(int codigo){
         for (Enturmacao enturmacao : enturmacoes) {
             if ((enturmacao != null) && (codigo == enturmacao.getCodigo())) {
@@ -58,7 +68,7 @@ public class FicharioEnturmacao {
         return null;
     }
 
-    private boolean turmaEnturmada(Turma turma){
+    private boolean turmaVinculada(Turma turma){
         for (Enturmacao enturmacao : enturmacoes) {
             if (enturmacao.getTurma() == turma) {
                 return true;
@@ -66,7 +76,7 @@ public class FicharioEnturmacao {
         }
         return false;
     }
-    private boolean alunoEnturmado(Aluno aluno){
+    private boolean alunoVinculado(Aluno aluno){
         for (Enturmacao enturmacao : enturmacoes) {
             if (enturmacao.getAlunos().contains(aluno)) {
                 return true;
@@ -74,100 +84,6 @@ public class FicharioEnturmacao {
         }
         return false;
     }
-
-    public void cadastrar() {
-        String nomeTurma, nomeAluno;
-
-        Turma turma;
-        Aluno aluno;
-
-        System.out.println(" === Cadastrar ENTURMAÇÃO === ");
-
-        System.out.println("Nome da turma: ");
-        nomeTurma = entrada.nextLine();
-
-        System.out.println("Nome do aluno: ");
-        nomeAluno = entrada.nextLine();
-
-        turma = buscaNomeTurma(nomeTurma);
-        aluno = buscaNomeAluno(nomeAluno);
-
-        if(turma != null && aluno != null){
-
-            if(!turmaEnturmada(turma) && !alunoEnturmado(aluno)){
-                Enturmacao enturmacao = new Enturmacao(turma,aluno,geradorCodigo());
-                enturmacoes.add(enturmacao);
-                System.out.println("Enturmação realizada com sucesso!");
-
-            }else{
-                if(!alunoEnturmado(aluno) && turmaEnturmada(turma)){
-                    enturmacoes.get(buscarTurmaArray(turma)).getAlunos().add(aluno);
-                    System.out.println("Enturmação realizada com sucesso!");
-                }else
-                    System.out.println("Aluno já enturmado!!");
-            }
-
-        }else
-            System.out.println("Nome da turma ou aluno inexistente!");
-    }
-
-    public void excluir() {
-        int resposta;
-        Enturmacao enturmacao;
-
-        System.out.println(" --==[Excluir Enturmação]==-- ");
-        System.out.println("Informe o codigo da enturmação a qual deseja excluir: ");
-        resposta = entrada.nextInt();
-
-        enturmacao = buscaCodigo(resposta);
-
-        if (enturmacao != null) {
-            System.out.println("Confirma a exclusão? (1-sim) e (2-não) ");
-            resposta = entrada.nextInt();
-
-            if (resposta == 1) {
-                enturmacoes.remove(enturmacao);
-                System.out.println(" Exclusão efetuada com sucesso. ");
-
-            } else {
-                System.out.println(" Exclusão não efetuada. ");
-            }
-        } else {
-            System.out.println(" Enturmacao nao encontrada!!");
-        }
-    }
-
-    public void consultar() {
-        int pos;
-
-        System.out.println(" --==[Consultar Enturmação]==-- ");
-        System.out.println("Qual a posição do vetor deseja consultar? ");
-        pos = entrada.nextInt();
-        entrada.skip("\n");
-
-        if (enturmacoes.get(pos) != null) {
-            System.out.println(enturmacoes.get(pos));
-        } else {
-            System.out.println(" Posição inválida. ");
-        }
-    }
-
-
-    public ArrayList<Enturmacao> getEnturmacoes() {
-        return enturmacoes;
-    }
-
-    public void relatorio() {
-
-        System.out.println("[Relatório de ENTURMACOES]");
-
-        for(Enturmacao enturmacao: enturmacoes){
-            System.out.println(enturmacao);
-            System.out.println("---------------------");
-        }
-
-    }
-
     private int buscaCodigoEnturmacao(int codigo){
         for (int i=0; i<enturmacoes.size(); i++) {
             if (enturmacoes.get(i).getCodigo() == codigo)
@@ -175,71 +91,135 @@ public class FicharioEnturmacao {
         }
         return -1;
     }
-
-    private boolean turmaExistente(String nomeTurma){
+    private boolean turmaExiste(String nomeTurma){
         Turma turma = buscaNomeTurma(nomeTurma);
         return turma != null;
     }
-
-    private String escolherNome(){
-        String novoNomeTurma;
-        System.out.println("Informe o novo nome de turma: ");
-        novoNomeTurma = entrada.nextLine();
-        return novoNomeTurma;
+    private boolean alunoExiste(String nomeAluno){
+        Aluno aluno = buscaNomeAluno(nomeAluno);
+        return aluno != null;
     }
+    private String escolherNome(){
+        String novoNome;
+        System.out.println("Informe um novo nome: ");
+        novoNome = entrada.nextLine();
+        return novoNome;
+    }
+    public void cadastrar() {
+        System.out.println(" === Cadastrar ENTURMAÇÃO === ");
 
+        System.out.println("Nome da turma: ");
+        String nomeTurma = entrada.nextLine();
+
+        System.out.println("Nome do aluno: ");
+        String nomeAluno = entrada.nextLine();
+
+        Turma turma = buscaNomeTurma(nomeTurma);
+        Aluno aluno = buscaNomeAluno(nomeAluno);
+
+        if(turma != null && aluno != null){
+            if(!turmaVinculada(turma) && !alunoVinculado(aluno)){
+                Enturmacao enturmacao = new Enturmacao(turma,aluno,geradorCodigo());
+                enturmacoes.add(enturmacao);
+                System.out.println("Enturmação realizada com sucesso!");
+            }else{
+                if(!alunoVinculado(aluno) && turmaVinculada(turma)){
+                    enturmacoes.get(buscaPosicaoTurmaArray(turma)).getAlunos().add(aluno);
+                    System.out.println("Enturmação realizada com sucesso!");
+                }else
+                    System.out.println("Aluno já enturmado!!");
+            }
+        }else
+            System.out.println("Nome da turma ou aluno inexistente!");
+    }
+    public void excluir() {
+        System.out.println(" --==[Excluir Enturmação]==-- ");
+        System.out.println("Informe o codigo da enturmação a qual deseja excluir: ");
+        int resp = entrada.nextInt();
+
+        Enturmacao enturmacao = buscaCodigo(resp);
+        if (enturmacao != null) {
+            System.out.println("Confirma a exclusão? (1-sim) e (2-não) ");
+            resp = entrada.nextInt();
+
+            if (resp == 1) {
+                enturmacoes.remove(enturmacao);
+                System.out.println(" Exclusão efetuada com sucesso. ");
+            } else
+                System.out.println(" Exclusão não efetuada. ");
+        } else
+            System.out.println(" Enturmacao nao encontrada!!");
+    }
+    public void consultar() {
+        System.out.println(" --==[Consultar Enturmação]==-- ");
+        System.out.println("Qual a posição do vetor deseja consultar? ");
+        int pos = entrada.nextInt();
+        entrada.skip("\n");
+
+        if (enturmacoes.get(pos) != null)
+            System.out.println(enturmacoes.get(pos));
+         else
+            System.out.println("Posição inválida.");
+    }
+    public ArrayList<Enturmacao> getEnturmacoes() {
+        return enturmacoes;
+    }
+    public void relatorio() {
+        System.out.println("[Relatório de ENTURMACOES]\n");
+        for (Enturmacao enturmacao : enturmacoes) {
+            System.out.println(enturmacao.toString());
+        }
+    }
     public void alterar(){
         System.out.println(" === Alterar ENTURMACAO ==== ");
-
-        short opcaoMenu;
-        String nomeTurma,novoNomeTurma;
-        Turma turma,novaTurma;
-        int codigo;
-        int retornoBuscaCodigo;
-
         System.out.println(enturmacoes);
-        System.out.println("Informe o codigo da enturmacao a qual deseja modificar: ");
-        codigo = entrada.nextInt();
-        retornoBuscaCodigo = buscaCodigoEnturmacao(codigo);
 
-        if(retornoBuscaCodigo != -1){
+        System.out.println("Informe o codigo da enturmacao a qual deseja modificar: ");
+        int codigo = entrada.nextInt();
+        int posicaoTurmaAtual = buscaCodigoEnturmacao(codigo);
+
+        if(posicaoTurmaAtual != -1){
             System.out.println("Escolha o item a editar!");
             System.out.println("[1] - Turma");
             System.out.println("[2] - Alunos");
-            opcaoMenu = entrada.nextShort();
+            short opcaoMenu = entrada.nextShort();
             entrada.skip("\n");
 
             switch (opcaoMenu) {
                 case 1 -> {
-                    nomeTurma = enturmacoes.get(retornoBuscaCodigo).getTurma().getNome();
+                    String novoNomeTurma;
+                    Turma novaTurma;
 
-                    if(turmaExistente(nomeTurma)){
-                        turma = buscaNomeTurma(nomeTurma);
-                        if(turmaEnturmada(turma)){
-                            novoNomeTurma = escolherNome();
-                            if(turmaExistente(novoNomeTurma)){
-                                novaTurma = buscaNomeTurma(novoNomeTurma);
-                                if(!turmaEnturmada(novaTurma))
-                                    enturmacoes.get(buscarTurmaArray(turma)).setTurma(buscaNomeTurma(novoNomeTurma));
-                                else
-                                    System.out.println("Esta turma ja esta enturmada, necessario desenturmar-la antes!");
-                            }else
-                                System.out.println("Turma inexistente!");
-                        }else
-                            System.out.println("A Turma nao esta enturmada!, necessario enturmar-la antes!");
+                    novoNomeTurma = escolherNome();
+                    if(turmaExiste(novoNomeTurma)){
+                        novaTurma = buscaNomeTurma(novoNomeTurma);
+                        if(!turmaVinculada(novaTurma))
+                            enturmacoes.get(posicaoTurmaAtual).setTurma(novaTurma);
+                        else
+                            System.out.println("Esta turma ja esta enturmada, necessario desenturma-la antes!");
                     }else
                         System.out.println("Turma inexistente!");
                 }
                 case 2 ->{
-                    System.out.println("ainda vazio");
-                    System.out.println("asdasd");
+                    System.out.println(enturmacoes.get(posicaoTurmaAtual).exibirAlunos());
+                    System.out.print("Informe o nome do aluno o qual deseja substituir: ");
+                    String alunoAtual = entrada.nextLine();
+
+                    if(alunoExiste(alunoAtual)){
+                        int posicaoAlunoAtual = buscaPosicaoAlunoArray(alunoAtual,posicaoTurmaAtual);
+                        String novoNomeAluno = escolherNome();
+                        if(alunoExiste(novoNomeAluno)){
+                            Aluno novoAluno = buscaNomeAluno(novoNomeAluno);
+                            if(!alunoVinculado(novoAluno)){
+                                enturmacoes.get(posicaoAlunoAtual).getAlunos().set(posicaoAlunoAtual,novoAluno);
+                            }else
+                                System.out.println("Aluno informado ja esta vinculado a uma turma");
+                        }
+                    }else
+                        System.out.println("Aluno inexistente!!");
                 }
             }
-        }
-
-
-
+        }else
+            System.out.println("Codigo inexistente!");
     }
-
-
 }

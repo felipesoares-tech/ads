@@ -1,10 +1,6 @@
 package br.com.felipeltda.modelos;
-
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class Enturmacao {
     private int codigo;
@@ -38,18 +34,17 @@ public class Enturmacao {
         return turma;
     }
 
+    public String toString() {
+        return (codigo+1)+"ª"+" Enturmacao"+"{" + "turma=" + turma.getNome() + ", alunos=" + alunos+'}';
+    }
+    public String exibirAlunos(){
+        return "turma=" + turma.getNome() + ", alunos=" + alunos+'}';
+    }
+
     public void setTurma(Turma turma) {
         this.turma = turma;
     }
 
-    @Override
-    public String toString() {
-        return "Enturmacao{" +
-                "codigo=" + codigo +
-                ", turma=" + turma +
-                ", \nalunos=" + alunos +
-                '}';
-    }
 
     @Override
     public boolean equals(Object o) {

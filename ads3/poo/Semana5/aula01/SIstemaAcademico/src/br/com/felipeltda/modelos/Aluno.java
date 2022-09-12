@@ -24,12 +24,13 @@ public class Aluno extends Pessoa{
 
     @Override
     public String toString() {
-        return "\nmatricula='" + matricula + '\'' +
-                ", nome='" + nome + '\'' +
-                ", cpf='" + cpf + '\'' +
-                ", telefone='" + telefone + '\'' +
-                ", email='" + email + '\'';
+        return nome;
     }
+
+    public String exibirDados(){
+        return "nome="+nome+" cpf="+cpf+" telefone="+telefone+" email="+email+" matricula="+matricula;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

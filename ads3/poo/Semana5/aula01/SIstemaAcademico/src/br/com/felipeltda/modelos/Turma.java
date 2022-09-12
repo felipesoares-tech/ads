@@ -28,9 +28,6 @@ public class Turma {
 
     @Override
     public String toString() {
-        return "Turma{" +
-                "codigo=" + codigo +
-                ", nome='" + nome + '\'' +
-                '}';
+        return "nome="+nome+" codigo="+codigo;
     }
 }

@@ -7,8 +7,6 @@ public class Main {
     public static int menu(int operacaoGeral){
         String[] vet = {"Aluno","Professor","Turma","Enturmacao"};
         Scanner entrada = new Scanner(System.in);
-        int operacao;
-
         System.out.println("==="+vet[operacaoGeral-1].toUpperCase()+"===");
         System.out.println("1 - Cadastrar "+vet[operacaoGeral-1]);
         System.out.println("2 - Alterar "+vet[operacaoGeral-1]);
@@ -17,25 +15,21 @@ public class Main {
         System.out.println("5 - Relatório "+vet[operacaoGeral-1]);
         System.out.println("0 - Voltar ao menu principal");
         System.out.println("Opção: ");
-        operacao = entrada.nextInt();
-
-        return operacao;
+        return entrada.nextInt();
     }
 
     public static void main(String[] args){
-        int opcao;
-        int operacao;
         Scanner entrada = new Scanner(System.in);
         ArrayList<Turma> turmas  = new ArrayList<>();
         ArrayList<Professor> professores = new ArrayList<>();
         ArrayList<Aluno> alunos = new ArrayList<>();
         ArrayList<Enturmacao> enturmacoes = new ArrayList<>();
         FicharioEnturmacao ficharioEnturmacao = new FicharioEnturmacao(enturmacoes,turmas, alunos);
-
         FicharioAluno ficharioAluno = new FicharioAluno(alunos,ficharioEnturmacao);
         FicharioProfessor ficharioProfessor = new FicharioProfessor(professores);
         FicharioTurma ficharioTurma = new FicharioTurma(turmas);
 
+        int opcao;
 
         do {
             System.out.println(" === SISTEMA-ESCOLAR === ");
@@ -47,7 +41,9 @@ public class Main {
             opcao = entrada.nextInt();
             entrada.skip("\n");
 
+            int operacao;
             switch (opcao) {
+
                 case 1->{
                     do{
                         operacao = menu(opcao);
@@ -73,7 +69,6 @@ public class Main {
                             default -> {if (operacao != 0 ) System.out.println("Opcao invalida");}
                         }
                     }while(operacao != 0);
-
                 }
                 case 3 ->{
                     do{
@@ -87,7 +82,6 @@ public class Main {
                             default -> {if (operacao != 0 ) System.out.println("Opcao invalida");}
                         }
                     }while(operacao != 0);
-
                 }
                 case 4 ->{
                     do{
@@ -101,10 +95,8 @@ public class Main {
                             default -> {if (operacao != 0 ) System.out.println("Opcao invalida");}
                         }
                     }while(operacao != 0);
-
                 }
-                default -> {if (opcao != 0) { System.out.println("Opção inválida.");
-                }
+                default -> {if (opcao != 0) { System.out.println("Opção inválida.");}
                 }
             }
         } while (opcao != 0);

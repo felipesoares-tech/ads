@@ -54,17 +54,17 @@ public class FicharioAluno {
 
         switch (opcao) {
             case 1 -> {
-                System.out.println("Nome: ");
+                System.out.print("Nome: ");
                 dado = entrada.nextLine();
                 aluno = buscaNome(dado);
             }
             case 2 -> {
-                System.out.println("Cpf: ");
+                System.out.print("Cpf: ");
                 dado = entrada.nextLine();
                 aluno = buscaCpf(dado);
             }
             case 3 -> {
-                System.out.println("Matricula: ");
+                System.out.print("Matricula: ");
                 dado = entrada.nextLine();
                 aluno = buscaMatricula(dado);
             }
@@ -79,6 +79,11 @@ public class FicharioAluno {
                 return true;
         }
         return false;
+    }
+    public void consultar(){
+        System.out.println(" === Consultar ALUNO ==== ");
+        Aluno aluno = busca();
+        System.out.println(aluno != null ? aluno.exibirDados() : "Cadastro nao encontrado!!");
     }
 
     public void excluir(){
@@ -136,11 +141,6 @@ public class FicharioAluno {
         System.out.println("Aluno ja cadastrado!");
 
     }
-    public void consultar(){
-        System.out.println(" === Consultar ALUNO ==== ");
-        Aluno aluno = busca();
-        System.out.println(aluno != null ? aluno : "Cadastro nao encontrado!!");
-    }
 
     public void alterar(){
         System.out.println(" === Alterar ALUNO ==== ");
@@ -150,7 +150,7 @@ public class FicharioAluno {
         Aluno aluno = busca();
 
         if(aluno != null){
-            System.out.println(aluno);
+            System.out.println(aluno.exibirDados());
             System.out.println("Escolha o item a editar!");
             System.out.println("[1] - Matricula");
             System.out.println("[2] - Nome");
@@ -192,12 +192,7 @@ public class FicharioAluno {
 
     }
     public void relatorio() {
-
         System.out.println("[Relatório de ALUNOS]");
-        for (Aluno aluno : alunos) {
-            if (aluno != null) {
-                System.out.println(aluno);
-            }
-        }
+        System.out.println(alunos);
     }
 }
