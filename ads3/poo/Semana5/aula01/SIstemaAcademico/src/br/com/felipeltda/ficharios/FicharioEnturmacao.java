@@ -154,13 +154,12 @@ public class FicharioEnturmacao {
             String nomeAluno = entrada.nextLine();
             if(alunoExiste(nomeAluno)){
                 Aluno aluno = buscaNomeAluno(nomeAluno);
-                if(alunoVinculado(aluno))
+                if(alunoVinculado(aluno) && enturmacoes.get(posicaoEmturmacao).getAlunos().contains(aluno))
                     enturmacoes.get(posicaoEmturmacao).getAlunos().remove(aluno);
                 else
-                    System.out.println("Aluno ja esta desvinculado!!");
+                    System.out.println("Aluno informado nao esta vinculado a esta enturmacao");
             }else
                 System.out.println("Aluno inexistente!!");
-
         }else
             System.out.println("Código inexistente!!");
     }
@@ -174,7 +173,7 @@ public class FicharioEnturmacao {
         if (turma != null){
             int posicao = buscaPosicaoTurmaArray(turma);
             if(posicao != -1)
-                System.out.println(enturmacoes.get(posicao));
+                System.out.println(enturmacoes.get(posicao).exibirAlunos());
             else
                 System.out.println("Turma ainda nao foi enturmada!");
         }else
@@ -207,12 +206,9 @@ public class FicharioEnturmacao {
 
             switch (opcaoMenu) {
                 case 1 -> {
-                    String novoNomeTurma;
-                    Turma novaTurma;
-
-                    novoNomeTurma = escolherNome();
+                    String novoNomeTurma = escolherNome();
                     if(turmaExiste(novoNomeTurma)){
-                        novaTurma = buscaNomeTurma(novoNomeTurma);
+                        Turma novaTurma = buscaNomeTurma(novoNomeTurma);
                         if(!turmaVinculada(novaTurma))
                             enturmacoes.get(posicaoTurmaAtual).setTurma(novaTurma);
                         else
