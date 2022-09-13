@@ -152,14 +152,20 @@ public class FicharioEnturmacao {
     }
     public void consultar() {
         System.out.println(" --==[Consultar Enturmação]==-- ");
-        System.out.println("Qual a posição do vetor deseja consultar? ");
-        int pos = entrada.nextInt();
-        entrada.skip("\n");
+        System.out.println("Qual turma deseja consultar ? ");
+        String nomeTurma = entrada.nextLine();
 
-        if (enturmacoes.get(pos) != null)
-            System.out.println(enturmacoes.get(pos));
-         else
-            System.out.println("Posição inválida.");
+        Turma turma = buscaNomeTurma(nomeTurma);
+
+        if (turma != null){
+            int posicao = buscaPosicaoTurmaArray(turma);
+            if(posicao != -1)
+                System.out.println(enturmacoes.get(posicao));
+            else
+                System.out.println("Turma ainda nao foi enturmada!");
+        }else
+            System.out.println("turma inexistente!");
+
     }
     public ArrayList<Enturmacao> getEnturmacoes() {
         return enturmacoes;
