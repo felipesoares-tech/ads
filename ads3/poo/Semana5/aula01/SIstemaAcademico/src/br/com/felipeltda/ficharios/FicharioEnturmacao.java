@@ -41,15 +41,6 @@ public class FicharioEnturmacao {
         return -1;
     }
 
-    private int buscaPosicaoAlunoArray(String nomeAluno, int posicaoTurmaAtual){
-        for (int i=0; i<enturmacoes.get(posicaoTurmaAtual).getAlunos().size(); i++){
-            if(Objects.equals(nomeAluno, enturmacoes.get(posicaoTurmaAtual).getAlunos().get(i).getNome())){
-                return i;
-            }
-        }
-        return -1;
-    }
-
     private Enturmacao buscaCodigo(int codigo){
         for (Enturmacao enturmacao : enturmacoes) {
             if ((enturmacao != null) && (codigo == enturmacao.getCodigo())) {
@@ -101,7 +92,7 @@ public class FicharioEnturmacao {
     }
     private String escolherNome(){
         String novoNome;
-        System.out.println("Informe um novo nome: ");
+        System.out.print("Informe um novo nome: ");
         novoNome = entrada.nextLine();
         return novoNome;
     }
@@ -134,6 +125,7 @@ public class FicharioEnturmacao {
     }
     public void excluir() {
         System.out.println(" --==[Excluir Enturmação]==-- ");
+        System.out.println(enturmacoes);
         System.out.println("Informe o codigo da enturmação a qual deseja excluir: ");
         int resp = entrada.nextInt();
 
@@ -149,6 +141,28 @@ public class FicharioEnturmacao {
                 System.out.println(" Exclusão não efetuada. ");
         } else
             System.out.println(" Enturmacao nao encontrada!!");
+    }
+    public void desvincularAluno(){
+        System.out.println(" --==[Desvincular Aluno]==-- ");
+        System.out.println(enturmacoes);
+        System.out.println("Digite o codigo da enturmacao: ");
+        int codigo = entrada.nextInt();
+
+        int posicaoEmturmacao = buscaCodigoEnturmacao(codigo);
+        if(posicaoEmturmacao != -1){
+            System.out.println("Informe o nome do aluno: ");
+            String nomeAluno = entrada.nextLine();
+            if(alunoExiste(nomeAluno)){
+                Aluno aluno = buscaNomeAluno(nomeAluno);
+                if(alunoVinculado(aluno))
+                    enturmacoes.get(posicaoEmturmacao).getAlunos().remove(aluno);
+                else
+                    System.out.println("Aluno ja esta desvinculado!!");
+            }else
+                System.out.println("Aluno inexistente!!");
+
+        }else
+            System.out.println("Código inexistente!!");
     }
     public void consultar() {
         System.out.println(" --==[Consultar Enturmação]==-- ");
@@ -209,18 +223,22 @@ public class FicharioEnturmacao {
                 case 2 ->{
                     System.out.println(enturmacoes.get(posicaoTurmaAtual).exibirAlunos());
                     System.out.print("Informe o nome do aluno o qual deseja substituir: ");
-                    String alunoAtual = entrada.nextLine();
+                    String nomeAlunoAtual = entrada.nextLine();
 
-                    if(alunoExiste(alunoAtual)){
-                        int posicaoAlunoAtual = buscaPosicaoAlunoArray(alunoAtual,posicaoTurmaAtual);
-                        String novoNomeAluno = escolherNome();
-                        if(alunoExiste(novoNomeAluno)){
-                            Aluno novoAluno = buscaNomeAluno(novoNomeAluno);
-                            if(!alunoVinculado(novoAluno)){
-                                enturmacoes.get(posicaoAlunoAtual).getAlunos().set(posicaoAlunoAtual,novoAluno);
-                            }else
-                                System.out.println("Aluno informado ja esta vinculado a uma turma");
-                        }
+                    if(alunoExiste(nomeAlunoAtual)){
+                        Aluno alunoAtual = buscaNomeAluno(nomeAlunoAtual);
+                        if(enturmacoes.get(posicaoTurmaAtual).getAlunos().contains(alunoAtual)){
+                            String novoNomeAluno = escolherNome();
+                            if(alunoExiste(novoNomeAluno)){
+                                Aluno novoAluno = buscaNomeAluno(novoNomeAluno);
+                                if(!alunoVinculado(novoAluno)){
+                                    int posicaoAlunoAtual = enturmacoes.get(posicaoTurmaAtual).getAlunos().indexOf(alunoAtual);
+                                    enturmacoes.get(posicaoTurmaAtual).getAlunos().set(posicaoAlunoAtual,novoAluno);
+                                }else
+                                    System.out.println("Aluno informado ja esta vinculado a uma turma");
+                            }
+                        }else
+                            System.out.println("Aluno informado nao esta nesta enturmacao");
                     }else
                         System.out.println("Aluno inexistente!!");
                 }

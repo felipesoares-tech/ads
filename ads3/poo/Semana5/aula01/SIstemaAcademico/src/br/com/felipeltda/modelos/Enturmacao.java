@@ -35,7 +35,7 @@ public class Enturmacao {
     }
 
     public String toString() {
-        return (codigo+1)+"ª"+" Enturmacao"+"{" + "turma=" + turma.getNome() + ", alunos=" + alunos+'}';
+        return (codigo+1)+"ª"+" Enturmacao"+"{" + "codigo="+codigo+ " turma=" + turma.getNome() + ", alunos=" + alunos+'}';
     }
     public String exibirAlunos(){
         return "turma=" + turma.getNome() + ", alunos=" + alunos+'}';
