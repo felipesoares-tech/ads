@@ -86,6 +86,8 @@ public class FicharioAluno {
         System.out.println(aluno != null ? aluno.exibirDados() : "Cadastro nao encontrado!!");
     }
 
+
+
     public void excluir(){
         Aluno aluno;
         String nome;
@@ -104,7 +106,7 @@ public class FicharioAluno {
             }else{
                 int resposta;
                 System.out.println("Confirma a exclusão? (1-sim) e (2-não) ");
-                resposta = entrada.nextInt();
+                resposta = Integer.parseInt(entrada.nextLine());
                 if(resposta == 1){
                     alunos.remove(aluno);
                     System.out.println("Exclusão efetuada com sucesso!");
@@ -115,6 +117,7 @@ public class FicharioAluno {
         }catch (RuntimeException e){
             System.out.println(e.getMessage());
         }
+
     }
 
     public void cadastrar(){
