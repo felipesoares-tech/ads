@@ -9,6 +9,7 @@ public class FicharioEnturmacao {
     private final ArrayList<Turma> turmas;
     private final ArrayList<Aluno> alunos;
     private final ArrayList<Enturmacao> enturmacoes;
+
     private final Scanner entrada;
 
     public FicharioEnturmacao(ArrayList<Enturmacao> enturmacoes,ArrayList<Turma> turmas, ArrayList<Aluno> alunos){
@@ -50,7 +51,7 @@ public class FicharioEnturmacao {
         return null;
     }
 
-    private Aluno buscaNomeAluno(String nome){
+    protected Aluno buscaNomeAluno(String nome){
         for (Aluno aluno : alunos) {
             if ((aluno != null) && (Objects.equals(aluno.getNome(), nome))) {
                 return aluno;
@@ -59,7 +60,7 @@ public class FicharioEnturmacao {
         return null;
     }
 
-    private boolean turmaVinculada(Turma turma){
+    protected boolean turmaVinculada(Turma turma){
         for (Enturmacao enturmacao : enturmacoes) {
             if (enturmacao.getTurma() == turma) {
                 return true;
@@ -75,18 +76,18 @@ public class FicharioEnturmacao {
         }
         return false;
     }
-    private int buscaCodigoEnturmacao(int codigo){
+    protected int buscaCodigoEnturmacao(int codigo){
         for (int i=0; i<enturmacoes.size(); i++) {
             if (enturmacoes.get(i).getCodigo() == codigo)
                 return i;
         }
         return -1;
     }
-    private boolean turmaExiste(String nomeTurma){
+    protected boolean turmaExiste(String nomeTurma){
         Turma turma = buscaNomeTurma(nomeTurma);
         return turma != null;
     }
-    private boolean alunoExiste(String nomeAluno){
+    protected boolean alunoExiste(String nomeAluno){
         Aluno aluno = buscaNomeAluno(nomeAluno);
         return aluno != null;
     }
@@ -142,27 +143,6 @@ public class FicharioEnturmacao {
         } else
             System.out.println(" Enturmacao nao encontrada!!");
     }
-    public void desvincularAluno(){
-        System.out.println(" --==[Desvincular Aluno]==-- ");
-        System.out.println(enturmacoes);
-        System.out.println("Digite o codigo da enturmacao: ");
-        int codigo = entrada.nextInt();
-
-        int posicaoEmturmacao = buscaCodigoEnturmacao(codigo);
-        if(posicaoEmturmacao != -1){
-            System.out.println("Informe o nome do aluno: ");
-            String nomeAluno = entrada.nextLine();
-            if(alunoExiste(nomeAluno)){
-                Aluno aluno = buscaNomeAluno(nomeAluno);
-                if(alunoVinculado(aluno) && enturmacoes.get(posicaoEmturmacao).getAlunos().contains(aluno))
-                    enturmacoes.get(posicaoEmturmacao).getAlunos().remove(aluno);
-                else
-                    System.out.println("Aluno informado nao esta vinculado a esta enturmacao");
-            }else
-                System.out.println("Aluno inexistente!!");
-        }else
-            System.out.println("Código inexistente!!");
-    }
     public void consultar() {
         System.out.println(" --==[Consultar Enturmação]==-- ");
         System.out.println("Qual turma deseja consultar ? ");
@@ -180,7 +160,7 @@ public class FicharioEnturmacao {
             System.out.println("turma inexistente!");
 
     }
-    public ArrayList<Enturmacao> getEnturmacoes() {
+    protected ArrayList<Enturmacao> getEnturmacoes() {
         return enturmacoes;
     }
     public void relatorio() {

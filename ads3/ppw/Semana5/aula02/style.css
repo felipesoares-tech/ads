@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input{
+    padding: 0.3em;
+}
+
+label + input{
+border: 1px solid #0f0;
+}
+input[type="reset"]{
+    outline: 1px solid #f00;
+}
+
+input[type="checkbox"]+ label::before{
+    content: 'O';
+    border: 1px solid #000;
+    margin-right: 10px;
+}
+
+input[type="checkbox"]:checked + label::before{
+    content: 'X';
+    border: 1px solid #00f;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+
+a + input[type="checkbox"]:checked+ form{
+    display: none;
+
+}
+
+form{
+    width: 15em;
+    height: 10em;
+    background-color: aqua;
+    text-align: center;
+    margin: 0 auto; /*centralizando elemento*/
+}

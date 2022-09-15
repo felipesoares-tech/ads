@@ -85,8 +85,27 @@ public class FicharioAluno {
         Aluno aluno = busca();
         System.out.println(aluno != null ? aluno.exibirDados() : "Cadastro nao encontrado!!");
     }
+    public void desvincular(){
+        System.out.println(" --==[Desvincular Aluno]==-- ");
+        System.out.println(ficharioEnturmacao.getEnturmacoes());
+        System.out.println("Digite o codigo da enturmacao: ");
+        int codigo = entrada.nextInt();
 
-
+        int posicaoEmturmacao = ficharioEnturmacao.buscaCodigoEnturmacao(codigo);
+        if(posicaoEmturmacao != -1){
+            System.out.println("Informe o nome do aluno: ");
+            String nomeAluno = entrada.nextLine();
+            if(ficharioEnturmacao.alunoExiste(nomeAluno)){
+                Aluno aluno = ficharioEnturmacao.buscaNomeAluno(nomeAluno);
+                if(alunoVinculado(aluno) && ficharioEnturmacao.getEnturmacoes().get(posicaoEmturmacao).getAlunos().contains(aluno))
+                   ficharioEnturmacao.getEnturmacoes().get(posicaoEmturmacao).getAlunos().remove(aluno);
+                else
+                    System.out.println("Aluno informado nao esta vinculado a esta enturmacao");
+            }else
+                System.out.println("Aluno inexistente!!");
+        }else
+            System.out.println("Código inexistente!!");
+    }
 
     public void excluir(){
         Aluno aluno;

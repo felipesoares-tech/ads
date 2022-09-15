@@ -13,6 +13,7 @@ public class Main {
         System.out.println("3 - Excluir "+vet[operacaoGeral-1]);
         System.out.println("4 - Consultar "+vet[operacaoGeral-1]);
         System.out.println("5 - Relatório "+vet[operacaoGeral-1]);
+        if(operacaoGeral == 1) System.out.println("6 - Desvincular "+vet[operacaoGeral-1]);
         System.out.println("0 - Voltar ao menu principal");
         System.out.println("Opção: ");
         return entrada.nextInt();
@@ -53,6 +54,7 @@ public class Main {
                             case 3 -> ficharioAluno.excluir();
                             case 4 -> ficharioAluno.consultar();
                             case 5 -> ficharioAluno.relatorio();
+                            case 6 -> ficharioAluno.desvincular();
                             default -> {if (operacao != 0 ) System.out.println("Opcao invalida");}
                         }
                     }while(operacao != 0);
