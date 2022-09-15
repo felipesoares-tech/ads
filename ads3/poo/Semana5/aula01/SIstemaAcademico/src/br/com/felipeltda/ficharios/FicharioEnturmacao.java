@@ -25,6 +25,18 @@ public class FicharioEnturmacao {
         return codigo;
     }
 
+    protected int buscaPosicaoAlunoEnturmacao(Aluno aluno){
+        for(int i=0; i<enturmacoes.size(); i++){
+            if(enturmacoes.get(i).getAlunos().contains(aluno))
+                return  i;
+        }
+        return -1;
+    }
+
+    protected String exbirDadosEnturmacao(int i){
+        return enturmacoes.get(i).toString();
+    }
+
     private Turma buscaNomeTurma(String nome){
         for (Turma turma : turmas) {
             if ((turma != null) && (Objects.equals(turma.getNome(), nome))) {
@@ -68,7 +80,7 @@ public class FicharioEnturmacao {
         }
         return false;
     }
-    private boolean alunoVinculado(Aluno aluno){
+    protected boolean alunoVinculado(Aluno aluno){
         for (Enturmacao enturmacao : enturmacoes) {
             if (enturmacao.getAlunos().contains(aluno)) {
                 return true;
@@ -91,6 +103,11 @@ public class FicharioEnturmacao {
         Aluno aluno = buscaNomeAluno(nomeAluno);
         return aluno != null;
     }
+
+    protected void removerAlunoEnturmacao(Aluno aluno,int posicao){
+        enturmacoes.get(posicao).getAlunos().remove(aluno);
+    }
+
     private String escolherNome(){
         String novoNome;
         System.out.print("Informe um novo nome: ");

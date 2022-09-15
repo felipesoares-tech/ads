@@ -73,13 +73,11 @@ public class FicharioAluno {
         return aluno;
     }
 
-    private boolean alunoVinculado(Aluno aluno){
-        for (int i=0; i<ficharioEnturmacao.getEnturmacoes().size(); i++){
-            if(ficharioEnturmacao.getEnturmacoes().get(i).getAlunos().contains(aluno))
-                return true;
-        }
-        return false;
+    private void exibirEnturmacao(int i){
+        System.out.println("O Aluno informado encontra-se na enturmacao abaixo!!");
+        System.out.println(ficharioEnturmacao.exbirDadosEnturmacao(i));
     }
+
     public void consultar(){
         System.out.println(" === Consultar ALUNO ==== ");
         Aluno aluno = busca();
@@ -87,24 +85,29 @@ public class FicharioAluno {
     }
     public void desvincular(){
         System.out.println(" --==[Desvincular Aluno]==-- ");
-        System.out.println(ficharioEnturmacao.getEnturmacoes());
-        System.out.println("Digite o codigo da enturmacao: ");
-        int codigo = entrada.nextInt();
+        System.out.println("Digite o nome do aluno: ");
+        String nomeAluno = entrada.nextLine();
 
-        int posicaoEmturmacao = ficharioEnturmacao.buscaCodigoEnturmacao(codigo);
-        if(posicaoEmturmacao != -1){
-            System.out.println("Informe o nome do aluno: ");
-            String nomeAluno = entrada.nextLine();
-            if(ficharioEnturmacao.alunoExiste(nomeAluno)){
-                Aluno aluno = ficharioEnturmacao.buscaNomeAluno(nomeAluno);
-                if(alunoVinculado(aluno) && ficharioEnturmacao.getEnturmacoes().get(posicaoEmturmacao).getAlunos().contains(aluno))
-                   ficharioEnturmacao.getEnturmacoes().get(posicaoEmturmacao).getAlunos().remove(aluno);
-                else
-                    System.out.println("Aluno informado nao esta vinculado a esta enturmacao");
+        if(ficharioEnturmacao.alunoExiste(nomeAluno)){
+            Aluno aluno = buscaNome(nomeAluno);
+
+            if(ficharioEnturmacao.alunoVinculado(aluno)){
+                int posicao = ficharioEnturmacao.buscaPosicaoAlunoEnturmacao(aluno);
+                exibirEnturmacao(posicao);
+                System.out.println("Tem certeza que deseja desvincular o aluno? (1-sim) e (2-não) ");
+                int resp = entrada.nextInt();
+
+                if(resp == 1){
+                    ficharioEnturmacao.removerAlunoEnturmacao(aluno,posicao);
+                    System.out.println("Aluno desvinculado com sucesso!");
+                }else
+                    System.out.println("Operacao cancelada!");
             }else
-                System.out.println("Aluno inexistente!!");
+                System.out.println("Aluno ja esta desvinculado!");
+
         }else
-            System.out.println("Código inexistente!!");
+            System.out.println("Aluno inexistente!!");
+
     }
 
     public void excluir(){
@@ -120,7 +123,7 @@ public class FicharioAluno {
         }
 
         try{
-            if(alunoVinculado(aluno)){
+            if(ficharioEnturmacao.alunoVinculado(aluno)){
                 System.out.println("Nao foi possivel excluir o aluno em questao, pois o mesmo esta vinculado a uma turma");
             }else{
                 int resposta;
