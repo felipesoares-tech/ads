@@ -90,12 +90,11 @@ public class FicharioAluno {
 
         if(ficharioEnturmacao.alunoExiste(nomeAluno)){
             Aluno aluno = buscaNome(nomeAluno);
-
             if(ficharioEnturmacao.alunoVinculado(aluno)){
                 int posicao = ficharioEnturmacao.buscaPosicaoAlunoEnturmacao(aluno);
                 exibirEnturmacao(posicao);
                 System.out.println("Tem certeza que deseja desvincular o aluno? (1-sim) e (2-não) ");
-                int resp = entrada.nextInt();
+                int resp = Integer.parseInt(entrada.nextLine());
 
                 if(resp == 1){
                     ficharioEnturmacao.removerAlunoEnturmacao(aluno,posicao);
