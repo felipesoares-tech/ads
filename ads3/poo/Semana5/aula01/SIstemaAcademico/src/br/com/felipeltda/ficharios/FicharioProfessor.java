@@ -25,7 +25,7 @@ public class FicharioProfessor {
     }
     private Professor buscaNome(String nome){
         for (Professor professor : professores) {
-            if ((professor != null) && (Objects.equals(professor.getNome(), nome))) {
+            if ((professor != null) && (Objects.equals(professor.getNome().toLowerCase(), nome.toLowerCase()))) {
                 return professor;
             }
         }

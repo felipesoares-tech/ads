@@ -45,7 +45,7 @@ public class FicharioTurma {
 
     private Turma buscaNome(String nome){
         for (Turma turma : turmas) {
-            if ((turma != null) && (Objects.equals(turma.getNome(), nome))) {
+            if ((turma != null) && (Objects.equals(turma.getNome().toLowerCase(), nome.toLowerCase()))) {
                 return turma;
             }
         }

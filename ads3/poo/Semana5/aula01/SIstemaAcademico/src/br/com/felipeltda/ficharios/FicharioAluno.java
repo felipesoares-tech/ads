@@ -26,7 +26,7 @@ public class FicharioAluno {
     }
     private Aluno buscaNome(String nome){
         for (Aluno aluno : alunos) {
-            if ((aluno != null) && (Objects.equals(aluno.getNome(), nome))) {
+            if ((aluno != null) && (Objects.equals(aluno.getNome().toLowerCase(), nome.toLowerCase()))) {
                 return aluno;
             }
         }
