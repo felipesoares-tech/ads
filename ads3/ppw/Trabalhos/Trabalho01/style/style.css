@@ -135,3 +135,120 @@ section{
     margin-top: 0.9em;
     margin-left:  0.5em;
 }
+textarea{
+    resize: none;
+}
+form input[type="text"],[type="email"],textarea{
+    background-color: #323546;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    border-radius: 0.7em;
+    padding: 1em;
+    border: 0;
+}
+form input[type="text"],[type="email"],textarea:focus{
+    outline: 0;
+}
+form input[type="text"],[type="email"]{
+    height: 2.5em;
+}
+input[type="submit"]{
+    background-color: rgb(56, 97, 251);
+    height: 3em;
+    width: 5.5em;
+    border-radius: 0.7em;
+    padding: 0.5em;
+    border: 0;
+}
+input[type="submit"]:hover{
+    cursor: pointer;
+}
+
+form{
+    text-align: center;
+    background-color: #222531;
+    width: 20em;
+    height: 26em;
+    margin: 0 auto;
+    margin-top: 4em;
+    border-radius: 1.5em;
+    border: 1px solid #fff;
+}
+
+form div{
+    display: inline-block;
+    margin-top: 1em;
+}
+
+.subMenuProdutos svg{
+    height: 0.9em;
+}
+.boxConversor{
+    width: 50em;
+    height: 13em;
+    background-color: rgb(35, 35, 35);
+    margin: 0 auto;
+    padding: 1em;
+}
+
+.tituloConversor{
+    color: rgb(160, 160, 160);
+}
+
+.conv{
+    width: 48em;
+    height: 3em;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.conv button{
+    width: 3em;
+    height: 2em;
+    background-color: rgb(102, 153, 204);
+    border: 0;
+    border-radius: 0.5em;
+    margin-top: 0.2em;
+    cursor: pointer;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+}
+
+.conv select{
+    width: 25em;
+    height: 2.5em;
+    background-color: #222531;
+    border: 1px solid rgb(24, 25, 29);
+    border-radius: 6px;
+    
+}
+
+.boxConversor input[type="number"]{
+    width: 25em;
+    height: 3em;
+    margin-bottom: 1em;
+    margin-left: 2em;
+    background-color: rgb(23, 25, 36);
+    border: 1px solid rgb(64, 66, 78);
+    border-radius: 8px;
+    padding: 0 16px;
+}
+
+.results{
+    margin-left: 18em;
+}
+.results p{
+    margin-bottom: 1.5em;
+    margin-top: 0.7em;
+}
+
+.results input{
+    background-color: rgb(27, 28, 32);
+    height: 2em;
+    padding: 0.3em;
+    color: rgb(160,160,160);
+}
+.results input:hover{
+    cursor: pointer;
+    
+}

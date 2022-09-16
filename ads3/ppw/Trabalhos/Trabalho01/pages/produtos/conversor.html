@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../style/style.css">
+    <title>Conversor</title>
+    <link rel="stylesheet" href="../../style/style.css">
 </head>
 <body>
     <header>
         <ul class="menu">
-            <li class="topico"><a href="../index.html"><img src="../img/cmc-2.png" alt="logo CoinMarketCap"></a></li>
-            <li class="topico"><a href="../index.html">Home</a></li>
-            <li class="topico"><a href="#">Sobre</a></li>
+            <li class="topico"><a href="../../index.html"><img src="../../img/cmc-2.png" alt="logo CoinMarketCap"></a></li>
+            <li class="topico"><a href="../../index.html">Home</a></li>
+            <li class="topico"><a href="../../pages/sobre.html">Sobre</a></li>
             <li class="topico"><a href="#">Produtos</a>
                 <ul class="subMenuProdutos">
                     <li><img src="https://s2.coinmarketcap.com/static/cloud/img/menu/MenuConverterIcon.svg"><a href="produtos/conversor.html">Conversor</a></li><br>
@@ -21,12 +21,38 @@
                     <li><img src="https://s2.coinmarketcap.com/static/cloud/img/menu/MenuJobsBoardIcon.svg" alt=""><a href="https://jobs.coinmarketcap.com/" target="_blank">Quadro de Empregos <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.0002 7.99969L13.3335 2.6665M13.3335 2.6665H9.4547M13.3335 2.6665L13.3335 6.54518M6.54566 4.60614H3.85205C3.19749 4.60614 2.66687 5.13675 2.66687 5.79129V12.148C2.66687 12.8026 3.19749 13.3332 3.85205 13.3332H10.209C10.8635 13.3332 11.3941 12.8026 11.3941 12.148V9.45449" stroke="#646B80" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></a></li>
                 </ul>
             </li>
-            <li class="topico"><a href="../pages/contato.html">Contato</a></li>
+            <li class="topico"><a href="../contato.html">Contato</a></li>
          </ul>
     </header>
-    <h1>Sobre</h1>
-    <p></p>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium debitis eaque vero soluta adipisci corporis. Saepe ab ipsa recusandae deleniti porro impedit tenetur excepturi laudantium quaerat, sint praesentium soluta necessitatibus? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis voluptatum, natus sunt atque voluptates perspiciatis? Aspernatur nam et vero aperiam recusandae odit, amet natus modi est alias eos voluptas. Saepe?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur veniam soluta deleniti error! Voluptas fuga minima, ullam quidem quas non nobis cumque consequatur molestias blanditiis vel, explicabo eos, quis eius! Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt exercitationem quae sapiente aliquid voluptas, tempora dolore esse accusantium magnam a, omnis excepturi consectetur quidem cumque recusandae reprehenderit unde eaque? Debitis.</p>
+    <h2 class="tituloConversor">Calculadora conversora de criptomoeda</h2>
+    <div class="boxConversor">
+        <input type="number" placeholder="Introduzir valor para a Conversão"><br>
+        <div class="conv">
+            <select class="moedas">
+                <option>Bitcoin (BTC)</option>
+                <option>Ethereum (ETH)</option>
+                <option>Theter (USDT)</option>
+                <option>USD Coin (USDC)</option>
+                <option>BNB (BNB)</option>
+                <option>Binance USD (BUSD)</option>
+            </select>
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="16px" width="16px" viewBox="0 0 24 24" class="sc-16r8icm-0 coGWQa"><path d="M6 16H20M20 16L17 19M20 16L17 13" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path><path d="M18 8H4M4 8L7 11M4 8L7 5" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+            <select class="moedas">
+                <option>Bitcoin (BTC)</option>
+                <option>Ethereum (ETH)</option>
+                <option>Theter (USDT)</option>
+                <option>USD Coin (USDC)</option>
+                <option>BNB (BNB)</option>
+                <option>Binance USD (BUSD)</option>
+            </select>
+        </div>
+        <div class="results">
+            <p>1 Bitcoin (BTC) = <strong>19.675,95</strong> United States Dollar "$" (USD)</p>
+            <input type="button" value="Atualizar">
+            <input type="button" value="Salvar esta conversão">
+        </div>
+    </div>
 </body>
 </html>
