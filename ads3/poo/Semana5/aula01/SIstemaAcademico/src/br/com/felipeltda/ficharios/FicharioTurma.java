@@ -62,7 +62,10 @@ public class FicharioTurma {
     public void consultar(){
         System.out.println(" === Consultar TURMAS ==== ");
         Turma turma = busca();
-        System.out.println(turma != null ? turma : "Cadastro nao encontrado!!");
+        if(turma != null){
+            System.out.println(turma);
+            System.out.println(turma.getAlunos());
+        }
     }
 
     public void relatorio() {
@@ -75,18 +78,14 @@ public class FicharioTurma {
     }
 
     public void cadastrar(){
-        String nomeTurma;
-        int codigo;
         Scanner entrada = new Scanner(System.in);
 
         System.out.println(" === Cadastrar TURMA ==== ");
         System.out.print("Nome: ");
-        nomeTurma = entrada.nextLine();
-        System.out.print("Codigo: ");
-        codigo = entrada.nextInt();
+        String nomeTurma = entrada.nextLine();
 
         Turma turma;
-        turma = new Turma(nomeTurma,codigo);
+        turma = new Turma(nomeTurma);
         turmas.add(turma);
 
     }

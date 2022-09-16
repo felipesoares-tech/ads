@@ -1,12 +1,22 @@
 package br.com.felipeltda.modelos;
 
+import java.util.ArrayList;
+
 public class Turma {
+    private static int geradorCodigo;
     private int codigo;
     private String nome;
 
-    public Turma(String nome, int codigo){
+    private final ArrayList<Aluno> alunos;
+
+    public ArrayList<Aluno> getAlunos() {
+        return alunos;
+    }
+
+    public Turma(String nome){
         this.nome = nome;
-        this.codigo = codigo;
+        this.codigo = ++geradorCodigo;
+        alunos = new ArrayList<>();
     }
 
     public int getCodigo() {

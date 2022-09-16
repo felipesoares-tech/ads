@@ -8,12 +8,12 @@ import java.util.Scanner;
 public class FicharioAluno {
     private final ArrayList<Aluno> alunos;
     private final Scanner entrada;
-    private final FicharioEnturmacao ficharioEnturmacao;
+    private final OpAlunoTurmas opAlunoTurmas;
 
-    public FicharioAluno(ArrayList<Aluno> alunos,FicharioEnturmacao ficharioEnturmacao ){
+    public FicharioAluno(ArrayList<Aluno> alunos, OpAlunoTurmas opAlunoTurmas){
         this.alunos = alunos;
         entrada = new Scanner(System.in);
-        this.ficharioEnturmacao = ficharioEnturmacao;
+        this.opAlunoTurmas = opAlunoTurmas;
     }
 
     private Aluno buscaMatricula(String matricula){
@@ -73,40 +73,10 @@ public class FicharioAluno {
         return aluno;
     }
 
-    private void exibirEnturmacao(int i){
-        System.out.println("O Aluno informado encontra-se na enturmacao abaixo!!");
-        System.out.println(ficharioEnturmacao.exbirDadosEnturmacao(i));
-    }
-
     public void consultar(){
         System.out.println(" === Consultar ALUNO ==== ");
         Aluno aluno = busca();
         System.out.println(aluno != null ? aluno.exibirDados() : "Cadastro nao encontrado!!");
-    }
-    public void desvincular(){
-        System.out.println(" --==[Desvincular Aluno]==-- ");
-        System.out.println("Digite o nome do aluno: ");
-        String nomeAluno = entrada.nextLine();
-
-        if(ficharioEnturmacao.alunoExiste(nomeAluno)){
-            Aluno aluno = buscaNome(nomeAluno);
-            if(ficharioEnturmacao.alunoVinculado(aluno)){
-                int posicao = ficharioEnturmacao.buscaPosicaoAlunoEnturmacao(aluno);
-                exibirEnturmacao(posicao);
-                System.out.println("Tem certeza que deseja desvincular o aluno? (1-sim) e (2-não) ");
-                int resp = Integer.parseInt(entrada.nextLine());
-
-                if(resp == 1){
-                    ficharioEnturmacao.removerAlunoEnturmacao(aluno,posicao);
-                    System.out.println("Aluno desvinculado com sucesso!");
-                }else
-                    System.out.println("Operacao cancelada!");
-            }else
-                System.out.println("Aluno ja esta desvinculado!");
-
-        }else
-            System.out.println("Aluno inexistente!!");
-
     }
 
     public void excluir(){
@@ -122,7 +92,7 @@ public class FicharioAluno {
         }
 
         try{
-            if(ficharioEnturmacao.alunoVinculado(aluno)){
+            if(opAlunoTurmas.alunoVinculado(aluno)){
                 System.out.println("Nao foi possivel excluir o aluno em questao, pois o mesmo esta vinculado a uma turma");
             }else{
                 int resposta;
@@ -138,7 +108,6 @@ public class FicharioAluno {
         }catch (RuntimeException e){
             System.out.println(e.getMessage());
         }
-
     }
 
     public void cadastrar(){
