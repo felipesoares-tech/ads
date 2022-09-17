@@ -86,8 +86,11 @@ public class FicharioTurma {
 
         Turma turma;
         turma = new Turma(nomeTurma);
-        turmas.add(turma);
-
+        if(!turmas.contains(turma)){
+            turmas.add(turma);
+            return;
+        }
+        System.out.println("Turma ja cadastrado!");
     }
     public void excluir(){
         Turma turma;

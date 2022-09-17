@@ -1,6 +1,7 @@
 package br.com.felipeltda.modelos;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Turma {
     private static int geradorCodigo;
@@ -8,6 +9,18 @@ public class Turma {
     private String nome;
 
     private final ArrayList<Aluno> alunos;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Turma turma)) return false;
+        return getNome().equals(turma.getNome());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getNome());
+    }
 
     public ArrayList<Aluno> getAlunos() {
         return alunos;
