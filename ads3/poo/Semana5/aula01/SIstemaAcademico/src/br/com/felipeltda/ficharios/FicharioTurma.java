@@ -15,27 +15,24 @@ public class FicharioTurma {
     }
 
     private Turma busca(){
-        short opcao;
         Turma turma = null;
-        String nome;
-        int codigo;
-        Scanner entrada = new Scanner(System.in);
 
         System.out.println("[1] - Por Nome");
         System.out.println("[2] - Por Codigo");
-        opcao = entrada.nextShort();
+        short opcao = entrada.nextShort();
         entrada.skip("\n");
 
         switch (opcao) {
             case 1 -> {
                 System.out.println("Nome: ");
-                nome = entrada.nextLine();
+                String nome = entrada.nextLine();
                 turma = buscaNome(nome);
             }
             case 2 -> {
                 System.out.println("Codigo: ");
-                codigo = entrada.nextShort();
+                int codigo = entrada.nextShort();
                 turma = buscaCodigo(codigo);
+                entrada.skip("\n");
             }
             default -> System.out.println("Opcao invalida!!");
         }
@@ -61,6 +58,8 @@ public class FicharioTurma {
     }
     public void consultar(){
         System.out.println(" === Consultar TURMAS ==== ");
+        System.out.println("===Turmas Cadastradas===");
+        System.out.println(turmas);
         Turma turma = busca();
         if(turma != null){
             System.out.println(turma);
@@ -77,29 +76,33 @@ public class FicharioTurma {
         }
     }
 
-    public void cadastrar(){
-        Scanner entrada = new Scanner(System.in);
+    private boolean nomeUtilizado(String nomeTurma){
+        for (Turma turma : turmas) {
+            if (Objects.equals(turma.getNome(), nomeTurma))
+                return true;
+        }
+        return false;
+    }
 
+    public void cadastrar(){
         System.out.println(" === Cadastrar TURMA ==== ");
         System.out.print("Nome: ");
         String nomeTurma = entrada.nextLine();
 
-        Turma turma;
-        turma = new Turma(nomeTurma);
+        Turma turma = new Turma(nomeTurma);
         if(!turmas.contains(turma)){
             turmas.add(turma);
-            return;
+        }else{
+            turma.decrementoGeradorCodigo();
+            System.out.println("Turma ja cadastrado!");
         }
-        System.out.println("Turma ja cadastrado!");
+
     }
     public void excluir(){
-        Turma turma;
-        String nome;
+        System.out.println(" === Excluir TURMAS ==== ");
+        System.out.println("===Turmas Cadastradas===");
         System.out.println(turmas);
-        System.out.println("Informe o nome da turma que deseja excluir: ");
-        nome = entrada.nextLine();
-
-        turma = buscaNome(nome);
+        Turma turma = busca();
 
         if(turma != null){
             int resposta;
@@ -108,6 +111,7 @@ public class FicharioTurma {
             if(resposta == 1){
                 turmas.remove(turma);
                 System.out.println("Exclusão efetuada com sucesso!");
+                entrada.skip("\n");
                 return;
             }
             System.out.println("Exclusão não efetuada.");
@@ -117,35 +121,21 @@ public class FicharioTurma {
 
     public void alterar(){
         System.out.println(" === Alterar TURMAS ==== ");
-
-        short opcao;
-        String dado;
-        int codigo;
+        System.out.println("===Turmas Cadastradas===");
+        System.out.println(turmas);
         Turma turma = busca();
-
         if(turma != null){
             System.out.println(turma);
-            System.out.println("Escolha o item a editar!");
-            System.out.println("[1] - Código");
-            System.out.println("[2] - Nome");
+            System.out.println("Informe um novo nome para a turma: ");
+            String novoNomeTurma = entrada.nextLine();
 
-            opcao = entrada.nextShort();
-            entrada.skip("\n");
-
-            switch (opcao) {
-                case 1 -> {
-                    System.out.print("Codigo: ");
-                    codigo = entrada.nextInt();
-                    turma.setCodigo(codigo);
-                }
-                case 2 -> {
-                    System.out.print("Nome: ");
-                    dado = entrada.nextLine();
-                    turma.setNome(dado);
-                }
+            if(!nomeUtilizado(novoNomeTurma)){
+                turma.setNome(novoNomeTurma);
+                System.out.println("Nome alterado com sucesso!!");
+                return;
             }
+            System.out.println("O Nome informado já está sendo utilizado!");
         }else
-            System.out.println("Cadastro nao encontrado!!");
-
+            System.out.println("Turma nao encontrada!!");
     }
 }

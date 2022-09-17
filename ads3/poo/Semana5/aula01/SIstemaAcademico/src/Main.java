@@ -5,20 +5,20 @@ import br.com.felipeltda.modelos.*;
 
 public class Main {
     public static int menu(int operacaoGeral){
-        String[] vet = {"Aluno","Professor","Turma","Enturmacao"};
+        String[] tipos = {"Aluno","Professor","Turma","Enturmacao"};
         Scanner entrada = new Scanner(System.in);
 
         if(operacaoGeral != 4){
-            System.out.println("==="+vet[operacaoGeral-1].toUpperCase()+"===");
-            System.out.println("1 - Cadastrar "+vet[operacaoGeral-1]);
-            System.out.println("2 - Alterar "+vet[operacaoGeral-1]);
-            System.out.println("3 - Excluir "+vet[operacaoGeral-1]);
-            System.out.println("4 - Consultar "+vet[operacaoGeral-1]);
-            System.out.println("5 - Relatório "+vet[operacaoGeral-1]);
+            System.out.println("==="+tipos[operacaoGeral-1].toUpperCase()+"===");
+            System.out.println("1 - Cadastrar "+tipos[operacaoGeral-1]);
+            System.out.println("2 - Alterar "+tipos[operacaoGeral-1]);
+            System.out.println("3 - Excluir "+tipos[operacaoGeral-1]);
+            System.out.println("4 - Consultar "+tipos[operacaoGeral-1]);
+            System.out.println("5 - Relatório "+tipos[operacaoGeral-1]);
             System.out.println("0 - Voltar ao menu principal");
             System.out.println("Opção: ");
         }else{
-            System.out.println("==="+vet[operacaoGeral-1].toUpperCase()+"===");
+            System.out.println("==="+tipos[operacaoGeral-1].toUpperCase()+"===");
             System.out.println("1 - Vincular Aluno");
             System.out.println("2 - Desvincular Aluno");
             System.out.println("3 - Alterar Vinculo");

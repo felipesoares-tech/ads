@@ -5,10 +5,14 @@ import java.util.Objects;
 
 public class Turma {
     private static int geradorCodigo;
-    private int codigo;
+    private final int codigo;
     private String nome;
 
     private final ArrayList<Aluno> alunos;
+
+    public void decrementoGeradorCodigo() {
+        geradorCodigo -= 1;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -36,10 +40,6 @@ public class Turma {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-
     public String getNome() {
         return nome;
     }
@@ -47,7 +47,6 @@ public class Turma {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
 
     @Override
     public String toString() {
