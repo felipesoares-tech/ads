@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
 
-
 public class FicharioProfessor {
     private final ArrayList<Professor> professores;
     private final Scanner entrada;
@@ -39,33 +38,43 @@ public class FicharioProfessor {
         }
         return null;
     }
+
+    private Professor buscaProfessor(String valor, int opcao){
+        Professor professor=null;
+        switch (opcao) {
+            case 1 -> professor = buscaNome(valor);
+            case 2 -> professor = buscaCpf(valor);
+            default -> System.out.println("Opcao invalida");
+        }
+        return professor;
+    }
+    private Professor buscaProfessor(int valor){
+        return buscaRegistro(valor);
+    }
     private Professor busca(){
-        short opcao;
-        int registro;
-        Professor professor =  null;
-        String dado;
         System.out.println("===TIPO DE BUSCA===");
         System.out.println("[1] - Por Nome");
         System.out.println("[2] - Por Cpf");
         System.out.println("[3] - Por Registro");
-        opcao = entrada.nextShort();
+        short opcao = entrada.nextShort();
         entrada.skip("\n");
 
+        Professor professor =  null;
         switch (opcao) {
             case 1 -> {
                 System.out.println("Nome: ");
-                dado = entrada.nextLine();
-                professor = buscaNome(dado);
+                String nomeProfessor = entrada.nextLine();
+                professor = buscaProfessor(nomeProfessor,opcao);
             }
             case 2 -> {
                 System.out.println("Cpf: ");
-                dado = entrada.nextLine();
-                professor = buscaCpf(dado);
+                String cpf = entrada.nextLine();
+                professor = buscaProfessor(cpf,opcao);
             }
             case 3 -> {
                 System.out.println("Registro: ");
-                registro = entrada.nextInt();
-                professor = buscaRegistro(registro);
+                int registro = entrada.nextInt();
+                professor = buscaProfessor(registro);
             }
             default -> System.out.println("Opcao invalida!!");
         }
@@ -74,64 +83,48 @@ public class FicharioProfessor {
     }
 
     public void cadastrar(){
-        String nome, telefone, cpf,email;
-        int registro;
-
         System.out.println(" === Cadastrar PROFESSOR ==== ");
         System.out.print("Nome: ");
-        nome = entrada.nextLine();
-
-        try{
-            System.out.print("Registro: ");
-            registro = entrada.nextInt();
-            entrada.skip("\n");
-        }catch (Exception e){
-            throw new RuntimeException("Registro invalido!");
-        }
+        String nome = entrada.nextLine();
+        System.out.print("Registro: ");
+        int registro = entrada.nextInt();
+        entrada.skip("\n");
         System.out.print("Telefone: ");
-        telefone = entrada.nextLine();
+        String telefone = entrada.nextLine();
         System.out.print("CPF: ");
-        cpf = entrada.nextLine();
+        String cpf = entrada.nextLine();
         System.out.print("E-mail: ");
-        email = entrada.nextLine();
+        String email = entrada.nextLine();
 
-        Professor professor;
-        professor = new Professor(nome,telefone,registro,cpf,email);
+        Professor professor = new Professor(nome,telefone,registro,cpf,email);
         if(!professores.contains(professor)){
             professores.add(professor);
             return;
         }
         System.out.println("Professor ja cadastrado!");
-
     }
 
     public void consultar(){
         System.out.println(" === Consultar PROFESSOR ==== ");
+        System.out.println("===Professores Cadastrados===");
+        System.out.println(professores);
         Professor professor = busca();
-        System.out.println(professor != null ? professor : "Cadastro nao encontrado!!");
+        System.out.println(professor != null ? professor.exibirDados() : "Cadastro nao encontrado!!");
     }
 
     public void relatorio() {
         System.out.println("[Relatório de PROFESSORES]");
-        for (Professor professor : professores) {
-            if (professor != null) {
-                System.out.println(professor);
-            }
-        }
+        System.out.println(professores);
     }
     public void excluir(){
-        Professor professor;
-        String nome;
+        System.out.println("===Professores Cadastrados===");
         System.out.println(professores);
-        System.out.println("Informe o nome do professor que deseja excluir: ");
-        nome = entrada.nextLine();
-
-        professor = buscaNome(nome);
+        Professor professor = busca();
 
         if(professor != null){
-            int resposta;
             System.out.println("Confirma a exclusão? (1-sim) e (2-não) ");
-            resposta = entrada.nextInt();
+            int resposta = entrada.nextInt();
+            entrada.skip("\n");
             if(resposta == 1){
                 professores.remove(professor);
                 System.out.println("Exclusão efetuada com sucesso!");
@@ -143,12 +136,10 @@ public class FicharioProfessor {
     }
     public void alterar(){
         System.out.println(" === Alterar PROFESSOR ==== ");
+        System.out.println("===Professores Cadastrados===");
+        System.out.println(professores);
 
-        short opcao;
-        String dado;
-        int registro;
         Professor professor = busca();
-
         if(professor != null){
             System.out.println(professor);
             System.out.println("Escolha o item a editar!");
@@ -157,38 +148,37 @@ public class FicharioProfessor {
             System.out.println("[3] - Cpf");
             System.out.println("[4] - Telefone");
             System.out.println("[5] - E-mail");
-            opcao = entrada.nextShort();
+            short opcao = entrada.nextShort();
             entrada.skip("\n");
 
             switch (opcao) {
                 case 1 -> {
                     System.out.print("Registro: ");
-                    registro = entrada.nextInt();
+                    int registro = entrada.nextInt();
                     professor.setRegistro(registro);
                 }
                 case 2 -> {
                     System.out.print("Nome: ");
-                    dado = entrada.nextLine();
-                    professor.setNome(dado);
+                    String nomeProfessor = entrada.nextLine();
+                    professor.setNome(nomeProfessor);
                 }
                 case 3 -> {
                     System.out.print("Cpf: ");
-                    dado = entrada.nextLine();
-                    professor.setCpf(dado);
+                    String cpf = entrada.nextLine();
+                    professor.setCpf(cpf);
                 }
                 case 4 -> {
                     System.out.print("Telefone: ");
-                    dado = entrada.nextLine();
-                    professor.setTelefone(dado);
+                    String telefone = entrada.nextLine();
+                    professor.setTelefone(telefone);
                 }
                 case 5 -> {
                     System.out.print("E-mail: ");
-                    dado = entrada.nextLine();
-                    professor.setEmail(dado);
+                    String email = entrada.nextLine();
+                    professor.setEmail(email);
                 }
             }
         }else
             System.out.println("Cadastro nao encontrado!!");
-
     }
 }

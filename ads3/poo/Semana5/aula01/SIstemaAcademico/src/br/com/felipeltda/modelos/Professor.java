@@ -16,6 +16,10 @@ public class Professor extends Pessoa{
         return registro;
     }
 
+    public String exibirDados(){
+        return "nome="+nome+" cpf="+cpf+" telefone="+telefone+" email="+email+" registro="+registro;
+    }
+
     public void setRegistro(int registro) {
         this.registro = registro;
     }
@@ -34,12 +38,6 @@ public class Professor extends Pessoa{
 
     @Override
     public String toString() {
-        return "Professor{" +
-                "registro=" + registro +
-                ", nome='" + nome + '\'' +
-                ", cpf='" + cpf + '\'' +
-                ", telefone='" + telefone + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return nome;
     }
 }
