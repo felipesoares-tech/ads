@@ -5,25 +5,18 @@ import br.com.felipeltda.modelos.*;
 
 public class Main {
     public static int menu(int operacaoGeral){
-        String[] tipos = {"Aluno","Professor","Turma","Enturmacao"};
+        String[] tipos = {"Aluno","Professor","Turma"};
         Scanner entrada = new Scanner(System.in);
 
-        if(operacaoGeral != 4){
-            System.out.println("==="+tipos[operacaoGeral-1].toUpperCase()+"===");
-            System.out.println("1 - Cadastrar "+tipos[operacaoGeral-1]);
-            System.out.println("2 - Alterar "+tipos[operacaoGeral-1]);
-            System.out.println("3 - Excluir "+tipos[operacaoGeral-1]);
-            System.out.println("4 - Consultar "+tipos[operacaoGeral-1]);
-            System.out.println("5 - Relatório "+tipos[operacaoGeral-1]);
-            System.out.println("0 - Voltar ao menu principal");
-            System.out.println("Opção: ");
-        }else{
-            System.out.println("==="+tipos[operacaoGeral-1].toUpperCase()+"===");
-            System.out.println("1 - Vincular Aluno");
-            System.out.println("2 - Desvincular Aluno");
-            System.out.println("3 - Alterar Vinculo");
-            System.out.println("0 - Voltar ao menu principal");
-        }
+        System.out.println("==="+tipos[operacaoGeral-1].toUpperCase()+"===");
+        System.out.println("1 - Cadastrar "+tipos[operacaoGeral-1]);
+        System.out.println("2 - Alterar "+tipos[operacaoGeral-1]);
+        System.out.println("3 - Excluir "+tipos[operacaoGeral-1]);
+        System.out.println("4 - Consultar "+tipos[operacaoGeral-1]);
+        System.out.println("5 - Relatório "+tipos[operacaoGeral-1]);
+        System.out.println("0 - Voltar ao menu principal");
+        System.out.println("Opção: ");
+
         return entrada.nextInt();
     }
 
@@ -93,7 +86,12 @@ public class Main {
                 }
                 case 4 ->{
                     do{
-                        operacao = menu(opcao);
+                        System.out.println("===Enturmação===");
+                        System.out.println("1 - Vincular Aluno");
+                        System.out.println("2 - Desvincular Aluno");
+                        System.out.println("3 - Alterar Vinculo");
+                        System.out.println("0 - Voltar ao menu principal");
+                        operacao = entrada.nextInt();
                         switch (operacao){
                             case 1 -> opAlunoTurmas.vincular();
                             case 2 -> opAlunoTurmas.desvincular();

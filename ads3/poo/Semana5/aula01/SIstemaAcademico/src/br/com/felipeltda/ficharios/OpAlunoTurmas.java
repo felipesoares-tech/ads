@@ -25,7 +25,7 @@ public class OpAlunoTurmas {
         return null;
     }
 
-    private Turma buscaAlunoTurma(Aluno aluno) {
+    private Turma buscaTurmaDoAluno(Aluno aluno) {
         for (Turma turma : turmas) {
             if (turma.getAlunos().contains(aluno))
                 return turma;
@@ -49,12 +49,13 @@ public class OpAlunoTurmas {
         }
         return false;
     }
-    protected boolean alunoExiste(Aluno aluno) {
-        return alunos.contains(aluno);
+
+    private boolean alunoVinculado(Turma turma, Aluno aluno) {
+        return turma.getAlunos().contains(aluno);
     }
 
-    private boolean alunoEnturmado(Turma turma, Aluno aluno) {
-        return turma.getAlunos().contains(aluno);
+    protected boolean alunoExiste(Aluno aluno) {
+        return alunos.contains(aluno);
     }
 
     public void vincular() {
@@ -83,17 +84,18 @@ public class OpAlunoTurmas {
 
     public void desvincular() {
         System.out.println(" --==[Desvincular Aluno]==-- ");
+
         System.out.println("Digite o nome do aluno: ");
         String nomeAluno = entrada.nextLine();
-
         Aluno aluno = buscaNomeAluno(nomeAluno);
 
         if (alunoExiste(aluno)) {
             if (alunoVinculado(aluno)) {
-                Turma turmaAluno = buscaAlunoTurma(aluno);
+                Turma turmaAluno = buscaTurmaDoAluno(aluno);
                 System.out.println("Tem certeza que deseja desvincular o aluno? (1-sim) e (2-não) ");
                 int resp = Integer.parseInt(entrada.nextLine());
-                if (resp == 1 && turmaAluno != null) {
+                if (resp == 1) {
+                    assert turmaAluno != null;
                     turmaAluno.getAlunos().remove(aluno);
                     System.out.println("Aluno desvinculado com sucesso!");
                 } else
@@ -119,7 +121,7 @@ public class OpAlunoTurmas {
             Aluno aluno = buscaNomeAluno(nomeAluno);
 
             if (aluno != null) {
-                if (alunoEnturmado(turma, aluno)) {
+                if (alunoVinculado(turma, aluno)) {
                     System.out.println("Informe o nome do novo aluno: ");
                     String nomeNovoAluno = entrada.nextLine();
                     Aluno novoAluno = buscaNomeAluno(nomeNovoAluno);
@@ -133,13 +135,10 @@ public class OpAlunoTurmas {
 
                     } else
                         System.out.println("Aluno inexistente!");
-
-
                 } else
                     System.out.println("Aluno nao pertence a esta turma");
             } else
                 System.out.println("Aluno inexistente!");
         }
-
     }
 }
