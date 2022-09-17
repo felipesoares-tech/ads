@@ -15,7 +15,6 @@ public class FicharioAluno {
         entrada = new Scanner(System.in);
         this.opAlunoTurmas = opAlunoTurmas;
     }
-
     private Aluno buscaMatricula(String matricula){
         for (Aluno aluno : alunos) {
             if ((aluno != null) && (Objects.equals(aluno.getMatricula(), matricula))) {
@@ -40,33 +39,30 @@ public class FicharioAluno {
         }
         return null;
     }
-
     private Aluno busca(){
-        short opcao;
-        Aluno aluno =  null;
-        String dado;
         System.out.println("===TIPO DE BUSCA===");
         System.out.println("[1] - Por Nome");
         System.out.println("[2] - Por Cpf");
         System.out.println("[3] - Por Matricula");
-        opcao = entrada.nextShort();
+        short opcao = entrada.nextShort();
         entrada.skip("\n");
 
+        Aluno aluno =  null;
         switch (opcao) {
             case 1 -> {
                 System.out.print("Nome: ");
-                dado = entrada.nextLine();
-                aluno = buscaNome(dado);
+                String nomeAluno = entrada.nextLine();
+                aluno = buscaNome(nomeAluno);
             }
             case 2 -> {
                 System.out.print("Cpf: ");
-                dado = entrada.nextLine();
-                aluno = buscaCpf(dado);
+                String cpf = entrada.nextLine();
+                aluno = buscaCpf(cpf);
             }
             case 3 -> {
                 System.out.print("Matricula: ");
-                dado = entrada.nextLine();
-                aluno = buscaMatricula(dado);
+                String numeroMatricula = entrada.nextLine();
+                aluno = buscaMatricula(numeroMatricula);
             }
             default -> System.out.println("Opcao invalida!!");
         }
@@ -75,29 +71,27 @@ public class FicharioAluno {
 
     public void consultar(){
         System.out.println(" === Consultar ALUNO ==== ");
+        System.out.println("===Alunos Cadastrados===");
+        System.out.println(alunos);
         Aluno aluno = busca();
         System.out.println(aluno != null ? aluno.exibirDados() : "Cadastro nao encontrado!!");
     }
 
     public void excluir(){
-        Aluno aluno;
-        String nome;
+        System.out.println("===Alunos Cadastrados===");
         System.out.println(alunos);
-        System.out.println("Informe o nome do aluno que deseja excluir: ");
-        nome = entrada.nextLine();
-        aluno = buscaNome(nome);
+        Aluno aluno = busca();
 
-        if(aluno == null){
+        if(aluno == null)
             throw new RuntimeException("Aluno inexistente!");
-        }
 
         try{
-            if(opAlunoTurmas.alunoVinculado(aluno)){
+            if(opAlunoTurmas.alunoVinculado(aluno))
                 System.out.println("Nao foi possivel excluir o aluno em questao, pois o mesmo esta vinculado a uma turma");
-            }else{
-                int resposta;
+            else{
                 System.out.println("Confirma a exclusão? (1-sim) e (2-não) ");
-                resposta = Integer.parseInt(entrada.nextLine());
+                int resposta = entrada.nextInt();
+                entrada.skip("\n");
                 if(resposta == 1){
                     alunos.remove(aluno);
                     System.out.println("Exclusão efetuada com sucesso!");
@@ -111,37 +105,33 @@ public class FicharioAluno {
     }
 
     public void cadastrar(){
-        String nome, telefone, matricula, cpf,email;
-
         System.out.println(" === Cadastrar ALUNO ==== ");
         System.out.print("Nome: ");
-        nome = entrada.nextLine();
+        String nome = entrada.nextLine();
         System.out.print("Matrícula: ");
-        matricula = entrada.nextLine();
+        String matricula = entrada.nextLine();
         System.out.print("Telefone: ");
-        telefone = entrada.nextLine();
+        String telefone = entrada.nextLine();
         System.out.print("CPF: ");
-        cpf = entrada.nextLine();
+        String cpf = entrada.nextLine();
         System.out.print("E-mail: ");
-        email = entrada.nextLine();
+        String email = entrada.nextLine();
 
-        Aluno aluno;
-        aluno = new Aluno(nome,telefone,matricula,cpf,email);
+        Aluno aluno = new Aluno(nome,telefone,matricula,cpf,email);
+
         if(!alunos.contains(aluno)){
             alunos.add(aluno);
             return;
         }
         System.out.println("Aluno ja cadastrado!");
-
     }
 
     public void alterar(){
         System.out.println(" === Alterar ALUNO ==== ");
+        System.out.println("===Alunos Cadastrados===");
+        System.out.println(alunos);
 
-        short opcao;
-        String dado;
         Aluno aluno = busca();
-
         if(aluno != null){
             System.out.println(aluno.exibirDados());
             System.out.println("Escolha o item a editar!");
@@ -150,39 +140,38 @@ public class FicharioAluno {
             System.out.println("[3] - Cpf");
             System.out.println("[4] - Telefone");
             System.out.println("[5] - E-mail");
-            opcao = entrada.nextShort();
+            short opcao = entrada.nextShort();
             entrada.skip("\n");
 
             switch (opcao) {
                 case 1 -> {
                     System.out.print("Matrícula: ");
-                    dado = entrada.nextLine();
-                    aluno.setMatricula(dado);
+                    String numeroMatricula = entrada.nextLine();
+                    aluno.setMatricula(numeroMatricula);
                 }
                 case 2 -> {
                     System.out.print("Nome: ");
-                    dado = entrada.nextLine();
-                    aluno.setNome(dado);
+                    String nomeAluno = entrada.nextLine();
+                    aluno.setNome(nomeAluno);
                 }
                 case 3 -> {
                     System.out.print("Cpf: ");
-                    dado = entrada.nextLine();
-                    aluno.setCpf(dado);
+                    String numeroCpf = entrada.nextLine();
+                    aluno.setCpf(numeroCpf);
                 }
                 case 4 -> {
                     System.out.print("Telefone: ");
-                    dado = entrada.nextLine();
-                    aluno.setTelefone(dado);
+                    String numeroTelefone = entrada.nextLine();
+                    aluno.setTelefone(numeroTelefone);
                 }
                 case 5 -> {
                     System.out.print("E-mail: ");
-                    dado = entrada.nextLine();
-                    aluno.setEmail(dado);
+                    String email = entrada.nextLine();
+                    aluno.setEmail(email);
                 }
             }
         }else
             System.out.println("Cadastro nao encontrado!!");
-
     }
     public void relatorio() {
         System.out.println("[Relatório de ALUNOS]");

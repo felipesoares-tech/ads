@@ -7,7 +7,6 @@ public class Turma {
     private static int geradorCodigo;
     private final int codigo;
     private String nome;
-
     private final ArrayList<Aluno> alunos;
 
     public void decrementoGeradorCodigo() {
