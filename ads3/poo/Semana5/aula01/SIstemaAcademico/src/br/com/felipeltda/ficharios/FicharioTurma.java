@@ -96,8 +96,12 @@ public class FicharioTurma {
             turma.decrementoGeradorCodigo();
             System.out.println("Turma ja cadastrado!");
         }
-
     }
+
+    private boolean possuiAluno(Turma turma){
+        return turma.getAlunos().size() > 0;
+    }
+
     public void excluir(){
         System.out.println(" === Excluir TURMAS ==== ");
         System.out.println("===Turmas Cadastradas===");
@@ -105,16 +109,18 @@ public class FicharioTurma {
         Turma turma = busca();
 
         if(turma != null){
-            int resposta;
-            System.out.println("Confirma a exclusão? (1-sim) e (2-não) ");
-            resposta = entrada.nextInt();
-            if(resposta == 1){
-                turmas.remove(turma);
-                System.out.println("Exclusão efetuada com sucesso!");
-                entrada.skip("\n");
-                return;
-            }
-            System.out.println("Exclusão não efetuada.");
+            if(!possuiAluno(turma)){
+                System.out.println("Confirma a exclusão? (1-sim) e (2-não) ");
+                int resposta = entrada.nextInt();
+                if(resposta == 1){
+                    turmas.remove(turma);
+                    System.out.println("Exclusão efetuada com sucesso!");
+                    entrada.skip("\n");
+                    return;
+                }
+                System.out.println("Exclusão não efetuada.");
+            }else
+                System.out.println("A Turma informada possui alunos, nao foi possivel excluir!");
         }else
             System.out.println("Turma inexistente!");
     }
@@ -123,6 +129,7 @@ public class FicharioTurma {
         System.out.println(" === Alterar TURMAS ==== ");
         System.out.println("===Turmas Cadastradas===");
         System.out.println(turmas);
+
         Turma turma = busca();
         if(turma != null){
             System.out.println(turma);
