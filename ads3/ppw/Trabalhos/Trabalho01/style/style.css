@@ -155,11 +155,23 @@ form input[type="text"],[type="email"],textarea{
     margin-bottom: 0.5em;
     border-radius: 0.7em;
     padding: 1em;
-    border: 0;
+    border: 1px solid rgba(176, 177, 182, 0.281);
 }
 form input[type="text"],[type="email"],textarea:focus{
     outline: 0;
 }
+
+form input[type="text"]:hover,[type="email"]:hover, textarea:hover{
+    border: 1px solid rgb(24, 73, 250);
+}
+
+form input[type="text"]:focus,[type="email"]:focus, textarea:focus{
+    border: 1px solid rgb(24, 73, 250);
+    outline: 2px solid rgba(13, 56, 211, 0.336);
+}
+
+
+
 form input[type="text"],[type="email"]{
     height: 2.5em;
 }
@@ -173,7 +185,7 @@ input[type="submit"]{
 }
 input[type="submit"]:hover{
     cursor: pointer;
-    background-color: rgb(24, 73, 250);
+    background-color: rgb(10, 55, 218);
 }
 
 form{
