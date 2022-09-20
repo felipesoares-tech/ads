@@ -104,6 +104,17 @@ section{
     width: 100em;
     margin: 0 auto;
     margin-top: 7em;
+    margin-bottom: 2em;
+}
+
+.sobre{
+    border: 1px solid #fff;
+    border-radius: 2em;
+    padding: 2em;
+    width: 100em;
+    margin: 0 auto;
+    margin-top: 2em;
+
 }
 
 .imagens{
@@ -171,7 +182,7 @@ form{
     width: 20em;
     height: 26em;
     margin: 0 auto;
-    margin-top: 4em;
+    margin-top: 1.6em;
     border-radius: 1.5em;
     border: 1px solid #fff;
 }
@@ -254,6 +265,7 @@ form div{
     height: 2em;
     padding: 0.3em;
     color: rgb(160,160,160);
+    border: 0;
 }
 .results input:hover{
     cursor: pointer;
