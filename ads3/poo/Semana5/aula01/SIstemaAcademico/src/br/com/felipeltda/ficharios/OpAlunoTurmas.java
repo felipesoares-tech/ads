@@ -139,6 +139,7 @@ public class OpAlunoTurmas {
                     System.out.println("Aluno nao pertence a esta turma");
             } else
                 System.out.println("Aluno inexistente!");
-        }
+        }else
+            System.out.println("Turma inexistente");
     }
 }

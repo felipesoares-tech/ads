@@ -89,9 +89,8 @@ public class FicharioProfessor {
         String nome = entrada.nextLine();
         try {
             System.out.print("Registro: ");
-            registro = entrada.nextInt();
-            entrada.skip("\n");
-        }catch (Exception e){
+            registro = Integer.parseInt(entrada.nextLine());
+        }catch (NumberFormatException e){
             System.out.println("O Valor informado precisa ser inteiro!");
         }
         System.out.print("Telefone: ");
@@ -136,7 +135,7 @@ public class FicharioProfessor {
                 return;
             }
             System.out.println("Exclusão não efetuada.");
-        }catch (RuntimeException e){
+        }catch (NullPointerException e){
             System.out.println("Professor inexistente");
         }
 

@@ -82,9 +82,6 @@ public class FicharioAluno {
         System.out.println(alunos);
         Aluno aluno = busca();
 
-        if(aluno == null)
-            throw new RuntimeException("Aluno inexistente!");
-
         try{
             if(opAlunoTurmas.alunoVinculado(aluno))
                 System.out.println("Nao foi possivel excluir o aluno em questao, pois o mesmo esta vinculado a uma turma");
@@ -99,8 +96,8 @@ public class FicharioAluno {
                 }
                 System.out.println("Exclusão não efetuada.");
             }
-        }catch (RuntimeException e){
-            System.out.println(e.getMessage());
+        }catch (NullPointerException e){
+            System.out.println("Aluno inexistente!!");
         }
     }
 
