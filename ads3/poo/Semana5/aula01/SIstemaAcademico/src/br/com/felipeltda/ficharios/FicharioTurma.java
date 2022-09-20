@@ -108,7 +108,10 @@ public class FicharioTurma {
         System.out.println(turmas);
         Turma turma = busca();
 
-        if(turma != null){
+        if(turma == null)
+            throw new RuntimeException("Turma inexistente!");
+
+        try{
             if(!possuiAluno(turma)){
                 System.out.println("Confirma a exclusão? (1-sim) e (2-não) ");
                 int resposta = entrada.nextInt();
@@ -121,8 +124,10 @@ public class FicharioTurma {
                 System.out.println("Exclusão não efetuada.");
             }else
                 System.out.println("A Turma informada possui alunos, nao foi possivel excluir!");
-        }else
-            System.out.println("Turma inexistente!");
+        }catch (RuntimeException e){
+            System.out.println(e.getMessage());
+        }
+
     }
 
     public void alterar(){

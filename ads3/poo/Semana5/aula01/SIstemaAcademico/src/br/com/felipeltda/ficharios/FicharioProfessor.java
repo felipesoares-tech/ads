@@ -83,12 +83,17 @@ public class FicharioProfessor {
     }
 
     public void cadastrar(){
+        int registro=0;
         System.out.println(" === Cadastrar PROFESSOR ==== ");
         System.out.print("Nome: ");
         String nome = entrada.nextLine();
-        System.out.print("Registro: ");
-        int registro = entrada.nextInt();
-        entrada.skip("\n");
+        try {
+            System.out.print("Registro: ");
+            registro = entrada.nextInt();
+            entrada.skip("\n");
+        }catch (Exception e){
+            System.out.println("O Valor informado precisa ser inteiro!");
+        }
         System.out.print("Telefone: ");
         String telefone = entrada.nextLine();
         System.out.print("CPF: ");
@@ -121,7 +126,7 @@ public class FicharioProfessor {
         System.out.println(professores);
         Professor professor = busca();
 
-        if(professor != null){
+        try{
             System.out.println("Confirma a exclusão? (1-sim) e (2-não) ");
             int resposta = entrada.nextInt();
             entrada.skip("\n");
@@ -131,8 +136,10 @@ public class FicharioProfessor {
                 return;
             }
             System.out.println("Exclusão não efetuada.");
-        }else
-            System.out.println("Professor inexistente!");
+        }catch (RuntimeException e){
+            System.out.println("Professor inexistente");
+        }
+
     }
     public void alterar(){
         System.out.println(" === Alterar PROFESSOR ==== ");
