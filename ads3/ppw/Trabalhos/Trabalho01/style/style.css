@@ -119,13 +119,14 @@ section{
 
 .imagens{
     width: 80em;
-    height: 20em;
     margin: 0 auto;
     padding-top: 4em;
+    text-align: center;
 }
-.imagens svg{
+.imagens img{
     padding-left: 0.7em;
-    height: 15em;
+    height: 10em;
+    margin-left: 1em;
 }
 
 .imagens a{
@@ -134,7 +135,7 @@ section{
     text-decoration: none;
 }
 
-.imagens p{
+.imagens a p{
     text-align: center;
 }
 
