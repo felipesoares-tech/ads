@@ -18,7 +18,7 @@ public class FicharioTurma {
         Turma turma = null;
 
         System.out.println("[1] - Por Nome");
-        System.out.println("[2] - Por Código");
+        System.out.println("[2] - Por Codigo");
         short opcao = entrada.nextShort();
         entrada.skip("\n");
 
