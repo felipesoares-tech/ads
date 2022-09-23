@@ -1,6 +1,9 @@
 package br.com.felipeltda.ficharios;
 import br.com.felipeltda.modelos.Professor;
 
+import java.time.DateTimeException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
@@ -100,7 +103,20 @@ public class FicharioProfessor {
         System.out.print("E-mail: ");
         String email = entrada.nextLine();
 
-        Professor professor = new Professor(nome,telefone,registro,cpf,email);
+        System.out.print("Informe a data de nascimento (dd/mm/yy): ");
+        String dataNascimento = entrada.nextLine();
+
+        DateTimeFormatter formatador;
+        LocalDate data=LocalDate.now();
+
+        try{
+            formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            data = LocalDate.parse(dataNascimento, formatador);
+        }catch (DateTimeException e){
+            System.out.println("Data no formato invalido");
+        }
+
+        Professor professor = new Professor(nome,telefone,registro,cpf,email,data);
         if(!professores.contains(professor)){
             professores.add(professor);
             return;

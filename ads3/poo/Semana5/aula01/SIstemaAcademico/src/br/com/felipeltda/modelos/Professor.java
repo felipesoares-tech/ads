@@ -1,15 +1,18 @@
 package br.com.felipeltda.modelos;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public class Professor extends Pessoa{
 
     private int registro;
-    public Professor(String nome, String telefone, int registro, String cpf, String email){
+    public Professor(String nome, String telefone, int registro, String cpf, String email, LocalDate dataNascimento){
         this.nome = nome;
         this.telefone = telefone;
         this.registro = registro;
         this.cpf = cpf;
         this.email = email;
+        this.dataNascimento = dataNascimento;
 
     }
     public int getRegistro() {
@@ -17,7 +20,8 @@ public class Professor extends Pessoa{
     }
 
     public String exibirDados(){
-        return "nome="+nome+" cpf="+cpf+" telefone="+telefone+" email="+email+" registro="+registro;
+        DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        return "nome="+nome+" cpf="+cpf+" telefone="+telefone+" email="+email+" registro="+registro+" data de nascimento="+dataNascimento.format(formatador);
     }
 
     public void setRegistro(int registro) {

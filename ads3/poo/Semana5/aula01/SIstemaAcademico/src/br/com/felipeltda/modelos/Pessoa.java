@@ -1,10 +1,14 @@
 package br.com.felipeltda.modelos;
 
+import java.time.*;
+
 public class Pessoa {
     protected String nome;
     protected String cpf;
     protected String telefone;
     protected String email;
+
+    protected LocalDate dataNascimento;
 
     public Pessoa(){
 
