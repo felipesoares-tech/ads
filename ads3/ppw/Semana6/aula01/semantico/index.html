@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html nao semântico</title>
+</head>
+
+<body>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .cabecalho {
+            height: 60px;
+            border: 3px solid red;
+        }
+
+        .lateral {
+            float: left;
+            border: 3px solid blue;
+            width: 200px;
+            width: 20%;
+        }
+
+        .conteudo {
+            float: left;
+            border: 3px solid green;
+            width: 80%;
+        }
+        .clearFix{
+            clear: both;
+        }
+        .rodape {
+            height: 60px;
+            border: 1px solid red;
+        }
+    </style>
+    <header class="cabecalho"></header>
+    <aside class="lateral">
+        <ul>
+            <li>Valor 1</li>
+            <li>Valor 2</li>
+            <li>Valor 3</li>
+            <li>Valor 4</li>
+        </ul>
+    </aside>
+    <main class="conteudo">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto magnam facilis necessitatibus consequatur
+            obcaecati nisi cum, dolores dignissimos aut est nulla possimus hic rem dicta quae officia numquam? Adipisci,
+            eaque!</p>
+        <p>Corporis ullam ex minima dolorem a laboriosam aspernatur, quas cupiditate id eligendi perferendis nostrum
+            aperiam exercitationem maiores quaerat ipsa omnis et praesentium enim temporibus itaque. Veniam autem
+            commodi fuga iusto?</p>
+    </main>
+    <div class="clearFix"></div>
+    <footer class="rodape"></footer>
+</body>
+
+</html>
