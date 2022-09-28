@@ -1,6 +1,6 @@
-import br.com.felipe.ltda.figuras.Quadrado;
-import br.com.felipe.ltda.figuras.Trapezio;
-import br.com.felipe.ltda.figuras.Triangulo;
+import br.com.felipeltda.figuras.Quadrado;
+import br.com.felipeltda.figuras.Trapezio;
+import br.com.felipeltda.figuras.Triangulo;
 
 public class Main {
     public static void main(String[] args) {

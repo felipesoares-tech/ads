@@ -1,6 +1,4 @@
-package br.com.felipe.ltda.figuras;
-
-import br.com.felipe.ltda.figuras.FiguraAbstrata;
+package br.com.felipeltda.figuras;
 
 public class Quadrado extends FiguraAbstrata {
     @Override

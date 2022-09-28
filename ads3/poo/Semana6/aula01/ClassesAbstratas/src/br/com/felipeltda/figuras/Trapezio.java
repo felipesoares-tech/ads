@@ -1,4 +1,4 @@
-package br.com.felipe.ltda.figuras;
+package br.com.felipeltda.figuras;
 
 public class Trapezio extends FiguraAbstrata{
     @Override
