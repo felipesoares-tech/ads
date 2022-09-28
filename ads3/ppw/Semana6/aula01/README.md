@@ -5,7 +5,7 @@ Many web sites contain HTML code like: `<div id="nav">` `<div class="header">` `
 In HTML there are some semantic elements that can be used to define different parts of a web page:  
 
 <div style="display: flex;">
-<div style="margin-right: 40px">
+<div style="margin-right: 25px">
 
 - `<article>`
 - `<aside>`
