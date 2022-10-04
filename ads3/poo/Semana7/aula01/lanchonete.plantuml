@@ -1,0 +1,23 @@
+@startuml
+
+Class Pessoa{
+    -nome: String
+    -cpf: String
+}
+
+Class Cliente{
+
+}
+
+Class Pedido{
+    -numeroPedido: int
+    -nomeAtendente: String
+}
+
+Class Avaliacao{
+    -Pedido: pedido
+    -String: avaliacao
+}
+
+
+@enduml
