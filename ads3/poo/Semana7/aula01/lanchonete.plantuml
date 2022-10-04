@@ -1,7 +1,7 @@
 @startuml lanchonete
-Class Pessoa{
-    -nome: String
-    -cpf: String
+abstract Class Pessoa{
+    #nome: String
+    #cpf: String
 }
 Class Pedido{
     -numeroPedido: int
@@ -13,14 +13,10 @@ Class Avaliacao{
 }
 
 Interface CRUD{
-    +void cadastrar()
-    +void visualizar()
-    +void atualizar()
-    +void remover()
-}
-
-Class Item{
-
+    void cadastrar()
+    void visualizar()
+    void atualizar()
+    void remover()
 }
 
 Class Produto{
@@ -30,28 +26,61 @@ Class Produto{
     -nome: String
 }
 
+Class Item{
+    -codigo: int
+    -ListaProduto: ArrayList
+}
+
+Class Estoque{
+
+}
+
+
 Class Cliente{
 
 }
 
 Class Atendente{
-
+    -metaDiaria: int
 }
 
 Class CadastroCliente{
-
+    -ListaClientes: ArrayList
 }
 
 Class CadastroPedido{
-
+    -ListaPedidos: ArrayList
 }
 
-Pessoa <|--- Cliente: é
-Pessoa <|--- Atendente: é
-CRUD <|--- CadastroCliente: implementa
-CRUD <|--- CadastroPedido: implementa
-Pedido *-- "1" Cliente: contém
-Item *-- "1" *-- "muitos" Produto: contém
-Pedido *--"1" Atendente: contém
+Class CadastroAtendente{
+    -ListaAtendentes: ArrayList
+}
 
+Class CadastroEstoque{
+    -ListaItem: ArrayList
+}
+
+Class CadastroAvaliacao{
+    -ListaAvaliacao: ArrayList
+}
+
+Pessoa <|-- Cliente: é
+Pessoa <|-- Atendente: é
+CRUD <|-- CadastroCliente: implementa
+CRUD <|-- CadastroAtendente: implementa
+CRUD <|-- CadastroEstoque: implementa
+CRUD <|-- CadastroPedido: implementa
+Cliente *-- "1" Pedido: contém
+Item "1" *-- "muitos" Produto : contém
+Atendente *-- "1" Pedido: contém
+Pedido *-- "1" Avaliação: contém
+CadastroPedido -- Cliente
+CadastroPedido -- Atendente
+CadastroPedido -- Pedido
+CadastroPedido -- Estoque
+CadastroCliente -- Cliente
+CadastroAtendente -- Atendente
+CadastroEstoque -- Item
+CadastroAvaliacao -- Avaliacao
+CadastroAvaliacao -- CadastroPedido
 @enduml
