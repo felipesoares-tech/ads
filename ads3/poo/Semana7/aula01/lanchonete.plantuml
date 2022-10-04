@@ -5,7 +5,9 @@ abstract Class Pessoa{
 }
 Class Pedido{
     -numeroPedido: int
-    -nomeAtendente: String
+    -atendente: Atendente
+    -cliente: Cliente
+    -listaItem: ArrayList
 }
 Class Avaliacao{
     -Pedido: pedido
@@ -26,13 +28,8 @@ Class Produto{
     -nome: String
 }
 
-Class Item{
-    -codigo: int
-    -ListaProduto: ArrayList
-}
-
 Class Estoque{
-
+    -ListaProduto: ArrayList
 }
 
 
@@ -57,7 +54,7 @@ Class CadastroAtendente{
 }
 
 Class CadastroEstoque{
-    -ListaItem: ArrayList
+    -ListaProduto: ArrayList
 }
 
 Class CadastroAvaliacao{
@@ -71,16 +68,16 @@ CRUD <|-- CadastroAtendente: implementa
 CRUD <|-- CadastroEstoque: implementa
 CRUD <|-- CadastroPedido: implementa
 Cliente *-- "1" Pedido: contém
-Item "1" *-- "muitos" Produto : contém
+Pedido "1" *-- "muitos" Produto : contém
 Atendente *-- "1" Pedido: contém
-Pedido *-- "1" Avaliação: contém
+Pedido *-- "1" Avaliacao: contém
 CadastroPedido -- Cliente
 CadastroPedido -- Atendente
 CadastroPedido -- Pedido
 CadastroPedido -- Estoque
-CadastroCliente -- Cliente
-CadastroAtendente -- Atendente
-CadastroEstoque -- Item
-CadastroAvaliacao -- Avaliacao
+CadastroCliente *-- "1" Cliente: contém
+CadastroAtendente *-- "1" Atendente: contém
+CadastroEstoque *-- "1" Estoque: contém
+CadastroAvaliacao *-- "1" Avaliacao: contém
 CadastroAvaliacao -- CadastroPedido
 @enduml
