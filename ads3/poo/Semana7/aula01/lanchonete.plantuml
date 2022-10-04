@@ -1,23 +1,57 @@
-@startuml
-
+@startuml lanchonete
 Class Pessoa{
     -nome: String
     -cpf: String
+}
+Class Pedido{
+    -numeroPedido: int
+    -nomeAtendente: String
+}
+Class Avaliacao{
+    -Pedido: pedido
+    -String: avaliacao
+}
+
+Interface CRUD{
+    +void cadastrar()
+    +void visualizar()
+    +void atualizar()
+    +void remover()
+}
+
+Class Item{
+
+}
+
+Class Produto{
+    -codigo: int
+    -valor: double
+    -quantiade: int
+    -nome: String
 }
 
 Class Cliente{
 
 }
 
-Class Pedido{
-    -numeroPedido: int
-    -nomeAtendente: String
+Class Atendente{
+
 }
 
-Class Avaliacao{
-    -Pedido: pedido
-    -String: avaliacao
+Class CadastroCliente{
+
 }
 
+Class CadastroPedido{
+
+}
+
+Pessoa <|--- Cliente: é
+Pessoa <|--- Atendente: é
+CRUD <|--- CadastroCliente: implementa
+CRUD <|--- CadastroPedido: implementa
+Pedido *-- "1" Cliente: contém
+Item *-- "1" *-- "muitos" Produto: contém
+Pedido *--"1" Atendente: contém
 
 @enduml
