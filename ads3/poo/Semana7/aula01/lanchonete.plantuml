@@ -21,9 +21,16 @@ Interface CRUD{
     void remover()
 }
 
+Class Item{
+    -codigo: int
+    -listaProduto: ArrayList
+    -quantidade: int
+    -valorTotal: double
+}
+
 Class Produto{
     -codigo: int
-    -valor: double
+    -valorUnitario: double
     -quantiade: int
     -nome: String
 }
