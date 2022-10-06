@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+    font-family: Avenir,sans-serif;
+}
+body{
+    background-color: #040714;
+}
+
+.container-img img{
+    height: 66.5em;
+    
+
+}
+.container-img{
+    text-align: right;
+}
+
+nav{
+    position: fixed;
+    right: 0;
+}
+
+nav button{
+    background-color: rgba(0, 0, 0, 0.829);
+    border: 1px solid rgba(255, 255, 255, 0.685);
+    height: 3em;
+    width: 6em;
+    border-radius: 7px;
+    margin-right: 2.5em;
+    margin-top: 0.7em;
+    font-size: large;
+    font-weight: 400px;
+}
+nav button:hover{
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    transition: 0.5s;
+}
