@@ -23,7 +23,7 @@ Interface CRUD{
 
 Class Item{
     -codigo: int
-    -listaProduto: ArrayList
+    -produto: Produto
     -quantidade: int
     -valorTotal: double
 }
@@ -36,7 +36,7 @@ Class Produto{
 }
 
 Class Estoque{
-    -ListaProduto: ArrayList
+    -listaProduto: ArrayList
 }
 
 
@@ -49,11 +49,14 @@ Class Atendente{
 }
 
 Class CadastroCliente{
-    -ListaClientes: ArrayList
+    -listaClientes: ArrayList
 }
 
 Class CadastroPedido{
-    -ListaPedidos: ArrayList
+    -listaPedidos: ArrayList
+    -listaItem: ArrayList
+    -estoque: Estoque
+
 }
 
 Class CadastroAtendente{
@@ -80,6 +83,7 @@ Atendente *-- "1" Pedido: contém
 Pedido *-- "1" Avaliacao: contém
 CadastroPedido -- Cliente
 CadastroPedido -- Atendente
+CadastroPedido -- Item
 CadastroPedido -- Pedido
 CadastroPedido -- Estoque
 CadastroCliente *-- "1" Cliente: contém
