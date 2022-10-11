@@ -10,11 +10,30 @@ Class Pedido{
     -listaItem: ArrayList
 }
 Class Avaliacao{
-    -Pedido: pedido
-    -String: avaliacao
+    -pedido: Pedido
+    -avaliacao: String
 }
 
-Interface CRUD{
+Interface ClienteRepository{
+    void cadastrar()
+    void visualizar()
+    void atualizar()
+    void remover()
+}
+Interface AtendenteRepository{
+    void cadastrar()
+    void visualizar()
+    void atualizar()
+    void remover()
+}
+Interface EstoqueRepository{
+    void cadastrar()
+    void visualizar()
+    void atualizar()
+    void remover()
+}
+
+Interface PedidoRepository{
     void cadastrar()
     void visualizar()
     void atualizar()
@@ -39,7 +58,6 @@ Class Estoque{
     -listaProduto: ArrayList
 }
 
-
 Class Cliente{
 
 }
@@ -60,29 +78,30 @@ Class CadastroPedido{
 }
 
 Class CadastroAtendente{
-    -ListaAtendentes: ArrayList
+    -listaAtendentes: ArrayList
 }
 
 Class CadastroEstoque{
-    -ListaProduto: ArrayList
+    -estoque: Estoque
 }
 
 Class CadastroAvaliacao{
-    -ListaAvaliacao: ArrayList
+    -listaAvaliacao: ArrayList
 }
 
 Pessoa <|-- Cliente: é
 Pessoa <|-- Atendente: é
-CRUD <|-- CadastroCliente: implementa
-CRUD <|-- CadastroAtendente: implementa
-CRUD <|-- CadastroEstoque: implementa
-CRUD <|-- CadastroPedido: implementa
+ClienteRepository <|-- CadastroCliente: implementa
+AtendenteRepository <|-- CadastroAtendente: implementa
+EstoqueRepository <|-- CadastroEstoque: implementa
+PedidoRepository <|-- CadastroPedido: implementa
 Cliente *-- "1" Pedido: contém
-Pedido "1" *-- "muitos" Produto : contém
+Pedido "1" *-- "muitos" Item : contém
 Atendente *-- "1" Pedido: contém
 Pedido *-- "1" Avaliacao: contém
 CadastroPedido -- Cliente
 CadastroPedido -- Atendente
+CadastroEstoque *-- "1" Produto
 CadastroPedido -- Item
 CadastroPedido -- Pedido
 CadastroPedido -- Estoque
