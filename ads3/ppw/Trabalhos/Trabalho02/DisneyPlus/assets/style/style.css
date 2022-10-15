@@ -11,18 +11,17 @@ body{
 
 .container-img img{
     height: 66.5em;
-    
 }
 .container-img{
     text-align: right;
 }
 
-nav{
+header{
     position: fixed;
     right: 0;
 }
 
-nav button{
+header nav button{
     background-color: rgba(0, 0, 0, 0.829);
     border: 1px solid rgba(255, 255, 255, 0.685);
     height: 3em;
@@ -33,51 +32,27 @@ nav button{
     font-size: large;
     font-weight: 400px;
 }
-
-nav button:hover{
+header nav button:hover{
     background-color: #fff;
     color: #000;
     cursor: pointer;
     transition: 0.5s;
 }
-
-.assinatura{ 
-    position: absolute;
-    margin-top: 12%;
-    margin-left: 7%;
-    justify-content: center;
+.container-principal{
+   width: 50%;
+   top: 0;
+   
 }
-.assinatura div{
+
+.logo-text img{
+    height: 10em;
+}
+
+.logo-assinar{
     display: flex;
-    text-align: center;
-    flex-direction: column;
-    font-size: 25px;
+    
 }
 
-.assinatura div p{
-    margin-bottom: 25px;
-    font-weight: bold;
-}
-
-.assinatura div button{
-    background-color: #6421ff;
-    font-size: 20px;
-    height: 3.5em;
-    width: 35em;
-    border: 0;
-    border-radius: 5px;
-    font-weight: 400;
-    letter-spacing: 1px;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-.assinatura div button:hover{
-    background-color: #8d65eb;
-    cursor: pointer;
-    transition: 0.5s;
-
-}
-
-.assinatura div img{
-    height: 7em;
+.logo-assinar img{
+    height: 5em;
 }
