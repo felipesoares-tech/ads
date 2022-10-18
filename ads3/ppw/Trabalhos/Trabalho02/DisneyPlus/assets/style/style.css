@@ -1,36 +1,37 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     color: #fff;
-    font-family: Avenir,sans-serif;
+    font-family: Avenir, sans-serif;
 }
-body{
+
+body {
     background-color: #040714;
 }
 
-.sec-1{
+.sec-1 {
     min-height: 100vh;
     display: flex;
     justify-content: right;
     flex-wrap: wrap;
 }
 
-.container{
+.container {
     display: flex;
 }
 
-.container img{
-    height: 66.5em;
+.container img {
+    height: 50em;
     z-index: 0;
 }
 
-header{
+header {
     position: fixed;
     right: 0;
 }
 
-header nav button{
+header nav button {
     transition: 0.5s;
     background-color: rgba(0, 0, 0, 0.829);
     border: 1px solid rgba(255, 255, 255, 0.685);
@@ -42,35 +43,36 @@ header nav button{
     font-size: large;
     font-weight: 400px;
 }
-header nav button:hover{
+
+header nav button:hover {
     background-color: #fff;
     color: #000;
     cursor: pointer;
     transition: 0.5s;
 }
 
-.escolher-plano{
+.escolher-plano {
     position: absolute;
     left: 0;
     margin-top: 10%;
     padding: 4em;
     margin-left: 8em;
-    
+
 }
 
-.escolher-plano div{
+.escolher-plano div {
     display: flex;
     flex-direction: column;
     text-align: center;
     width: 35em;
 }
 
-.escolher-plano div p{
-    font-family: Avenir,sans-serif;
+.escolher-plano div p {
+    font-family: Avenir, sans-serif;
     font-size: 1.5em;
 }
 
-.escolher-plano div button{
+.escolher-plano div button,.sec-2-items div button {
     transition: 0.5s;
     height: 4em;
     background-color: #6421ff;
@@ -78,60 +80,63 @@ header nav button:hover{
     border: 0;
 }
 
-.escolher-plano div button:hover{
+.escolher-plano div button:hover,.sec-2-items div button:hover {
     background-color: #743bfa;
     cursor: pointer;
     transition: 0.5s;
 }
 
-.escolher-plano div div{
+.escolher-plano div div {
     margin-bottom: 2em;
 }
 
-.escolher-plano div img{
+.escolher-plano div img {
     height: 10em;
 }
 
-.logo-assinar{
+.logo-assinar {
     display: flex;
-    
+
 }
 
-.logo-assinar img{
+.logo-assinar img {
     height: 5em;
 }
 
-main{
+main {
     min-height: 100vh;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     flex-direction: column;
     padding: 4em;
+    padding-top: 0;
 }
 
-.options{
+.options {
     display: flex;
 }
 
-.options button{
-    font-family: Avenir,sans-serif;
+.options button {
+    font-family: Avenir, sans-serif;
     font-size: 1.5em;
     background-color: transparent;
     margin-right: 2em;
 }
 
-.options button:hover{
+.options button:hover {
     cursor: pointer;
 }
 
 
-#bt-1:focus,#bt-2:focus,#bt-3:focus{
+#bt-1:focus,
+#bt-2:focus,
+#bt-3:focus {
     border-bottom: 5px solid #f9f9f9;
     padding-bottom: 5px;
 }
 
-.container-items{
+.container-items {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -140,12 +145,60 @@ main{
 
 }
 
-.container-items img{
+.container-items img {
     border-radius: 4px;
     height: 20em;
 }
 
-.options p{
+.options p {
     margin-right: 2em;
     text-decoration: none;
+}
+
+.sec-2 {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sec-2 h1{
+    font-size: 2.5em;
+}
+
+.sec-2-items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.sec-2-items div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    
+    margin-right: 3em;
+    padding: 5em;
+
+}
+
+.sec-2-items div img {
+    height: 3.5em;
+    margin-top: 5em;
+    margin-bottom: 2.5em;
+}
+
+.sec-2-items div button {
+    height: 3.5em;
+    width: 20em;
+    margin-top: 2em;
+}
+
+.item-center{
+    background-image: url('../img/back-purple.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 23em;
 }
