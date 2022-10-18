@@ -29,6 +29,7 @@ body {
 header {
     position: fixed;
     right: 0;
+    z-index: 1;
 }
 
 header nav button {
@@ -83,7 +84,7 @@ header nav button:hover {
 
 .escolher-plano div button:hover,
 .sec-2-items div button:hover {
-    background-color: #743bfa;
+    background-color: #8865da;
     cursor: pointer;
     transition: 0.5s;
 }
@@ -124,6 +125,7 @@ main {
     font-size: 1.5em;
     background-color: transparent;
     margin-right: 2em;
+    border: 0;
 }
 
 .options button:hover {
@@ -167,6 +169,7 @@ main {
 
 .sec-2 h1 {
     font-size: 2.5em;
+    margin-bottom: 0em;
 }
 
 .sec-2-items {
@@ -197,6 +200,26 @@ main {
     width: 20em;
     margin-top: 2em;
 }
+
+.sec-2 div p, .sec-3 div p, .txt-rei-leao p, .container-dispositivos p{
+    color: silver;
+    letter-spacing: 2px;
+    line-height: 24px;
+}
+
+.sec-3 div h2{
+    margin-bottom: 0.4em;
+}
+
+.sec-2 div h2{
+    margin-bottom: 0.3em;
+}
+
+.letra-pequena {
+    color: silver;
+    font-size: 0.8em;
+}
+
 
 .item-center {
     background-image: url('../img/back-purple.png');
@@ -232,23 +255,71 @@ main {
     min-height: 100vh;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .sec-4 img {
     height: 60em;
+
 }
 
 .sec-4 div {
-    display: inline-block;
-    position: relative;
+    position: absolute;
 }
 
 .txt-rei-leao {
-    position: absolute;
-    top: 145px;
-    right: 20px;
-    font-size: 40px;
-    color: black;
-    text-shadow: 0px 0px 5px black;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 3em;
+    margin-left: 40em;
 
+}
+
+.txt-rei-leao h2{
+    margin-bottom: 1em;
+}
+
+.sec-5{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container-dispositivos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.line{
+    display: flex;
+    align-items: center;
+}
+
+.line div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-dispositivos div img{
+    height: 14em;
+}
+
+.sec-5-title h2{
+    font-size: 2.5em;
+    margin-bottom: 0.7em;
+}
+
+.divisao-imgs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
