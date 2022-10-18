@@ -1,4 +1,4 @@
-package br.com.felipeltda.sistema.modelos;
+package br.com.felipeltda.sistema.ficharios;
 
 public interface CRUD {
     void cadastrar();
