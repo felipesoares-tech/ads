@@ -72,7 +72,8 @@ header nav button:hover {
     font-size: 1.5em;
 }
 
-.escolher-plano div button,.sec-2-items div button {
+.escolher-plano div button,
+.sec-2-items div button {
     transition: 0.5s;
     height: 4em;
     background-color: #6421ff;
@@ -80,7 +81,8 @@ header nav button:hover {
     border: 0;
 }
 
-.escolher-plano div button:hover,.sec-2-items div button:hover {
+.escolher-plano div button:hover,
+.sec-2-items div button:hover {
     background-color: #743bfa;
     cursor: pointer;
     transition: 0.5s;
@@ -163,7 +165,7 @@ main {
     flex-direction: column;
 }
 
-.sec-2 h1{
+.sec-2 h1 {
     font-size: 2.5em;
 }
 
@@ -178,7 +180,7 @@ main {
     flex-direction: column;
     text-align: center;
     align-items: center;
-    
+
     margin-right: 3em;
     padding: 5em;
 
@@ -196,9 +198,57 @@ main {
     margin-top: 2em;
 }
 
-.item-center{
+.item-center {
     background-image: url('../img/back-purple.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 23em;
+}
+
+.sec-3 {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.sec-3 div img {
+    height: 45em;
+}
+
+.sec-3 div h2 {
+    font-size: 2.5em;
+}
+
+.sec-3 div {
+    display: flex;
+    flex-direction: column;
+    margin-right: 2em;
+
+}
+
+.sec-4 {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.sec-4 img {
+    height: 60em;
+}
+
+.sec-4 div {
+    display: inline-block;
+    position: relative;
+}
+
+.txt-rei-leao {
+    position: absolute;
+    top: 145px;
+    right: 20px;
+    font-size: 40px;
+    color: black;
+    text-shadow: 0px 0px 5px black;
+
 }
