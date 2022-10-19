@@ -348,7 +348,17 @@ main {
     font-size: 1.4em;
 }
 
+.sec-6 ul li:hover{
+    cursor: pointer;
+}
+
 .sec-6 h2{
     font-size: 2.5em;
     margin-bottom: 1em;
+}
+
+.simbolo-sum{
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 2em;
 }
