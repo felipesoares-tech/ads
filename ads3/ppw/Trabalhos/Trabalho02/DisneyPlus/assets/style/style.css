@@ -93,6 +93,10 @@ header nav button:hover {
     margin-bottom: 2em;
 }
 
+.escolher-plano div div p{
+    font-weight: bolder;
+}
+
 .escolher-plano div img {
     height: 10em;
 }
