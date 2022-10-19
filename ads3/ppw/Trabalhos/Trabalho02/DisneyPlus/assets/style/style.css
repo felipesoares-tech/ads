@@ -341,14 +341,14 @@ main {
     justify-content: center;
     height: 4.1em;
     background-color: #13151d;
-    width: 87em;
+    width: 75em;
     margin-bottom: 1em;
     padding: 1em;
     flex-wrap: wrap;
-    font-size: 1.8em;
+    font-size: 1.4em;
 }
 
 .sec-6 h2{
-    font-size: 3.5em;
+    font-size: 2.5em;
     margin-bottom: 1em;
 }
