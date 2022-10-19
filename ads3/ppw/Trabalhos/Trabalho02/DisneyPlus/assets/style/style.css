@@ -84,7 +84,7 @@ header nav button:hover {
 
 .escolher-plano div button:hover,
 .sec-2-items div button:hover {
-    background-color: #8865da;
+    background-color: #6f35f7;
     cursor: pointer;
     transition: 0.5s;
 }
@@ -125,7 +125,6 @@ main {
 }
 
 .options button {
-    font-family: Avenir, sans-serif;
     font-size: 1.5em;
     background-color: transparent;
     margin-right: 2em;
@@ -276,12 +275,17 @@ main {
     flex-direction: column;
     position: relative;
     padding: 3em;
-    margin-left: 40em;
+    margin-left: 45em;
 
 }
 
 .txt-rei-leao h2{
     margin-bottom: 1em;
+    font-size: 2em;
+}
+
+.txt-rei-leao h2, .txt-rei-leao p{
+    font-family: Avenir, serif;
 }
 
 .sec-5{
