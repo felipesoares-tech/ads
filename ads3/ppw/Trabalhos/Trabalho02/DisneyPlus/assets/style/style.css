@@ -295,16 +295,24 @@ main {
     flex-direction: column;
 }
 
-.line{
+.container-dispositivos ul{
     display: flex;
-    align-items: center;
 }
 
-.line div{
+.container-dispositivos ul li{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    list-style: none;
+    
+}
+
+.container-dispositivos ul li p{
+    margin-bottom: 0.3em;
+}
+.container-dispositivos ul li h2{
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 .container-dispositivos div img{
@@ -314,12 +322,4 @@ main {
 .sec-5-title h2{
     font-size: 2.5em;
     margin-bottom: 0.7em;
-}
-
-.divisao-imgs{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
 }
