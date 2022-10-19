@@ -323,3 +323,32 @@ main {
     font-size: 2.5em;
     margin-bottom: 0.7em;
 }
+
+.sec-6{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.sec-6 ul{
+    display: flex;
+    flex-direction: column;
+}
+
+.sec-6 ul li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 4.1em;
+    background-color: #13151d;
+    width: 87em;
+    margin-bottom: 1em;
+    padding: 1em;
+    flex-wrap: wrap;
+    font-size: 1.8em;
+}
+
+.sec-6 h2{
+    font-size: 3.5em;
+    margin-bottom: 1em;
+}
