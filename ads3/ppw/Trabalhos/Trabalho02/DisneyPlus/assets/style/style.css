@@ -343,11 +343,10 @@ main {
     flex-wrap: wrap;
 }
 
-.sec-6 ul li{
+.sec-6 label span{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 4.1em;
+    justify-content: left;
+    height: 3.4em;
     background-color: #13151d;
     width: 75em;
     margin-bottom: 1em;
@@ -367,6 +366,21 @@ main {
 
 .simbolo-sum{
     display: flex;
-    flex-direction: row-reverse;
+    right: 0;
     font-size: 2em;
+}
+
+.expande span {
+    height: 40px;
+    overflow: hidden;
+    display: block;
+    background-color: #6421ff;
+}
+
+.expande input[type="checkbox"] {
+    appearance: none;
+}
+
+.expande input[type="checkbox"]:checked ~ span {
+    height: auto; 
 }
