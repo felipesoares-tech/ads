@@ -27,9 +27,11 @@ body {
 }
 
 header {
-    position: fixed;
-    right: 0;
+    position: sticky;
+    top: 10px;
     z-index: 1;
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 header nav button {
@@ -424,7 +426,7 @@ footer img{
     line-height: 3.5em;
 }
 
-.container-footer p{
+.container-footer p, .container-footer select{
     margin-right: 2em;
     color: silver;
 }
@@ -433,4 +435,25 @@ footer img{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.container-footer select{
+    background-color: transparent;
+    border: 0;
+}
+
+.container-footer select option{
+    color: #000;
+    text-align: center;
+}
+
+.container-footer select:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    color: #fff;
+}
+
+.lines p:hover{
+    cursor: pointer;
+    color: #fff;
 }
