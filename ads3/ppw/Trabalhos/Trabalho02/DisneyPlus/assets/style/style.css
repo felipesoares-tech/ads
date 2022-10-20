@@ -125,7 +125,7 @@ main {
 }
 
 .options button {
-    font-size: 1.5em;
+    font-size: 1.2em;
     background-color: transparent;
     margin-right: 2em;
     border: 0;
@@ -337,25 +337,20 @@ main {
     align-items: center;
     flex-direction: column;
 }
-.sec-6 ul{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
 
-.sec-6 label span{
-    display: flex;
-    justify-content: left;
+.expande span{
+    display: block;
     height: 3.4em;
     background-color: #13151d;
     width: 75em;
     margin-bottom: 1em;
-    padding: 1em;
-    flex-wrap: wrap;
+    padding: 1.3em;
     font-size: 1.4em;
+    overflow: hidden;
+    position: relative;
 }
 
-.sec-6 ul li:hover{
+.expande span:hover{
     cursor: pointer;
 }
 
@@ -370,11 +365,32 @@ main {
     font-size: 2em;
 }
 
-.expande span {
-    height: 40px;
-    overflow: hidden;
+.expande span ul{
     display: block;
-    background-color: #6421ff;
+    padding: 1em;
+    line-height: 1.8em;
+    font-size: 0.8em;
+}
+
+.expande span ul, .expande span ul li{
+    color: silver;
+}
+
+.expande span h4{
+    display: inline;
+    margin-bottom: 7px;
+    font-size: 0.8em;
+    font-weight: normal;
+}
+
+.expande span div{
+    display: inline;
+    position: absolute;
+    right: 0;
+    font-size: 1.7em;
+    margin-right: 1em;
+    margin-top: -0.2em;
+    
 }
 
 .expande input[type="checkbox"] {
