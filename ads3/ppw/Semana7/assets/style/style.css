@@ -7,7 +7,7 @@
 }
 
 body{
-    background-color: rgba(0, 0, 0, 0.993);
+    background-color: #040714;
 }
 
 header div{
@@ -93,9 +93,10 @@ main, .teste2{
 header{
     border-bottom: 1px solid rgb(216, 208, 208);
     box-shadow: 0px 2px 20px -5px #999;
-    background-color: #000;
+    background-color: #060b22;
 }
 
 .container-img img, .container-items img{
     border: 1px solid #fff;
+    border-radius: 5px;
 }
