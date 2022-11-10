@@ -12,7 +12,10 @@ header div{
 header div ul{
     display: flex;
     list-style: none;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 header div ul li{
@@ -49,4 +52,11 @@ section{
 .container-items div{
     display: flex;
     flex-direction: column;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="li-"] {
+      width: 100%;
+    }
 }
