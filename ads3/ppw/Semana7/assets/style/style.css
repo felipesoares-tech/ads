@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 header div{
@@ -54,9 +55,29 @@ section{
     flex-direction: column;
 }
 
+.container-items div img{
+    height: 400px;
+}
+
+main, .teste2{
+    padding: 30px;
+}
+
+.container-items{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
     [class*="li-"] {
+      width: 100%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="teste"] {
       width: 100%;
     }
 }
