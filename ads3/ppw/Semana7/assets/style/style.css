@@ -96,6 +96,6 @@ header{
     background-color: #000;
 }
 
-.container-img img{
+.container-img img, .container-items img{
     border: 1px solid #fff;
 }
