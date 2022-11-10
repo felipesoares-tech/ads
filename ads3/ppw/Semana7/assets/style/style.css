@@ -5,6 +5,12 @@
     overflow-x: hidden;
 }
 
+
+header{
+    border-bottom: 1px solid rgb(216, 208, 208);
+    box-shadow: 0px 2px 20px -5px #999;
+}
+
 header div{
     display: flex;
     justify-content: center;
@@ -80,4 +86,8 @@ main, .teste2{
     [class*="teste"] {
       width: 100%;
     }
+}
+
+.opa{
+    margin-right: 75px;
 }
