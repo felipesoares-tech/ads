@@ -91,27 +91,24 @@ main, .container-img{
 }
 
 @media screen and (max-width: 768px) {
-
-    header div ul li{
-        width: 100%;
-        margin-bottom: 10px;
+    header div ul{
+        flex-direction: column;
     }
-
+    header div ul li{
+        margin-bottom: 26px;
+    }
     .text{
         margin-bottom: 30px;
         font-size: 1.5em;
     }
-
     .container-items div img{
         height: 297px;
     }
-
     .imgs img{
         height: 200px;
         margin-right: 12px;
         margin-bottom: 12px;
     }
-    
 }
 
 @media screen and (max-width: 550px){
