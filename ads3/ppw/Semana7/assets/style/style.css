@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *{
     box-sizing: border-box;
     margin: 0;
@@ -141,3 +142,145 @@ header{
     border: 1px solid #fff;
     border-radius: 5px;
 }
+=======
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    color: #fff;
+}
+
+body{
+    background-color: #040714;
+}
+
+header div{
+    display: flex;
+    justify-content: center;
+}
+
+header div ul{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+}
+
+header div ul li{
+    margin-right: 12px;
+}
+
+
+header div ul li:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+header div ul li img{
+    height: 52px;
+}
+
+.container-img{
+    display: flex;
+    justify-content: center;
+}
+
+.imgs img{
+    height: 250px;
+    margin-right: 12px;
+    margin-bottom: 12px;
+}
+
+section{
+    margin-top: 46px;
+    display: flex;
+    flex-direction: column;
+}
+
+.imgs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+}
+
+.container-items div img{
+    height: 400px;
+}
+
+main, .container-img{
+    padding: 30px;
+}
+
+.container-items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.text{
+    font-size: 1.2em;
+    width: 50%;
+}
+
+.text h2{
+    margin-bottom: 40px;
+}
+
+@media screen and (max-width: 768px) {
+    header div ul{
+        flex-direction: column;
+    }
+    header div ul li{
+        margin-bottom: 26px;
+    }
+    .text{
+        margin-bottom: 30px;
+        font-size: 1.5em;
+    }
+    .container-items div img{
+        height: 297px;
+    }
+    .imgs img{
+        height: 200px;
+        margin-right: 12px;
+        margin-bottom: 12px;
+    }
+}
+
+@media screen and (max-width: 550px){
+    .container-items div img{
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 377px){
+    .imgs img{
+        height: 170px;
+        margin-right: 12px;
+        margin-bottom: 12px;
+    }
+    .container-items div img{
+        height: 190px;
+    }
+}
+
+header{
+    border-bottom: 1px solid rgb(216, 208, 208);
+    box-shadow: 0px 2px 20px -5px #999;
+    background-color: #060b22;
+}
+
+.imgs img, .container-items img{
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+>>>>>>> 89a4448564817f7183a9a1b8a7316b3d599f5d0c
