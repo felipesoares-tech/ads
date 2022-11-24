@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 16 - Javascript Hello World</title>
+</head>
+<body>
+    <input type="button" value="Não click" onmouseover="alert('Hello World')">
+    <input type="button" value="Mudar Cor" onclick="mudarCor()">
+    <input type="button" value="Dizer olá" onclick="dizerOla()">
+    <div id="msg">
+
+    </div>
+    <script>
+        var cor = localStorage.cor;
+        console.log(cor)
+        if(cor != '' && cor === 'red'){
+                document.body.style.background = 'red'
+                localStorage.cor = 'red'
+            }
+            else
+                document.body.style.background = 'white'
+
+
+        function mudarCor(){
+            var cor = localStorage.cor
+            console.log(cor)
+            if(cor === 'red'){
+                document.body.style.background = 'white'
+                localStorage.cor = 'white'
+            }
+            else{
+                document.body.style.background = 'red'
+                localStorage.cor = 'red'
+            }
+            
+        }
+
+        function dizerOla(){
+            var nome = prompt('Qual e o seu nome?')
+            var msg = document.getElementById('msg')
+            //msg.setAttribute('style','color: red;')
+            //msg.style.color = 'red'
+            msg.innerHTML = 'Ola ' + nome
+        }
+    </script>
+</body>
+</html>
