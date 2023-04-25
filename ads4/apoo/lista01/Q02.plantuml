@@ -1,0 +1,66 @@
+/'Crie um diagrama de classe para um software de controle de funcionários e
+clientes. Faça uso do mecanismo de herança, utilizando o conceito de classe
+abstrata. Os atributos de Cliente são os seguintes atributos: limiteDeCredito
+(double), valorDaCompra (double), dataDaCompra (LocalDate),
+dataLimiteParaPagamento (LocalDate), dataDePagamento (LocalDate). Crie CRUD’s
+para os diversos cadastros, padronizando os métodos principais através do uso de
+interfaces. Construa também um módulo de compras onde seja possível o cliente
+comprar a vista ou a prazo e também pagar parcelado e de diversas formas,
+inclusive cartão de crédito. Dê a possibilidade de se determinar a quantidade de
+parcelas e também a aplicação de juros no caso de atraso no pagamento. Seu
+diagrama deverá conter todas as classes do sistema, inclusive a classe Principal.
+Sempre que for possível faça uso do conceito de herança, para reduzir a
+implementação de código-fonte e também de interfaces, para padronização dos
+métodos utilizados'/
+
+@startuml Q02
+
+class IGerencia{
+    +cadastrar(): boolean
+    +consultar(): boolean
+    +atualizar(): boolean
+    +remover(): boolean
+}
+
+class GerenciaFuncionario{
+    -funcionarios: ArrayList<Funcionario>
+}
+
+class GerenciaCliente{
+    -clientes: ArrayList<Cliente>
+}
+
+class GerenciaCliente{
+    -clientes: ArrayList<Cliente>
+}
+
+class Cliente{
+    -limiteDeCredito: Double
+}
+
+class Funcionario{
+    -setor: Integer 
+}
+
+class Compra{
+    -valorDaCompra: Double
+    -dataDaCompra: LocalDate
+    -dataLimitePagamento: LocalDate
+    -formaPagamento: Integer
+    -quantidadeParcelas: Integer
+}
+
+enum FormaPagamento{
+    DINHEIRO
+    PIX
+    CARTAO_CREDITO
+    CARTAO_DEBITO
+}
+
+enum Parcelamento{
+    A_VISTA
+    PARCELADO
+}
+
+
+@enduml

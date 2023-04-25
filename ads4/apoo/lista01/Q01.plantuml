@@ -1,0 +1,63 @@
+/'Construa um diagrama de classes para um software de controle de Veículos. Este
+software deverá ser capaz de armazenar, em memória principal, os seguintes tipos
+de veículos: moto, carro, caminhão e ônibus. Faça uso do conceito de herança
+utilizando o conceito de classe abstrata. Crie um CRUD1
+, também conhecido como
+classe “gerencia” ou “fichário” para o software em questão. Utilize interface para
+padronizar os principais métodos do CRUD. Seu diagrama deverá conter todas as
+classes do sistema, inclusive a classe Principal.'/
+
+@startuml Q01
+
+abstract class Veiculo{
+    -placa: String
+    -marca: String
+    -modelo: String
+    -anoModelo: Integer
+    -anoFabricacao: Integer
+    -cor: String
+}
+
+class IFichario{
+    +cadastrar(): boolean
+    +consultar(): boolean
+    +atualizar(): boolean
+    +remover(): boolean
+}
+
+class Fichario{
+    -veiculos: ArrayList<Veiculo>
+}
+
+class Caminhao{
+    -eixos: Integer
+}
+
+class Onibus{
+    -qtdAssentos: Integer
+}
+
+class Moto{
+    -qtdCilindros: Integer
+}
+
+class Carro{
+    -automatico: boolean
+}
+
+class SistemaVeiculos{
+    +main(args: String[]): void
+}
+
+Veiculo <|-- Carro
+Veiculo <|--Moto
+Veiculo <|-- Caminhao
+Veiculo <|-- Onibus
+IFichario <|.. Fichario
+Fichario -- Veiculo
+Fichario -- Caminhao
+Fichario -- Carro
+Fichario -- Moto
+Fichario -- Onibus
+SistemaVeiculos -- Fichario
+@enduml

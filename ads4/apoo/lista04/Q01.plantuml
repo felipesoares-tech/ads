@@ -1,0 +1,29 @@
+@startuml q01
+
+class Livro{
+    -id: Integer
+    -autor: String
+    -dataPublicacao: Date
+    -ISBN: String
+}
+
+interface IFicharioLivro{
+    +cadastrar(): boolean
+    +consultar(): boolean
+    +atualizar(): boolean
+    +apagar(id: Integer): boolean
+}
+
+class FicharioLivro{
+    -Livros: ArrayList<Livro>
+}
+
+class Gerenciador{
+    +main(): void
+}
+
+IFicharioLivro <|.. FicharioLivro
+FicharioLivro -- Livro
+Gerenciador - Livro
+Gerenciador -- FicharioLivro
+@enduml

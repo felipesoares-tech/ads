@@ -1,0 +1,64 @@
+/'
+Desenvolva o diagrama de classes de um software para controle de cobrança e entrega de
+produtos. Seu software deverá ser capaz de cadastrar os clientes da empresa, os produtos e
+a venda efetivada. Um cliente poderá ter dois endereços, um de entrega dos produtos e
+outro de cobrança.
+'/
+@startuml q03
+
+class Produto{
+    -id: Integer
+    -nome: String
+    -quantidade: Integer
+}
+
+class Endereco{
+    -nome: String
+    -numero: Integer
+    -cep: String
+    -entrega: boolean
+}
+
+class Cliente{
+    -id: Integer
+    -nome: String
+    -cpf: String
+    -endereco: Endereco[0..2]
+}
+
+interface IFichario{
+    +cadastrar(): boolean
+    +consultar(): boolean
+    +atualizar(): boolean
+    +apagar(id: Integer): boolean
+}
+
+class FicharioCliente{
+    -clientes: ArrayList<Cliente>
+}
+
+class FicharioProduto{
+    -produtos: ArrayList<Produto>
+}
+
+class FicharioVenda{
+    -vendas: ArrayList<Venda>
+}
+
+class Venda{
+    -id: Integer
+    -cliente: Cliente
+    -produto: Produto
+}
+
+
+IFichario <|.. FicharioCliente
+IFichario <|.. FicharioProduto
+IFichario <|.. FicharioVenda
+FicharioCliente -- Cliente
+FicharioProduto -- Produto
+FicharioVenda -- Venda
+Cliente  o-  Endereco
+Venda   *-  Cliente
+Venda  "*" *-  Produto
+@enduml

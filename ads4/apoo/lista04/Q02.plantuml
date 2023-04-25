@@ -1,0 +1,43 @@
+@startuml q02
+
+abstract class Pessoa{
+    #nome: String
+    #dataNascimento: Date
+    #cpf: String
+    #sexo: char
+}
+
+class Funcionario{
+    -id: Integer
+    -salario: Double
+    -filhos: ArrayList<Filho>
+}
+
+class Filho{
+    -id: Integer
+}
+
+
+interface IFicharioFuncionario{
+    +cadastrar(): boolean
+    +consultar(): boolean
+    +atualizar(): boolean
+    +apagar(id: Integer): boolean
+}
+
+class FicharioFuncionario{
+    -Livros: ArrayList<Funcionario>
+}
+
+class GerenciadorFuncionarios{
+    +main(): static
+}
+
+IFicharioFuncionario <|.. FicharioFuncionario
+FicharioFuncionario -- Funcionario
+GerenciadorFuncionarios -- Funcionario
+GerenciadorFuncionarios -- FicharioFuncionario
+Pessoa <|-- Funcionario
+Pessoa <|-- Filho
+Filho "*" *-  Funcionario
+@enduml

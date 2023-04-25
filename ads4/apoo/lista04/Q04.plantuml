@@ -1,0 +1,58 @@
+/'
+Desenvolva o diagrama de classes de um software para controle de um clínica média.
+Considere que deverão ser armazenadas informações sobre médicos, pacientes e consultas
+realizadas.
+'/
+
+@startuml Q04
+
+abstract class Pessoa{
+    -nome: String
+    -cpf: Stri  ng
+    -dataNascimento: Date
+}
+
+class Consulta{
+    -id: Integer
+    -medico: Medico
+    -paciente: Paciente
+    -data: Date
+}
+
+interface IFichario{
+    +cadastrar(): boolean
+    +consultar(): boolean
+    +atualizar(): boolean
+    +apagar(id: Integer): boolean
+}
+
+class FicharioMedico{
+    -medicos: ArrayList<Medico>
+}
+class FicharioPaciente{
+    -medicos: ArrayList<Paciente>
+}
+class FicharioConsulta{
+    -medicos: ArrayList<Consulta>
+}
+
+class Medico{
+    -id: Integer
+    -CRM: String
+}
+class Paciente{
+    -id: Integer
+    -convenio: boolean
+}
+
+Pessoa <|-- Medico
+Pessoa <|-- Paciente
+IFichario <|.. FicharioMedico
+IFichario <|.. FicharioPaciente
+IFichario <|.. FicharioConsulta
+FicharioPaciente -- Paciente
+FicharioConsulta -- Consulta
+FicharioMedico -- Medico
+Consulta  *-  Paciente
+Consulta *- Medico
+@enduml
