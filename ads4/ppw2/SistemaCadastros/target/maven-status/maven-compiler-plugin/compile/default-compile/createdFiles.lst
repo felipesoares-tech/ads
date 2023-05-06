@@ -1,0 +1,6 @@
+br/com/felipesoarestech/sistemacadastros/bean/GenericBean.class
+br/com/felipesoarestech/sistemacadastros/bean/ClienteBean.class
+br/com/felipesoarestech/sistemacadastros/entity/Cliente.class
+br/com/felipesoarestech/sistemacadastros/util/BeanUtil.class
+br/com/felipesoarestech/sistemacadastros/logic/ClienteLogic.class
+br/com/felipesoarestech/sistemacadastros/logic/GenericLogic.class
