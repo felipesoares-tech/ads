@@ -92,11 +92,11 @@
 
 # Diagrama de sequência
 
-## Atendente
+## Atendente (Atendimento ao Cliente)
 
 ![dseq-atendente](https://cdn.discordapp.com/attachments/1024510401255317566/1156064691492241448/dseq_atendente.png?ex=65139ca5&is=65124b25&hm=d8964df0ca09afc163ef7fd7086faa5a31eea2d011bd401f53aadbdad089f313&)
 
-## Estoquista (Entrada de produtos)
+## Estoquista (Entrada de Produtos)
 
 ![dseq-estoquista1](https://cdn.discordapp.com/attachments/1024510401255317566/1156065050482712666/dseq_estoquista1.png?ex=65139cfa&is=65124b7a&hm=90139506903850ebb828ee750fff1cab4f768e29f3acde4efa9540423f5dbe47&)
 
@@ -104,4 +104,6 @@
 
 ![dseq-estoquista2](https://cdn.discordapp.com/attachments/1024510401255317566/1156065050721779903/dseq_estoquista2.png?ex=65139cfa&is=65124b7a&hm=8807684932e36c2f0284ab8a5851e3d2809f783f4c7ea940d6d1b06dc0aa438f&)
 
-## Mecânico ()
+## Mecânico (Atendimento ao Mecânico)
+
+![dseq-mecanico](https://cdn.discordapp.com/attachments/1024510401255317566/1156067568570859570/dseq_mecanico.png?ex=65139f53&is=65124dd3&hm=9bfe1ec3cc1a6997b9d1fdc7be33d392e4ad71944fa36eb8b93f1167d2ad927f&)
